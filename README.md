@@ -2,9 +2,14 @@
 
 ## Warisan Flora Bali
 
-**TARU BALI** merupakan website edukasi yang membahas tanaman upakara Bali serta keterkaitannya dengan kehidupan, budaya, dan lingkungan masyarakat Bali.
+TARU BALI merupakan platform digital edukasi yang dibuat untuk
+mengenalkan tanaman yang berkaitan dengan kehidupan dan budaya
+masyarakat Bali.
 
-Nama **TARU BALI** berasal dari kata *Taru* yang dalam bahasa Sanskerta berarti pohon atau tumbuhan.
+Nama **TARU BALI** berasal dari kata **"Taru"** yang dalam bahasa
+Sanskerta berarti pohon atau tumbuhan.
+
+---
 
 ## 📚 Menu Website
 
@@ -16,43 +21,94 @@ Website TARU BALI memiliki beberapa menu utama:
 - 🌺 **Jenis Tanaman**
 - 🗺️ **Peta Sebaran**
 
+---
+
 ## 🎯 Tujuan
 
-Website ini dibuat untuk:
+TARU BALI dibuat dengan tujuan:
 
-1. Mengenalkan berbagai tanaman yang berkaitan dengan upakara Bali.
-2. Menambah pengetahuan generasi muda mengenai tanaman dan budaya Bali.
-3. Mendorong kepedulian terhadap pelestarian tanaman.
-4. Memanfaatkan teknologi digital sebagai media edukasi budaya.
-
-## 🌿 Isi Website
-
-### Tentang Kami
-Menjelaskan latar belakang dan tujuan pembuatan TARU BALI.
-
-### Fungsi
-Membahas berbagai fungsi tanaman upakara dalam kehidupan masyarakat Bali.
-
-### Jenis Tanaman
-Mengenalkan berbagai jenis tanaman yang berkaitan dengan kegiatan adat dan keagamaan.
-
-### Peta Sebaran
-Menampilkan informasi mengenai wilayah persebaran tanaman di Bali.
-
-## 💻 Teknologi
-
-Website ini dibuat menggunakan:
-
-- HTML
-- CSS
-- Tailwind CSS
-- JavaScript
-- GitHub Pages
-
-## 🌱 Pelestarian
-
-TARU BALI diharapkan dapat menjadi media edukasi digital yang membantu masyarakat, khususnya generasi muda, untuk mengenal dan ikut melestarikan kekayaan flora serta budaya Bali.
+1. Mengenalkan berbagai tanaman yang berkaitan dengan budaya Bali.
+2. Menambah pengetahuan masyarakat mengenai tanaman Bali.
+3. Mengenalkan fungsi tanaman dalam kehidupan masyarakat.
+4. Mendorong kepedulian terhadap pelestarian tanaman.
+5. Memanfaatkan teknologi digital sebagai media edukasi budaya.
 
 ---
 
-© 2026 TARU BALI
+## 🌿 Tentang TARU BALI
+
+TARU BALI merupakan media digital yang menyajikan informasi
+mengenai kekayaan flora Bali.
+
+Website ini dirancang agar masyarakat, khususnya generasi muda,
+dapat mengenal berbagai tanaman dengan lebih mudah melalui
+media digital.
+
+---
+
+## 🌱 Fungsi
+
+Menu Fungsi membahas berbagai kegunaan tanaman dalam:
+
+- Kegiatan upakara
+- Kegiatan adat
+- Kehidupan sehari-hari
+- Lingkungan
+- Pendidikan
+- Pelestarian
+
+---
+
+## 🌺 Jenis Tanaman
+
+Menu Jenis Tanaman berisi informasi mengenai berbagai tanaman
+yang berkaitan dengan kehidupan dan budaya masyarakat Bali.
+
+Informasi tanaman dapat mencakup:
+
+- Nama lokal
+- Nama Indonesia
+- Nama latin
+- Informasi tanaman
+- Kegunaan tanaman
+
+---
+
+## 🗺️ Peta Sebaran
+
+Menu Peta Sebaran memberikan informasi mengenai persebaran
+berbagai tanaman di wilayah Bali.
+
+---
+
+## 💻 Teknologi
+
+Website TARU BALI dibuat menggunakan:
+
+- HTML
+- CSS
+- JavaScript
+- Tailwind CSS
+- GitHub Pages
+
+---
+
+## 🌳 Pelestarian
+
+TARU BALI diharapkan dapat menjadi media edukasi digital yang
+membantu meningkatkan pengetahuan dan kepedulian masyarakat
+terhadap kekayaan flora serta budaya Bali.
+
+---
+
+## 📌 Struktur Website
+
+```text
+TARU-BALI/
+│
+├── index.html
+├── tentang.html
+├── fungsi.html
+├── jenis-tanaman.html
+├── peta-sebaran.html
+└── README.md
