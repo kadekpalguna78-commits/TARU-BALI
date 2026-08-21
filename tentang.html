@@ -2,12 +2,6 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-
-    <!-- Mencegah browser menyimpan halaman versi lama -->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Tentang Kami - TARU BALI</title>
@@ -34,7 +28,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(255,255,255,0.97);
+            background: white;
             border-bottom: 1px solid #e5e7eb;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
@@ -53,8 +47,7 @@
             text-decoration: none;
             color: #14532d;
             font-size: 25px;
-            font-weight: 800;
-            white-space: nowrap;
+            font-weight: bold;
         }
 
         .logo-small {
@@ -76,8 +69,8 @@
             color: #374151;
             font-size: 14px;
             font-weight: 600;
-            transition: 0.3s;
             padding: 6px 0;
+            transition: 0.3s;
         }
 
         nav a:hover {
@@ -89,17 +82,13 @@
             border-bottom: 2px solid #166534;
         }
 
-        /* HERO */
-
         .hero {
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(20,83,45,0.97),
-                    rgba(22,101,52,0.96),
-                    rgba(21,128,61,0.94)
-                );
-
+            background: linear-gradient(
+                135deg,
+                #14532d,
+                #166534,
+                #15803d
+            );
             color: white;
             text-align: center;
             padding: 90px 25px;
@@ -123,8 +112,6 @@
             font-size: 18px;
             color: #dcfce7;
         }
-
-        /* CONTENT */
 
         .container {
             max-width: 1100px;
@@ -166,7 +153,6 @@
                 #dcfce7,
                 #fef9c3
             );
-
             border-radius: 30px;
             padding: 55px 35px;
             text-align: center;
@@ -175,23 +161,18 @@
 
         .about-box-icon {
             font-size: 90px;
-            margin-bottom: 15px;
         }
 
         .about-box h3 {
             color: #14532d;
             font-size: 30px;
-            margin: 10px 0;
+            margin: 15px 0;
         }
 
         .about-box p {
             color: #4b5563;
             line-height: 1.8;
-            max-width: 400px;
-            margin: auto;
         }
-
-        /* TUJUAN */
 
         .section-title {
             text-align: center;
@@ -204,7 +185,7 @@
             margin: 10px 0;
         }
 
-        .section-title p:last-child {
+        .section-title p {
             color: #6b7280;
         }
 
@@ -224,27 +205,23 @@
         }
 
         .card:hover {
-            transform: translateY(-7px);
+            transform: translateY(-6px);
         }
 
         .card-icon {
             font-size: 48px;
-            margin-bottom: 12px;
         }
 
         .card h3 {
             color: #14532d;
             font-size: 24px;
-            margin: 10px 0;
+            margin: 12px 0;
         }
 
         .card p {
             color: #6b7280;
             line-height: 1.8;
-            margin: 0;
         }
-
-        /* VISI */
 
         .vision {
             background: #14532d;
@@ -260,22 +237,18 @@
 
         .vision-icon {
             font-size: 55px;
-            margin-bottom: 15px;
         }
 
         .vision h2 {
             font-size: 38px;
-            margin: 0 0 20px;
+            margin: 15px 0;
         }
 
         .vision p {
             color: #dcfce7;
             font-size: 17px;
             line-height: 1.9;
-            margin: 0;
         }
-
-        /* FOOTER */
 
         footer {
             background: #052e16;
@@ -286,23 +259,19 @@
 
         footer h2 {
             margin: 0 0 10px;
-            font-size: 25px;
         }
 
         footer p {
             color: #bbf7d0;
-            margin: 8px 0;
         }
 
         .copyright {
             border-top: 1px solid #166534;
             margin-top: 25px;
             padding-top: 20px;
-            font-size: 13px;
             color: #86efac;
+            font-size: 13px;
         }
-
-        /* MOBILE */
 
         @media (max-width: 850px) {
 
@@ -316,21 +285,13 @@
                 gap: 14px 20px;
             }
 
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
+            .about-grid,
             .cards {
                 grid-template-columns: 1fr;
             }
 
             .hero h1 {
                 font-size: 38px;
-            }
-
-            .section-title h2,
-            .about-text h2 {
-                font-size: 32px;
             }
         }
 
@@ -342,14 +303,6 @@
 
             .hero h1 {
                 font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .logo {
-                font-size: 22px;
             }
 
             nav {
@@ -365,24 +318,16 @@
 
 <body>
 
-<!-- =========================
-     HEADER
-========================= -->
-
 <header>
 
     <div class="header-inner">
 
         <a href="index.html" class="logo">
-
             🌿 TARU BALI
-
             <span class="logo-small">
                 WARISAN FLORA BALI
             </span>
-
         </a>
-
 
         <nav>
 
@@ -390,7 +335,7 @@
                 Beranda
             </a>
 
-            <a href="tentang-kami.html" class="active">
+            <a href="tentang.html" class="active">
                 Tentang Kami
             </a>
 
@@ -413,10 +358,6 @@
 </header>
 
 
-<!-- =========================
-     HERO
-========================= -->
-
 <section class="hero">
 
     <div class="hero-icon">
@@ -434,10 +375,6 @@
 
 </section>
 
-
-<!-- =========================
-     TENTANG TARU BALI
-========================= -->
 
 <section class="container">
 
@@ -473,17 +410,10 @@
             </p>
 
             <p>
-                Kehadiran TARU BALI diharapkan dapat membantu
-                masyarakat, khususnya generasi muda, untuk lebih
-                mengenal kekayaan flora Bali serta memahami pentingnya
-                menjaga dan melestarikannya.
-            </p>
-
-            <p>
-                Melalui pemanfaatan teknologi digital, pengetahuan
-                mengenai tanaman dan budaya Bali dapat disampaikan
-                dengan cara yang lebih menarik, mudah diakses, dan
-                sesuai dengan perkembangan zaman.
+                Melalui teknologi digital, informasi mengenai
+                kekayaan flora dan budaya Bali dapat dipelajari
+                dengan lebih mudah oleh masyarakat, khususnya
+                generasi muda.
             </p>
 
         </div>
@@ -501,8 +431,7 @@
 
             <p>
                 Mengenal flora, memahami budaya,
-                dan menjaga warisan Bali untuk
-                generasi mendatang.
+                dan menjaga warisan Bali.
             </p>
 
         </div>
@@ -511,10 +440,6 @@
 
 </section>
 
-
-<!-- =========================
-     TUJUAN
-========================= -->
 
 <section class="container">
 
@@ -529,7 +454,7 @@
         </h2>
 
         <p>
-            TARU BALI dikembangkan dengan beberapa tujuan utama.
+            Beberapa tujuan utama pengembangan TARU BALI.
         </p>
 
     </div>
@@ -548,10 +473,9 @@
             </h3>
 
             <p>
-                Menyediakan informasi mengenai tanaman Bali
-                dengan bahasa yang mudah dipahami sehingga
-                dapat menjadi media pembelajaran bagi masyarakat
-                dan generasi muda.
+                Menyediakan informasi mengenai tanaman
+                dan budaya Bali sebagai media edukasi
+                yang mudah dipahami.
             </p>
 
         </div>
@@ -568,9 +492,8 @@
             </h3>
 
             <p>
-                Meningkatkan kepedulian terhadap keberadaan
-                tanaman serta mendorong upaya pelestarian
-                kekayaan flora Bali.
+                Mendorong kepedulian masyarakat terhadap
+                keberadaan dan kelestarian tanaman Bali.
             </p>
 
         </div>
@@ -587,9 +510,8 @@
             </h3>
 
             <p>
-                Memperkenalkan keterkaitan tanaman dengan
-                kehidupan dan budaya Bali kepada generasi
-                sekarang maupun generasi yang akan datang.
+                Memperkenalkan kekayaan budaya Bali
+                kepada masyarakat, terutama generasi muda.
             </p>
 
         </div>
@@ -598,10 +520,6 @@
 
 </section>
 
-
-<!-- =========================
-     VISI
-========================= -->
 
 <section class="vision">
 
@@ -617,19 +535,14 @@
 
         <p>
             Dengan mengenal berbagai tanaman yang ada di Bali,
-            kita dapat memahami nilai yang terkandung di dalamnya
-            serta meningkatkan kepedulian untuk menjaga kekayaan
-            alam dan budaya Bali.
+            kita dapat meningkatkan kepedulian terhadap kekayaan
+            alam dan budaya serta ikut menjaga warisan Bali.
         </p>
 
     </div>
 
 </section>
 
-
-<!-- =========================
-     FOOTER
-========================= -->
 
 <footer>
 
@@ -646,20 +559,6 @@
     </div>
 
 </footer>
-
-
-<!-- =========================
-     CACHE VERSION
-========================= -->
-
-<script>
-    /*
-       Versi halaman.
-       Jika website diperbarui, angka ini dapat dinaikkan.
-    */
-
-    console.log("TARU BALI - Tentang Kami v2");
-</script>
 
 </body>
 </html>
