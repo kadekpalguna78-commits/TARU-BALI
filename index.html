@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,6 +11,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -24,69 +27,115 @@
             color: #1f2937;
         }
 
+
+        /* =========================
+           HEADER
+        ========================= */
+
         header {
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: white;
+            background: rgba(255,255,255,0.97);
             border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .header-inner {
             max-width: 1200px;
             margin: auto;
             padding: 16px 25px;
+
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+
             gap: 20px;
         }
+
+
+        /* LOGO */
 
         .logo {
             text-decoration: none;
             color: #14532d;
+
             font-size: 25px;
-            font-weight: bold;
+            font-weight: 800;
+
+            white-space: nowrap;
         }
 
         .logo-small {
             display: block;
+
             font-size: 10px;
             letter-spacing: 3px;
+
             color: #a16207;
+
+            margin-top: 3px;
         }
+
+
+        /* NAVIGATION */
 
         nav {
             display: flex;
-            gap: 25px;
             align-items: center;
+
+            gap: 25px;
         }
 
         nav a {
             text-decoration: none;
+
             color: #374151;
-            font-weight: 600;
+
             font-size: 14px;
+            font-weight: 600;
+
+            padding: 6px 0;
+
+            transition: 0.3s;
         }
 
         nav a:hover {
             color: #166534;
         }
 
+        nav a.active {
+            color: #166534;
+
+            border-bottom: 2px solid #166534;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
         .hero {
-            min-height: 600px;
+
+            min-height: 620px;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             text-align: center;
+
             padding: 80px 25px;
+
             color: white;
-            background: linear-gradient(
-                135deg,
-                #14532d,
-                #166534,
-                #15803d
-            );
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #14532d,
+                    #166534,
+                    #15803d
+                );
         }
 
         .hero-content {
@@ -94,293 +143,1000 @@
         }
 
         .hero-icon {
-            font-size: 80px;
+            font-size: 85px;
+
+            margin-bottom: 10px;
         }
 
         .hero h1 {
-            font-size: 60px;
-            margin: 20px 0 10px;
+
+            font-size: 64px;
+
+            margin: 10px 0;
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
         }
 
         .hero h2 {
-            font-size: 25px;
+
+            font-size: 26px;
+
             color: #fef3c7;
-            margin-bottom: 25px;
+
+            margin: 10px 0 25px;
         }
 
         .hero p {
-            line-height: 1.9;
+
+            max-width: 760px;
+
+            margin: auto;
+
             font-size: 18px;
+
+            line-height: 1.9;
+
             color: #dcfce7;
         }
 
+
+        /* BUTTON */
+
         .button {
+
             display: inline-block;
-            margin-top: 25px;
-            padding: 14px 25px;
+
+            margin-top: 30px;
+
+            padding: 15px 28px;
+
             background: #facc15;
+
             color: #14532d;
+
             text-decoration: none;
+
             border-radius: 12px;
+
             font-weight: bold;
+
+            transition: 0.3s;
         }
 
+        .button:hover {
+
+            transform: translateY(-3px);
+
+            background: #fde047;
+        }
+
+
+        /* =========================
+           GENERAL SECTION
+        ========================= */
+
         .container {
+
             max-width: 1100px;
+
             margin: auto;
-            padding: 75px 25px;
+
+            padding: 80px 25px;
         }
 
         .section-title {
+
             text-align: center;
+
             margin-bottom: 45px;
         }
 
+        .section-title .label {
+
+            color: #a16207;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
+        }
+
         .section-title h2 {
+
             color: #14532d;
+
             font-size: 38px;
+
+            margin: 12px 0;
         }
 
         .section-title p {
+
             color: #6b7280;
+
+            line-height: 1.8;
         }
 
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-section {
+
+            background: white;
+        }
+
+        .about-content {
+
+            max-width: 850px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+        .about-content p {
+
+            color: #4b5563;
+
+            line-height: 1.9;
+
+            font-size: 16px;
+
+            margin-bottom: 18px;
+        }
+
+        .about-content strong {
+
+            color: #14532d;
+        }
+
+
+        /* =========================
+           CARDS
+        ========================= */
+
         .cards {
+
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
             gap: 25px;
         }
 
         .card {
+
             background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 7px 25px rgba(0,0,0,.06);
-            border-top: 4px solid #166534;
+
+            padding: 32px;
+
+            border-radius: 22px;
+
+            box-shadow:
+                0 7px 25px
+                rgba(0,0,0,0.06);
+
+            border-top:
+                4px solid #166534;
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+
+            transform:
+                translateY(-7px);
+
+            box-shadow:
+                0 12px 30px
+                rgba(0,0,0,0.10);
         }
 
         .card-icon {
-            font-size: 45px;
+
+            font-size: 48px;
+
+            margin-bottom: 12px;
         }
 
         .card h3 {
+
             color: #14532d;
+
+            font-size: 23px;
+
+            margin: 10px 0;
         }
 
         .card p {
+
             color: #6b7280;
+
             line-height: 1.8;
+
+            margin: 0;
         }
 
-        .about {
-            background: #dcfce7;
+
+        /* =========================
+           GREEN SECTION
+        ========================= */
+
+        .green-section {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #dcfce7,
+                    #f0fdf4
+                );
+        }
+
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+
+            background: #14532d;
+
+            color: white;
+
             text-align: center;
         }
+
+        .cta-inner {
+
+            max-width: 800px;
+
+            margin: auto;
+
+            padding: 80px 25px;
+        }
+
+        .cta-icon {
+
+            font-size: 60px;
+        }
+
+        .cta h2 {
+
+            font-size: 38px;
+
+            margin: 15px 0;
+        }
+
+        .cta p {
+
+            color: #dcfce7;
+
+            line-height: 1.9;
+
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
+
             background: #052e16;
+
             color: white;
+
             text-align: center;
-            padding: 40px 25px;
+
+            padding: 45px 25px;
+        }
+
+        footer h2 {
+
+            margin: 0 0 10px;
+
+            font-size: 26px;
         }
 
         footer p {
+
             color: #bbf7d0;
+
+            margin: 8px 0;
         }
 
-        @media(max-width:850px) {
+        .copyright {
+
+            border-top:
+                1px solid #166534;
+
+            margin-top: 25px;
+
+            padding-top: 20px;
+
+            color: #86efac;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 850px) {
+
             .header-inner {
+
                 flex-direction: column;
             }
 
             nav {
+
                 flex-wrap: wrap;
+
                 justify-content: center;
+
+                gap: 14px 20px;
             }
 
             .cards {
-                grid-template-columns: 1fr;
+
+                grid-template-columns:
+                    1fr;
             }
 
             .hero h1 {
-                font-size: 42px;
+
+                font-size: 45px;
             }
+
+            .hero h2 {
+
+                font-size: 22px;
+            }
+
         }
+
+
+        @media (max-width: 500px) {
+
+            .hero {
+
+                padding:
+                    65px 20px;
+            }
+
+            .hero h1 {
+
+                font-size: 36px;
+            }
+
+            .hero p {
+
+                font-size: 16px;
+            }
+
+            nav {
+
+                gap: 10px 15px;
+            }
+
+            nav a {
+
+                font-size: 12px;
+            }
+
+        }
+
     </style>
+
 </head>
 
+
 <body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
     <div class="header-inner">
 
+
         <a href="index.html" class="logo">
+
             🌿 TARU BALI
+
             <span class="logo-small">
                 WARISAN FLORA BALI
             </span>
+
         </a>
+
 
         <nav>
 
-            <a href="index.html">
+
+            <a
+                href="index.html"
+                class="active">
+
                 Beranda
+
             </a>
 
-            <a href="tentang.html">
+
+            <a
+                href="tentang.html">
+
                 Tentang Kami
+
             </a>
 
-            <a href="fungsi.html">
+
+            <a
+                href="fungsi.html">
+
                 Fungsi
+
             </a>
 
-            <a href="jenis-tanaman.html">
+
+            <a
+                href="jenis-tanaman.html">
+
                 Jenis Tanaman
+
             </a>
 
-            <a href="peta-sebaran.html">
+
+            <a
+                href="peta-sebaran.html">
+
                 Peta Sebaran
+
             </a>
+
 
         </nav>
+
 
     </div>
 
 </header>
 
 
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
+
 
     <div class="hero-content">
 
+
         <div class="hero-icon">
+
             🌿
+
         </div>
 
+
         <h1>
+
             TARU BALI
+
         </h1>
 
+
         <h2>
+
             Warisan Flora Bali
+
         </h2>
 
+
         <p>
-            Platform digital edukasi untuk mengenal berbagai
-            tanaman yang berkaitan dengan kehidupan dan budaya
+
+            Platform digital edukasi yang menyediakan
+            informasi mengenai tanaman yang berkaitan
+            dengan kehidupan, lingkungan, dan budaya
             masyarakat Bali.
+
         </p>
 
-        <a href="jenis-tanaman.html" class="button">
+
+        <a
+            href="jenis-tanaman.html"
+            class="button">
+
             🌱 Jelajahi Tanaman
+
         </a>
 
+
     </div>
+
 
 </section>
 
 
-<section class="container">
 
-    <div class="section-title">
+<!-- =========================
+     TENTANG
+========================= -->
 
-        <h2>
-            Mengenal TARU BALI
-        </h2>
+<section class="about-section">
 
-        <p>
-            Mengenal flora Bali melalui teknologi digital.
-        </p>
-
-    </div>
-
-    <div style="text-align:center; max-width:800px; margin:auto; line-height:1.9; color:#4b5563;">
-
-        <p>
-            Nama <strong>TARU BALI</strong> berasal dari kata
-            "Taru" yang dalam bahasa Sanskerta berarti pohon
-            atau tumbuhan.
-        </p>
-
-        <p>
-            TARU BALI hadir sebagai media edukasi digital untuk
-            memperkenalkan tanaman, fungsi, serta persebarannya
-            di Bali.
-        </p>
-
-    </div>
-
-</section>
-
-
-<section class="about">
 
     <div class="container">
 
+
         <div class="section-title">
 
+
+            <div class="label">
+
+                TENTANG TARU BALI
+
+            </div>
+
+
             <h2>
-                Jelajahi TARU BALI
+
+                Mengenal TARU BALI
+
             </h2>
 
+
             <p>
-                Temukan informasi mengenai kekayaan flora Bali.
+
+                Mengenal flora Bali melalui teknologi digital.
+
             </p>
 
+
         </div>
+
+
+
+        <div class="about-content">
+
+
+            <p>
+
+                Nama <strong>TARU BALI</strong> berasal dari kata
+                <strong>"Taru"</strong> yang dalam bahasa Sanskerta
+                berarti pohon atau tumbuhan.
+
+            </p>
+
+
+            <p>
+
+                TARU BALI merupakan platform digital edukasi
+                yang dibuat untuk mengenalkan berbagai tanaman
+                yang berkaitan dengan kehidupan dan budaya
+                masyarakat Bali.
+
+            </p>
+
+
+            <p>
+
+                Website ini menyajikan informasi mengenai
+                jenis tanaman, fungsi tanaman, serta
+                persebarannya di wilayah Bali.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     FITUR
+========================= -->
+
+<section class="green-section">
+
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+
+            <div class="label">
+
+                FITUR TARU BALI
+
+            </div>
+
+
+            <h2>
+
+                Jelajahi Informasi
+
+            </h2>
+
+
+            <p>
+
+                Temukan berbagai informasi mengenai tanaman
+                dan kekayaan flora Bali.
+
+            </p>
+
+
+        </div>
+
 
 
         <div class="cards">
 
-            <div class="card">
-                <div class="card-icon">📚</div>
-                <h3>Edukasi</h3>
-                <p>
-                    Menambah pengetahuan mengenai tanaman
-                    dan budaya Bali.
-                </p>
-            </div>
+
+            <!-- TENTANG -->
 
             <div class="card">
-                <div class="card-icon">🌱</div>
-                <h3>Pelestarian</h3>
+
+
+                <div class="card-icon">
+
+                    👥
+
+                </div>
+
+
+                <h3>
+
+                    Tentang Kami
+
+                </h3>
+
+
                 <p>
-                    Meningkatkan kepedulian terhadap
-                    kelestarian tanaman Bali.
+
+                    Mengenal latar belakang dan tujuan
+                    pengembangan TARU BALI.
+
                 </p>
+
+
+                <a
+                    href="tentang.html"
+                    style="
+                        display:inline-block;
+                        margin-top:15px;
+                        color:#166534;
+                        font-weight:bold;
+                        text-decoration:none;
+                    ">
+
+                    Selengkapnya →
+
+                </a>
+
+
             </div>
 
+
+
+            <!-- FUNGSI -->
+
             <div class="card">
-                <div class="card-icon">🗺️</div>
-                <h3>Informasi</h3>
+
+
+                <div class="card-icon">
+
+                    🌱
+
+                </div>
+
+
+                <h3>
+
+                    Fungsi
+
+                </h3>
+
+
                 <p>
-                    Menyediakan informasi tanaman dan
-                    persebarannya di Bali.
+
+                    Mengenal berbagai fungsi tanaman
+                    dalam kehidupan dan budaya Bali.
+
                 </p>
+
+
+                <a
+                    href="fungsi.html"
+                    style="
+                        display:inline-block;
+                        margin-top:15px;
+                        color:#166534;
+                        font-weight:bold;
+                        text-decoration:none;
+                    ">
+
+                    Lihat Fungsi →
+
+                </a>
+
+
             </div>
+
+
+
+            <!-- JENIS -->
+
+            <div class="card">
+
+
+                <div class="card-icon">
+
+                    🌺
+
+                </div>
+
+
+                <h3>
+
+                    Jenis Tanaman
+
+                </h3>
+
+
+                <p>
+
+                    Menjelajahi berbagai jenis tanaman
+                    yang terdapat di Bali.
+
+                </p>
+
+
+                <a
+                    href="jenis-tanaman.html"
+                    style="
+                        display:inline-block;
+                        margin-top:15px;
+                        color:#166534;
+                        font-weight:bold;
+                        text-decoration:none;
+                    ">
+
+                    Lihat Tanaman →
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- PETA -->
+
+            <div class="card">
+
+
+                <div class="card-icon">
+
+                    🗺️
+
+                </div>
+
+
+                <h3>
+
+                    Peta Sebaran
+
+                </h3>
+
+
+                <p>
+
+                    Melihat informasi persebaran tanaman
+                    di berbagai wilayah Bali.
+
+                </p>
+
+
+                <a
+                    href="peta-sebaran.html"
+                    style="
+                        display:inline-block;
+                        margin-top:15px;
+                        color:#166534;
+                        font-weight:bold;
+                        text-decoration:none;
+                    ">
+
+                    Lihat Peta →
+
+                </a>
+
+
+            </div>
+
+
+            <!-- EDUKASI -->
+
+            <div class="card">
+
+
+                <div class="card-icon">
+
+                    📚
+
+                </div>
+
+
+                <h3>
+
+                    Edukasi
+
+                </h3>
+
+
+                <p>
+
+                    Menambah wawasan mengenai tanaman,
+                    lingkungan, dan budaya Bali.
+
+                </p>
+
+
+            </div>
+
+
+            <!-- PELESTARIAN -->
+
+            <div class="card">
+
+
+                <div class="card-icon">
+
+                    🌳
+
+                </div>
+
+
+                <h3>
+
+                    Pelestarian
+
+                </h3>
+
+
+                <p>
+
+                    Mendorong kepedulian terhadap
+                    kelestarian kekayaan flora Bali.
+
+                </p>
+
+
+            </div>
+
 
         </div>
 
+
     </div>
+
 
 </section>
 
 
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+
+    <div class="cta-inner">
+
+
+        <div class="cta-icon">
+
+            🌿
+
+        </div>
+
+
+        <h2>
+
+            Mengenal untuk Melestarikan
+
+        </h2>
+
+
+        <p>
+
+            Dengan mengenal berbagai tanaman yang ada di Bali,
+            kita dapat meningkatkan kepedulian terhadap
+            kekayaan alam dan budaya serta ikut menjaga
+            warisan Bali.
+
+        </p>
+
+
+        <a
+            href="jenis-tanaman.html"
+            class="button">
+
+            Mulai Menjelajah
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
-    <h2>🌿 TARU BALI</h2>
+
+    <h2>
+
+        🌿 TARU BALI
+
+    </h2>
+
 
     <p>
+
         Media edukasi tanaman dan budaya Bali.
+
     </p>
 
+
     <p>
-        © 2026 TARU BALI
+
+        Mengenal flora, memahami budaya,
+        dan menjaga warisan Bali.
+
     </p>
+
+
+    <div class="copyright">
+
+        © 2026 TARU BALI
+
+    </div>
+
 
 </footer>
 
+
 </body>
+
 </html>
