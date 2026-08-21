@@ -1,75 +1,277 @@
 <!DOCTYPE html>
-<html lang="id"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Jenis Tanaman - TARU BALI</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jenis Tanaman Upakara - TARU BALI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        h1, h2, h3, .heading {
+            font-family: 'Playfair Display', serif;
+        }
+        .filter-btn.active {
+            background-color: #1a5c3a;
+            color: white;
+        }
+        .tanaman-card {
+            transition: all 0.3s ease;
+        }
+        .tanaman-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+    </style>
 </head>
-<body class="bg-background text-on-background antialiased min-h-screen flex flex-col pt-20">
-<header class="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-md shadow-sm h-20 flex items-center px-8 justify-between">
-<a class="font-bold text-primary text-xl" href="index.html">TARU BALI</a>
-<nav class="hidden md:flex gap-4">
-<a href="index.html">Beranda</a>
-<a href="tentang-kami.html">Tentang Kami</a>
-<a href="makna-tanaman.html">Makna Tanaman</a>
-<a href="fungsi.html">Fungsi</a>
-<a href="jenis-tanaman.html" class="border-b-2 border-orange-500">Jenis Tanaman</a>
-<a href="peta-sebaran.html">Peta Sebaran</a>
-</nav>
-</header>
-<main class="flex-grow max-w-screen-2xl mx-auto w-full px-8 pt-12">
-<h1 class="text-4xl font-bold text-primary mb-8">Jenis-Jenis Tanaman Upakara</h1>
-<div class="mb-6">
-<input type="text" id="searchInput" placeholder="Cari tanaman..." class="w-full px-4 py-2 border border-gray-300 rounded-lg" onkeyup="filterTanaman()">
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="tanamanContainer">
-<div class="tanamanItem bg-surface-container-low p-6 rounded-lg">
-<h3 class="text-xl font-bold text-primary mb-2">Bunga Mawar</h3>
-<p class="text-sm text-on-surface-variant mb-2"><strong>Nama Latin:</strong> Rosa sp.</p>
-<p class="text-on-surface-variant">Bunga mawar digunakan dalam berbagai upacara sebagai simbol cinta dan bakti kepada Tuhan.</p>
-</div>
-<div class="tanamanItem bg-surface-container-low p-6 rounded-lg">
-<h3 class="text-xl font-bold text-primary mb-2">Padi</h3>
-<p class="text-sm text-on-surface-variant mb-2"><strong>Nama Latin:</strong> Oryza sativa</p>
-<p class="text-on-surface-variant">Padi melambangkan Dewi Sri dan kesuburan. Digunakan dalam upacara permohonan hasil panen yang melimpah.</p>
-</div>
-<div class="tanamanItem bg-surface-container-low p-6 rounded-lg">
-<h3 class="text-xl font-bold text-primary mb-2">Kelapa</h3>
-<p class="text-sm text-on-surface-variant mb-2"><strong>Nama Latin:</strong> Cocos nucifera</p>
-<p class="text-on-surface-variant">Pohon kehidupan yang memberikan segala kebutuhan. Buahnya digunakan dalam canang sari.</p>
-</div>
-<div class="tanamanItem bg-surface-container-low p-6 rounded-lg">
-<h3 class="text-xl font-bold text-primary mb-2">Bunga Cempaka</h3>
-<p class="text-sm text-on-surface-variant mb-2"><strong>Nama Latin:</strong> Magnolia champaca</p>
-<p class="text-on-surface-variant">Bunga putih yang melambangkan kesucian dan kedamaian dalam upacara keagamaan.</p>
-</div>
-<div class="tanamanItem bg-surface-container-low p-6 rounded-lg">
-<h3 class="text-xl font-bold text-primary mb-2">Bunga Jepun</h3>
-<p class="text-sm text-on-surface-variant mb-2"><strong>Nama Latin:</strong> Plumeria sp.</p>
-<p class="text-on-surface-variant">Bunga yang indah dan harum, sering digunakan dalam upacara sebagai dekorasi dan persembahan.</p>
-</div>
-<div class="tanamanItem bg-surface-container-low p-6 rounded-lg">
-<h3 class="text-xl font-bold text-primary mb-2">Daun Sirih</h3>
-<p class="text-sm text-on-surface-variant mb-2"><strong>Nama Latin:</strong> Piper betle</p>
-<p class="text-on-surface-variant">Daun sirih digunakan dalam upacara dan memiliki nilai budaya yang tinggi dalam tradisi Bali.</p>
-</div>
-</div>
-</main>
-<footer class="mt-auto py-8 text-center border-t">© 2024 TARU BALI</footer>
-<script>
-function filterTanaman() {
-  const searchInput = document.getElementById('searchInput').value.toLowerCase();
-  const tanamanItems = document.querySelectorAll('.tanamanItem');
-  
-  tanamanItems.forEach(item => {
-    const text = item.textContent.toLowerCase();
-    if (text.includes(searchInput)) {
-      item.style.display = '';
-    } else {
-      item.style.display = 'none';
-    }
-  });
-}
-</script>
-</body></html>
+<body class="bg-stone-50">
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-md">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-green-900">TARU BALI</a>
+            <nav class="hidden md:flex gap-8">
+                <a href="index.html" class="text-gray-700 hover:text-green-900">Beranda</a>
+                <a href="tentang-kami.html" class="text-gray-700 hover:text-green-900">Tentang Kami</a>
+                <a href="makna-tanaman.html" class="text-gray-700 hover:text-green-900">Makna Tanaman</a>
+                <a href="fungsi.html" class="text-gray-700 hover:text-green-900">Fungsi</a>
+                <a href="jenis-tanaman.html" class="text-green-900 font-semibold border-b-2 border-green-900">Jenis Tanaman</a>
+                <a href="peta-sebaran.html" class="text-gray-700 hover:text-green-900">Peta Sebaran</a>
+            </nav>
+            <button class="md:hidden">☰</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <h1 class="text-5xl font-bold text-green-900 mb-4">Jenis-Jenis Tanaman Upakara</h1>
+            <p class="text-lg text-gray-600 mb-12 max-w-2xl">
+                Eksplorasi kekayaan botani suci Bali. Temukan berbagai jenis tanaman yang memiliki peranan penting dalam ritual dan kehidupan spiritual masyarakat Bali.
+            </p>
+
+            <!-- Search & Filter Section -->
+            <div class="bg-white rounded-lg shadow-md p-8 mb-12">
+                <!-- Search Box -->
+                <div class="mb-6">
+                    <input type="text" id="searchInput" placeholder="🔍 Cari tanaman (nama lokal, nama Indonesia, nama latin)..." 
+                        class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-green-900 focus:outline-none text-lg">
+                </div>
+
+                <!-- Filter Kategori -->
+                <div class="mb-4">
+                    <p class="font-bold text-green-900 mb-3">Jenis Bagian Tanaman:</p>
+                    <div class="flex flex-wrap gap-3">
+                        <button class="filter-btn active px-6 py-2 rounded-full border-2 border-green-900 bg-green-900 text-white font-semibold" data-filter="semua">
+                            ✓ Semua Kategori
+                        </button>
+                        <button class="filter-btn px-6 py-2 rounded-full border-2 border-yellow-400 text-yellow-700 font-semibold hover:bg-yellow-50" data-filter="bunga">
+                            🌸 Bunga
+                        </button>
+                        <button class="filter-btn px-6 py-2 rounded-full border-2 border-green-400 text-green-700 font-semibold hover:bg-green-50" data-filter="daun">
+                            🍃 Daun
+                        </button>
+                        <button class="filter-btn px-6 py-2 rounded-full border-2 border-amber-600 text-amber-700 font-semibold hover:bg-amber-50" data-filter="batang">
+                            🌿 Batang
+                        </button>
+                        <button class="filter-btn px-6 py-2 rounded-full border-2 border-purple-600 text-purple-700 font-semibold hover:bg-purple-50" data-filter="umbi">
+                            🌱 Umbi/Akar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Katalog Botani Table -->
+                <div class="mt-8">
+                    <p class="font-bold text-green-900 mb-4 text-lg">Katalog Botani</p>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="bg-green-100 border-b-2 border-green-900">
+                                    <th class="px-4 py-3 text-left font-bold text-green-900">Nama Bali</th>
+                                    <th class="px-4 py-3 text-left font-bold text-green-900">Nama Indonesia</th>
+                                    <th class="px-4 py-3 text-left font-bold text-green-900">Nama Latin</th>
+                                    <th class="px-4 py-3 text-left font-bold text-green-900">Kategori</th>
+                                </tr>
+                            </thead>
+                            <tbody id="catalogTable">
+                                <!-- Dinamis diisi dengan JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tanaman Cards Grid -->
+            <div>
+                <h2 class="text-2xl font-bold text-green-900 mb-6">Daftar Lengkap Tanaman</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="tanamanContainer">
+                    <!-- Dinamis diisi dengan JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-900 text-white py-8 text-center border-t">
+        <p>© 2026 TARU BALI. Melestarikan Pusaka Budaya Bali.</p>
+    </footer>
+
+    <script>
+        const tanamanData = [
+            {
+                namaBali: "Teratai",
+                namaIndonesia: "Teratai",
+                namaLatin: "Nelumbo nucifera",
+                kategori: "bunga",
+                deskripsi: "Simbol kesucian dan pencerahan spiritual. Digunakan dalam berbagai upacara sebagai persembahan kepada Dewa.",
+                image: "https://via.placeholder.com/300x200?text=Teratai"
+            },
+            {
+                namaBali: "Cempaka",
+                namaIndonesia: "Cempaka Putih",
+                namaLatin: "Magnolia alba",
+                kategori: "bunga",
+                deskripsi: "Bunga putih yang melambangkan kesucian dan kedamaian dalam upacara keagamaan.",
+                image: "https://via.placeholder.com/300x200?text=Cempaka"
+            },
+            {
+                namaBali: "Majegau",
+                namaIndonesia: "Majegau",
+                namaLatin: "Dysoxylum densiflorum",
+                kategori: "bunga",
+                deskripsi: "Kayu suci yang digunakan dalam penghaturan doa kepada para Dewa.",
+                image: "https://via.placeholder.com/300x200?text=Majegau"
+            },
+            {
+                namaBali: "Beringin",
+                namaIndonesia: "Beringin",
+                namaLatin: "Ficus benjamina",
+                kategori: "batang",
+                deskripsi: "Simbol pengayoman dan perlambang kebijaksanaan leluhur. Sering digunakan dalam upacara permohonan bimbingan.",
+                image: "https://via.placeholder.com/300x200?text=Beringin"
+            },
+            {
+                namaBali: "Pandan Wangi",
+                namaIndonesia: "Pandan Harum",
+                namaLatin: "Pandanus amaryllifolius",
+                kategori: "daun",
+                deskripsi: "Pengharum alami yang digunakan dalam canang sari dan berbagai upacara sehari-hari.",
+                image: "https://via.placeholder.com/300x200?text=Pandan+Wangi"
+            },
+            {
+                namaBali: "Sirih",
+                namaIndonesia: "Daun Sirih",
+                namaLatin: "Piper betle",
+                kategori: "daun",
+                deskripsi: "Daun sirih digunakan dalam upacara dan memiliki nilai budaya yang tinggi dalam tradisi Bali.",
+                image: "https://via.placeholder.com/300x200?text=Sirih"
+            },
+            {
+                namaBali: "Kunyit",
+                namaIndonesia: "Kunyit",
+                namaLatin: "Curcuma longa",
+                kategori: "umbi",
+                deskripsi: "Umbi yang memiliki warna kuning cerah melambangkan kesucian dan energi kehidupan.",
+                image: "https://via.placeholder.com/300x200?text=Kunyit"
+            },
+            {
+                namaBali: "Jahe",
+                namaIndonesia: "Jahe",
+                namaLatin: "Zingiber officinale",
+                kategori: "umbi",
+                deskripsi: "Rimpang aromatik yang digunakan dalam persiapan upacara dan memiliki nilai pengobatan tradisional.",
+                image: "https://via.placeholder.com/300x200?text=Jahe"
+            },
+            {
+                namaBali: "Sekar Sandat",
+                namaIndonesia: "Bunga Sandat",
+                namaLatin: "Bouvardia ternifolia",
+                kategori: "bunga",
+                deskripsi: "Bunga warna-warni yang indah digunakan sebagai dekorasi dalam upacara keagamaan.",
+                image: "https://via.placeholder.com/300x200?text=Sekar+Sandat"
+            },
+            {
+                namaBali: "Melati",
+                namaIndonesia: "Melati",
+                namaLatin: "Jasminum sambac",
+                kategori: "bunga",
+                deskripsi: "Bunga harum yang melambangkan kemurnian dan keindahan. Digunakan dalam canang sari harian.",
+                image: "https://via.placeholder.com/300x200?text=Melati"
+            }
+        ];
+
+        let currentFilter = "semua";
+
+        // Render tanaman cards
+        function renderTanaman() {
+            const container = document.getElementById('tanamanContainer');
+            const filtered = currentFilter === "semua" ? tanamanData : tanamanData.filter(t => t.kategori === currentFilter);
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            
+            const results = filtered.filter(t => 
+                t.namaBali.toLowerCase().includes(searchTerm) ||
+                t.namaIndonesia.toLowerCase().includes(searchTerm) ||
+                t.namaLatin.toLowerCase().includes(searchTerm) ||
+                t.deskripsi.toLowerCase().includes(searchTerm)
+            );
+
+            container.innerHTML = results.map(tanaman => `
+                <div class="tanaman-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="${tanaman.image}" alt="${tanaman.namaBali}" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-green-900 mb-1">${tanaman.namaBali}</h3>
+                        <p class="text-sm text-gray-600 mb-2"><strong>Indonesia:</strong> ${tanaman.namaIndonesia}</p>
+                        <p class="text-sm text-gray-600 mb-3"><strong>Latin:</strong> <em>${tanaman.namaLatin}</em></p>
+                        <p class="text-gray-700 text-sm">${tanaman.deskripsi}</p>
+                        <div class="mt-3">
+                            <span class="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">
+                                ${getKategoriLabel(tanaman.kategori)}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            renderCatalogTable(results);
+        }
+
+        function renderCatalogTable(tanaman) {
+            const tbody = document.getElementById('catalogTable');
+            tbody.innerHTML = tanaman.map((t, i) => `
+                <tr class="${i % 2 === 0 ? 'bg-white' : 'bg-gray-50'} border-b hover:bg-green-50">
+                    <td class="px-4 py-3">${t.namaBali}</td>
+                    <td class="px-4 py-3">${t.namaIndonesia}</td>
+                    <td class="px-4 py-3"><em>${t.namaLatin}</em></td>
+                    <td class="px-4 py-3"><span class="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700">${getKategoriLabel(t.kategori)}</span></td>
+                </tr>
+            `).join('');
+        }
+
+        function getKategoriLabel(kategori) {
+            const labels = {
+                bunga: "🌸 Bunga",
+                daun: "🍃 Daun",
+                batang: "🌿 Batang",
+                umbi: "🌱 Umbi/Akar"
+            };
+            return labels[kategori] || kategori;
+        }
+
+        // Event Listeners
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentFilter = this.dataset.filter;
+                renderTanaman();
+            });
+        });
+
+        document.getElementById('searchInput').addEventListener('keyup', renderTanaman);
+
+        // Initial render
+        renderTanaman();
+    </script>
+</body>
+</html>
