@@ -1,56 +1,47 @@
 # 🌿 TARU BALI
 
-## Pusat Edukasi Tanaman Upakara & Budaya Bali
+## Warisan Flora Bali
 
-TARU BALI merupakan platform digital yang menyediakan informasi mengenai tanaman yang digunakan dalam upacara adat dan keagamaan Hindu di Bali.
+**TARU BALI** merupakan website edukasi yang membahas tanaman upakara Bali serta keterkaitannya dengan kehidupan, budaya, dan lingkungan masyarakat Bali.
 
-Website ini hadir sebagai media edukasi untuk memperkenalkan kekayaan flora upakara, fungsi tanaman, nilai budaya, serta pentingnya pelestarian tanaman dan lingkungan Bali.
+Nama **TARU BALI** berasal dari kata *Taru* yang dalam bahasa Sanskerta berarti pohon atau tumbuhan.
 
----
+## 📚 Menu Website
 
-## 🌺 Menu Website
+Website TARU BALI memiliki beberapa menu utama:
 
 - 🏠 **Beranda**
-- 🌿 **Tentang Kami**
+- 👥 **Tentang Kami**
 - 🌱 **Fungsi**
-- 🌸 **Jenis Tanaman**
+- 🌺 **Jenis Tanaman**
 - 🗺️ **Peta Sebaran**
-
----
 
 ## 🎯 Tujuan
 
-TARU BALI bertujuan untuk:
+Website ini dibuat untuk:
 
-1. Mengenalkan berbagai tanaman yang digunakan sebagai sarana upakara.
-2. Menjelaskan fungsi tanaman dalam kehidupan masyarakat Bali.
-3. Meningkatkan pengetahuan generasi muda mengenai kekayaan flora Bali.
-4. Mendukung pelestarian tanaman upakara.
-5. Menjadi media edukasi digital mengenai budaya dan lingkungan Bali.
+1. Mengenalkan berbagai tanaman yang berkaitan dengan upakara Bali.
+2. Menambah pengetahuan generasi muda mengenai tanaman dan budaya Bali.
+3. Mendorong kepedulian terhadap pelestarian tanaman.
+4. Memanfaatkan teknologi digital sebagai media edukasi budaya.
 
----
+## 🌿 Isi Website
 
-## 🌿 Tentang TARU BALI
+### Tentang Kami
+Menjelaskan latar belakang dan tujuan pembuatan TARU BALI.
 
-Nama **TARU BALI** berasal dari kata *Taru* yang dalam bahasa Sanskerta berarti pohon atau tumbuhan. Dengan demikian, TARU BALI dimaknai sebagai wadah untuk mengenal berbagai tumbuhan yang memiliki nilai dan fungsi dalam kehidupan masyarakat Bali.
+### Fungsi
+Membahas berbagai fungsi tanaman upakara dalam kehidupan masyarakat Bali.
 
----
+### Jenis Tanaman
+Mengenalkan berbagai jenis tanaman yang berkaitan dengan kegiatan adat dan keagamaan.
 
-## 🛕 Tanaman Upakara
-
-Tanaman upakara merupakan berbagai jenis tumbuhan yang digunakan dalam sarana upacara keagamaan Hindu di Bali. Bagian tanaman yang digunakan dapat berupa bunga, daun, buah, batang, maupun bagian lainnya sesuai dengan kebutuhan upacara.
-
----
-
-## 🗺️ Peta Sebaran
-
-Website ini juga menyediakan informasi mengenai persebaran tanaman upakara di berbagai wilayah Bali untuk membantu mengenalkan keberadaan dan potensi tanaman tersebut.
-
----
+### Peta Sebaran
+Menampilkan informasi mengenai wilayah persebaran tanaman di Bali.
 
 ## 💻 Teknologi
 
-Website TARU BALI dibuat menggunakan:
+Website ini dibuat menggunakan:
 
 - HTML
 - CSS
@@ -58,8 +49,10 @@ Website TARU BALI dibuat menggunakan:
 - JavaScript
 - GitHub Pages
 
+## 🌱 Pelestarian
+
+TARU BALI diharapkan dapat menjadi media edukasi digital yang membantu masyarakat, khususnya generasi muda, untuk mengenal dan ikut melestarikan kekayaan flora serta budaya Bali.
+
 ---
 
-## © 2026 TARU BALI
-
-**Melestarikan Pusaka Budaya Bali melalui teknologi dan edukasi.**
+© 2026 TARU BALI
