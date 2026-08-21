@@ -1,23 +1,532 @@
-<nav>
+<!DOCTYPE html>
+<html lang="id">
 
-    <a href="index.html">
-        Beranda
-    </a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <a href="tentang.html">
-        Tentang Kami
-    </a>
+    <title>Jenis Tanaman Upakara - TARU BALI</title>
 
-    <a href="fungsi.html">
-        Fungsi
-    </a>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-    <a href="jenis-tanaman.html">
-        Jenis Tanaman
-    </a>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8f3;
+            color: #1f2937;
+        }
 
-    <a href="peta-sebaran.html">
-        Peta Sebaran
-    </a>
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: white;
+            box-shadow: 0 2px 12px rgba(0,0,0,.08);
+        }
 
-</nav>
+        .header-inner {
+            max-width: 1200px;
+            margin: auto;
+            padding: 16px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: #14532d;
+            font-size: 25px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .logo-small {
+            display: block;
+            font-size: 9px;
+            letter-spacing: 3px;
+            color: #a16207;
+            margin-top: 3px;
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #374151;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #166534;
+        }
+
+        .hero {
+            padding: 75px 25px;
+            text-align: center;
+            color: white;
+            background: linear-gradient(135deg, #14532d, #15803d);
+        }
+
+        .hero-icon {
+            font-size: 70px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin: 15px 0;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: auto;
+            color: #dcfce7;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 65px 25px;
+        }
+
+        .search-box {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 7px 25px rgba(0,0,0,.07);
+            margin-bottom: 35px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #bbf7d0;
+            border-radius: 12px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .search-box input:focus {
+            border-color: #166534;
+        }
+
+        .plant-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .plant-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 7px 25px rgba(0,0,0,.07);
+            border-top: 5px solid #166534;
+            transition: .3s;
+        }
+
+        .plant-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .plant-icon {
+            font-size: 50px;
+        }
+
+        .plant-card h2 {
+            color: #14532d;
+            margin: 12px 0;
+        }
+
+        .plant-card p {
+            color: #6b7280;
+            line-height: 1.8;
+        }
+
+        .latin {
+            color: #a16207;
+            font-style: italic;
+            font-size: 14px;
+        }
+
+        .function {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 7px 12px;
+            background: #dcfce7;
+            color: #166534;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .empty {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            color: #6b7280;
+        }
+
+        footer {
+            background: #052e16;
+            color: white;
+            text-align: center;
+            padding: 45px 25px;
+        }
+
+        footer p {
+            color: #bbf7d0;
+        }
+
+        @media(max-width:850px) {
+            .header-inner {
+                flex-direction: column;
+            }
+
+            .plant-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-inner">
+
+        <a
+            href="https://kadekpalguna78-commits.github.io/TARU-BALI/"
+            class="logo">
+
+            🌿 TARU BALI
+
+            <span class="logo-small">
+                WARISAN FLORA BALI
+            </span>
+
+        </a>
+
+        <nav>
+
+            <a href="https://kadekpalguna78-commits.github.io/TARU-BALI/">
+                Beranda
+            </a>
+
+            <a href="https://kadekpalguna78-commits.github.io/TARU-BALI/tentang.html">
+                Tentang Kami
+            </a>
+
+            <a href="https://kadekpalguna78-commits.github.io/TARU-BALI/fungsi.html">
+                Fungsi
+            </a>
+
+            <a
+                href="https://kadekpalguna78-commits.github.io/TARU-BALI/jenis-tanaman.html"
+                class="active">
+                Jenis Tanaman
+            </a>
+
+            <a href="https://kadekpalguna78-commits.github.io/TARU-BALI/peta-sebaran.html">
+                Peta Sebaran
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-icon">
+        🌺
+    </div>
+
+    <h1>
+        Jenis-Jenis Tanaman Upakara
+    </h1>
+
+    <p>
+        Mengenal berbagai tanaman yang berkaitan dengan
+        kehidupan, budaya, dan kegiatan upakara masyarakat Bali.
+    </p>
+
+</section>
+
+
+<section class="container">
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Cari nama tanaman...">
+
+    </div>
+
+
+    <div class="plant-grid" id="plantGrid">
+
+
+        <div class="plant-card">
+
+            <div class="plant-icon">
+                🌴
+            </div>
+
+            <h2>
+                Kelapa
+            </h2>
+
+            <div class="latin">
+                Cocos nucifera
+            </div>
+
+            <p>
+                Tanaman yang banyak dimanfaatkan dalam
+                kehidupan dan berbagai kegiatan masyarakat Bali.
+            </p>
+
+            <span class="function">
+                Sarana Upakara
+            </span>
+
+        </div>
+
+
+        <div class="plant-card">
+
+            <div class="plant-icon">
+                🌺
+            </div>
+
+            <h2>
+                Kamboja
+            </h2>
+
+            <div class="latin">
+                Plumeria
+            </div>
+
+            <p>
+                Bunga yang banyak dijumpai di lingkungan
+                pura dan digunakan dalam kegiatan keagamaan.
+            </p>
+
+            <span class="function">
+                Bunga Upakara
+            </span>
+
+        </div>
+
+
+        <div class="plant-card">
+
+            <div class="plant-icon">
+                🌼
+            </div>
+
+            <h2>
+                Kenanga
+            </h2>
+
+            <div class="latin">
+                Cananga odorata
+            </div>
+
+            <p>
+                Tanaman berbunga harum yang dikenal
+                dalam berbagai kegiatan tradisional.
+            </p>
+
+            <span class="function">
+                Sarana Upakara
+            </span>
+
+        </div>
+
+
+        <div class="plant-card">
+
+            <div class="plant-icon">
+                🌿
+            </div>
+
+            <h2>
+                Pandan
+            </h2>
+
+            <div class="latin">
+                Pandanus amaryllifolius
+            </div>
+
+            <p>
+                Tanaman yang dimanfaatkan dalam kehidupan
+                sehari-hari dan berbagai kegiatan masyarakat.
+            </p>
+
+            <span class="function">
+                Kebutuhan Adat
+            </span>
+
+        </div>
+
+
+        <div class="plant-card">
+
+            <div class="plant-icon">
+                🍃
+            </div>
+
+            <h2>
+                Sirih
+            </h2>
+
+            <div class="latin">
+                Piper betle
+            </div>
+
+            <p>
+                Tanaman yang dikenal dalam berbagai tradisi
+                dan kegiatan masyarakat Bali.
+            </p>
+
+            <span class="function">
+                Tradisi
+            </span>
+
+        </div>
+
+
+        <div class="plant-card">
+
+            <div class="plant-icon">
+                🌱
+            </div>
+
+            <h2>
+                Pisang
+            </h2>
+
+            <div class="latin">
+                Musa
+            </div>
+
+            <p>
+                Tanaman yang memiliki berbagai manfaat
+                dan dimanfaatkan dalam kegiatan masyarakat.
+            </p>
+
+            <span class="function">
+                Sarana Upakara
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="empty" id="emptyMessage">
+
+        Tanaman yang dicari tidak ditemukan.
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <h2>
+        🌿 TARU BALI
+    </h2>
+
+    <p>
+        Media edukasi tanaman dan budaya Bali.
+    </p>
+
+    <p>
+        © 2026 TARU BALI
+    </p>
+
+</footer>
+
+
+<script>
+
+    const searchInput =
+        document.getElementById("searchInput");
+
+    const plantCards =
+        document.querySelectorAll(".plant-card");
+
+    const emptyMessage =
+        document.getElementById("emptyMessage");
+
+
+    searchInput.addEventListener("input", function () {
+
+        const keyword =
+            searchInput.value.toLowerCase().trim();
+
+        let found = 0;
+
+
+        plantCards.forEach(function(card) {
+
+            const text =
+                card.textContent.toLowerCase();
+
+
+            if (text.includes(keyword)) {
+
+                card.style.display = "block";
+
+                found++;
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+
+        if (found === 0) {
+
+            emptyMessage.style.display = "block";
+
+        } else {
+
+            emptyMessage.style.display = "none";
+
+        }
+
+    });
+
+</script>
+
+</body>
+</html>
