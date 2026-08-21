@@ -1,173 +1,222 @@
 <!DOCTYPE html>
-<html lang="id"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>TARU BALI - Pusat Edukasi Tanaman Upakara</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "tertiary-fixed": "#ffdad8",
-                        "on-tertiary": "#ffffff",
-                        "surface-container-low": "#f7f3e9",
-                        "surface-variant": "#e6e2d8",
-                        "primary": "#012d1d",
-                        "on-secondary-fixed": "#291800",
-                        "error": "#ba1a1a",
-                        "tertiary": "#55000b",
-                        "secondary-container": "#feae2c",
-                        "secondary-fixed-dim": "#ffb955",
-                        "outline": "#717973",
-                        "primary-fixed-dim": "#a5d0b9",
-                        "on-primary-fixed-variant": "#274e3d",
-                        "on-error": "#ffffff",
-                        "primary-fixed": "#c1ecd4",
-                        "on-tertiary-fixed": "#410007",
-                        "primary-container": "#1b4332",
-                        "secondary-fixed": "#ffddb4",
-                        "inverse-primary": "#a5d0b9",
-                        "surface-container-high": "#ece8de",
-                        "on-primary-container": "#86af99",
-                        "surface-container-lowest": "#ffffff",
-                        "on-error-container": "#93000a",
-                        "on-secondary": "#ffffff",
-                        "surface-container": "#f1eee4",
-                        "on-background": "#1c1c16",
-                        "surface-container-highest": "#e6e2d8",
-                        "inverse-on-surface": "#f4f0e6",
-                        "on-surface": "#1c1c16",
-                        "tertiary-fixed-dim": "#ffb3b0",
-                        "background": "#fdf9ef",
-                        "on-primary": "#ffffff",
-                        "on-secondary-container": "#6b4500",
-                        "on-tertiary-fixed-variant": "#861f25",
-                        "on-surface-variant": "#414844",
-                        "inverse-surface": "#31312a",
-                        "surface-dim": "#dddad0",
-                        "error-container": "#ffdad6",
-                        "surface-tint": "#3f6653",
-                        "on-tertiary-container": "#ff807f",
-                        "surface": "#fdf9ef",
-                        "outline-variant": "#c1c8c2",
-                        "on-secondary-fixed-variant": "#633f00",
-                        "secondary": "#835500",
-                        "on-primary-fixed": "#002114",
-                        "tertiary-container": "#77131c",
-                        "surface-bright": "#fdf9ef"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "md": "24px",
-                        "base": "8px",
-                        "margin-desktop": "64px",
-                        "gutter": "24px",
-                        "xs": "4px",
-                        "margin-mobile": "16px",
-                        "xl": "80px",
-                        "lg": "48px",
-                        "sm": "12px"
-                    },
-                    "fontFamily": {
-                        "body-lg": ["Plus Jakarta Sans"],
-                        "label-md": ["Plus Jakarta Sans"],
-                        "body-md": ["Plus Jakarta Sans"],
-                        "headline-md": ["Playfair Display"],
-                        "headline-display": ["Playfair Display"],
-                        "headline-lg-mobile": ["Playfair Display"],
-                        "headline-lg": ["Playfair Display"],
-                        "label-sm": ["Plus Jakarta Sans"]
-                    },
-                    "fontSize": {
-                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
-                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
-                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
-                        "headline-md": ["28px", { "lineHeight": "1.3", "fontWeight": "600" }],
-                        "headline-display": ["56px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
-                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
-                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
-                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "500" }]
-                    }
-                }
-            }
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TARU BALI - Pusat Edukasi Tanaman Upakara & Budaya Bali</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        h1, h2, h3, .heading {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero {
+            background: linear-gradient(135deg, #1a5c3a 0%, #2d7a52 100%);
+            min-height: 600px;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+        .section-divider {
+            background: linear-gradient(to right, #1a5c3a, #2d7a52, #1a5c3a);
+            height: 2px;
         }
     </style>
 </head>
-<body class="bg-background text-on-background antialiased min-h-screen flex flex-col pt-20">
-<header class="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-md bg-surface-container-low shadow-sm">
-<div class="flex justify-between items-center h-20 px-margin-desktop max-w-screen-2xl mx-auto">
-<a class="font-headline-md text-headline-md font-bold text-primary tracking-tight hover:opacity-80 transition-opacity" href="index.html">TARU BALI</a>
-<nav class="hidden md:flex gap-md items-center">
-<a class="font-label-md text-label-md text-primary border-b-2 border-secondary-container pb-1 hover:bg-surface-container rounded-lg px-2" href="index.html">Beranda</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container rounded-lg px-2 py-1" href="tentang-kami.html">Tentang Kami</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container rounded-lg px-2 py-1" href="makna-tanaman.html">Makna Tanaman</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container rounded-lg px-2 py-1" href="fungsi.html">Fungsi</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container rounded-lg px-2 py-1" href="jenis-tanaman.html">Jenis Tanaman</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container rounded-lg px-2 py-1" href="peta-sebaran.html">Peta Sebaran</a>
-</nav>
-<div class="hidden md:block">
-<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-full hover:bg-primary-container transition-colors shadow-sm flex items-center gap-2">
-                    Edukasi Budaya
-                    <span class="material-symbols-outlined text-[18px]">auto_stories</span>
-</button>
-</div>
-<button class="md:hidden text-primary p-2">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-</header>
-<main class="flex-grow">
-<section class="relative w-full min-h-[921px] flex items-center justify-center px-margin-mobile md:px-margin-desktop overflow-hidden bg-surface-container-low">
-<div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover opacity-80 mix-blend-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqs2tQENw1dbYr1Y7Ah1DI87lS7feSlpyNMRcNffWHMJSdfhZMC1e8MiGlcGNbk_ThFmYK61swaR29pe-FR_QttenGBlDUNDv6GBeMsLSMk_L6palY3WswTf61BnSTdEee1lbq2UsCKoHd-lf_eYyM0WQQFQEjQypVRbbHxPu7Oeu1MoLsdo8PWJRIf0tn1i1SbfgwJHGCbrboiMfg6H3WxmPyjgK0b3YKxJn6bfb9tixRnHnP3Bwi" alt="Bali rice terrace sunrise offering"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
-</div>
-<div class="relative z-10 max-w-4xl mx-auto text-center space-y-lg mt-xl">
-<span class="inline-block px-4 py-2 bg-secondary-container/20 text-on-secondary-container rounded-full font-label-md text-label-md uppercase tracking-widest">Digital Sanctuary</span>
-<h1 class="font-headline-display text-headline-lg-mobile md:text-headline-display text-primary leading-tight">
-                    TARU BALI: Pusat Edukasi Tanaman Upakara & Budaya Bali
-                </h1>
-<div class="space-y-md max-w-3xl mx-auto">
-<p class="font-body-lg text-body-lg text-on-surface-variant">
-                        TARU BALI merupakan platform digital yang menyediakan informasi lengkap mengenai tanaman yang digunakan dalam upacara adat dan keagamaan Hindu di Bali.
-                    </p>
-</div>
-<div class="flex flex-col sm:flex-row gap-md justify-center items-center pt-md">
-<button class="bg-primary text-on-primary font-label-md text-label-md px-8 py-4 rounded-[24px] hover:bg-primary-container transition-all shadow-md hover:shadow-lg flex items-center gap-2 w-full sm:w-auto justify-center">
-                        Mulai Menjelajah
-                        <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">eco</span>
-</button>
-<button class="border-2 border-primary-fixed-dim text-primary font-label-md text-label-md px-8 py-4 rounded-[24px] hover:bg-surface-container transition-all flex items-center gap-2 w-full sm:w-auto justify-center">
-                        Pelajari Filosofi
-                        <span class="material-symbols-outlined text-[20px]">menu_book</span>
-</button>
-</div>
-</div>
-</section>
-</main>
-<footer class="w-full rounded-t-xl bg-primary mt-auto">
-<div class="flex flex-col md:flex-row justify-between gap-lg px-margin-desktop py-xl w-full max-w-screen-2xl mx-auto text-on-primary">
-<div class="flex flex-col gap-md max-w-sm">
-<span class="font-headline-lg text-headline-lg text-secondary-fixed">TARU BALI</span>
-<p class="font-body-md text-body-md opacity-80">Melestarikan pusaka budaya melalui kemudahan akses digital.</p>
-</div>
-</div>
-<div class="w-full border-t border-on-primary/10 px-margin-desktop py-md">
-<p class="text-center font-label-sm text-label-sm text-on-primary/60">© 2026 TARU BALI. Melestarikan Pusaka Budaya Bali.</p>
-</div>
-</footer>
-</body></html>
+<body class="bg-stone-50">
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-md">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-green-900">TARU BALI</a>
+            <nav class="hidden md:flex gap-8">
+                <a href="index.html" class="text-green-900 font-semibold border-b-2 border-green-900">Beranda</a>
+                <a href="tentang-kami.html" class="text-gray-700 hover:text-green-900">Tentang Kami</a>
+                <a href="makna-tanaman.html" class="text-gray-700 hover:text-green-900">Makna Tanaman</a>
+                <a href="fungsi.html" class="text-gray-700 hover:text-green-900">Fungsi</a>
+                <a href="jenis-tanaman.html" class="text-gray-700 hover:text-green-900">Jenis Tanaman</a>
+                <a href="peta-sebaran.html" class="text-gray-700 hover:text-green-900">Peta Sebaran</a>
+            </nav>
+            <button class="md:hidden">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero text-white pt-32 pb-16">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <span class="inline-block bg-yellow-200 text-green-900 px-4 py-2 rounded-full text-sm font-semibold mb-4">DIGITAL SANCTUARY</span>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">TARU BALI: Pusat Edukasi Tanaman Upakara & Budaya Bali</h1>
+            <p class="text-lg md:text-xl text-green-100 max-w-2xl mx-auto mb-8">
+                TARU BALI merupakan platform digital yang menyediakan informasi lengkap mengenai tanaman yang digunakan dalam upacara adat dan keagamaan Hindu di Bali. Website ini hadir sebagai media edukasi untuk memperkanalkan kekayaan flora upakara, nilai filosofisnya, serta pelestariannya di berbagai wilayah Bali.
+            </p>
+            <div class="flex gap-4 justify-center flex-wrap">
+                <a href="jenis-tanaman.html" class="bg-yellow-400 text-green-900 px-8 py-3 rounded-full font-bold hover:bg-yellow-300 transition">Mulai Menjelajahi</a>
+                <a href="makna-tanaman.html" class="border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white/10 transition">Pelajari Filosofi</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Jenis Upacara -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-green-900 text-center mb-4">Jenis Upacara Keagamaan</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Masing-masing upacara di Bali memiliki makna mendalam dan membutuhkan tanaman upakara spesifik sesuai filosofinya.
+            </p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Sarana Upacara -->
+                <div class="card-hover bg-gradient-to-br from-yellow-50 to-white p-8 rounded-xl border border-yellow-200 transition duration-300">
+                    <div class="text-4xl mb-4">🏛️</div>
+                    <h3 class="text-2xl font-bold text-green-900 mb-3">Sarana Upacara Keagamaan</h3>
+                    <p class="text-gray-700">Elemen esensial dalam berbagai ritual Hindu di Bali, dari canang sari hingga banten skala besar, memfasilitasi koneksi spiritual antara manusia, alam, dan Tuhan.</p>
+                </div>
+
+                <!-- Simbol & Makna -->
+                <div class="card-hover bg-gradient-to-br from-purple-50 to-white p-8 rounded-xl border border-purple-200 transition duration-300">
+                    <div class="text-4xl mb-4">🌸</div>
+                    <h3 class="text-2xl font-bold text-green-900 mb-3">Simbol & Makna Filosofis</h3>
+                    <p class="text-gray-700">Setiap jenis tanaman, daun, dan bunga membawa makna simbolis yang mendalam, merepresentasikan manfaat dewa, sifat alam semesta, dan ajaran etika.</p>
+                </div>
+
+                <!-- Pelestarian Budaya -->
+                <div class="card-hover bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl border border-blue-200 transition duration-300">
+                    <div class="text-4xl mb-4">👥</div>
+                    <h3 class="text-2xl font-bold text-green-900 mb-3">Pelestarian Budaya Bali</h3>
+                    <p class="text-gray-700">Menjaga keberlanjungan tanaman upakara sama dengan menjaga warisan leluhur. Pengetahuan tentang penanaman dan penggunaannya diwariskan lintas generasi.</p>
+                </div>
+
+                <!-- Pelestarian Lingkungan -->
+                <div class="card-hover bg-gradient-to-br from-green-50 to-white p-8 rounded-xl border border-green-200 transition duration-300">
+                    <div class="text-4xl mb-4">🌿</div>
+                    <h3 class="text-2xl font-bold text-green-900 mb-3">Pelestarian Lingkungan</h3>
+                    <p class="text-gray-700">Mendorong praktik agroforestri dan keanekaragaman hayati. Penanaman spesies endemik mendukung keseimbangan ekosistem dan konsep Tri Hita Karana.</p>
+                </div>
+
+                <!-- Memperkuat Hubungan Sosial -->
+                <div class="card-hover bg-gradient-to-br from-pink-50 to-white p-8 rounded-xl border border-pink-200 transition duration-300">
+                    <div class="text-4xl mb-4">🤝</div>
+                    <h3 class="text-2xl font-bold text-green-900 mb-3">Memperkuat Hubungan Sosial (Ngayah)</h3>
+                    <p class="text-gray-700">Proses persiapan sarana upacara, mulai dari panen hingga merangkai banten, sering dilakukan secara komunal, memperkuat gotong royong dan ikatan sosial.</p>
+                </div>
+
+                <!-- Media Pendidikan -->
+                <div class="card-hover bg-gradient-to-br from-amber-50 to-white p-8 rounded-xl border border-amber-200 transition duration-300">
+                    <div class="text-4xl mb-4">📚</div>
+                    <h3 class="text-2xl font-bold text-green-900 mb-3">Media Pendidikan</h3>
+                    <p class="text-gray-700">Berfungsi sebagai laboratorium alam hidup. Mengajarkan generasi muda tentang botani lokal, etnobotani, dan kearifan ekologis tradisional Bali.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Jenis Tanaman -->
+    <section class="py-20 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-green-900 text-center mb-4">Jenis-Jenis Tanaman Upakara</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Eksplorasi kekayaan botani suci Bali. Temukan berbagai jenis tanaman yang memiliki peranan penting dalam ritual dan kehidupan spiritual masyarakat Bali.
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Teratai -->
+                <div class="card-hover group relative overflow-hidden rounded-lg h-64 cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70"></div>
+                    <img src="https://via.placeholder.com/300x300?text=Teratai" alt="Teratai" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                    <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+                        <h3 class="text-xl font-bold">Teratai</h3>
+                        <p class="text-sm text-gray-300">Nelumbo nucifera</p>
+                    </div>
+                </div>
+
+                <!-- Cempaka -->
+                <div class="card-hover group relative overflow-hidden rounded-lg h-64 cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70"></div>
+                    <img src="https://via.placeholder.com/300x300?text=Cempaka" alt="Cempaka" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                    <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+                        <h3 class="text-xl font-bold">Cempaka</h3>
+                        <p class="text-sm text-gray-300">Magnolia champaca</p>
+                    </div>
+                </div>
+
+                <!-- Beringin -->
+                <div class="card-hover group relative overflow-hidden rounded-lg h-64 cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70"></div>
+                    <img src="https://via.placeholder.com/300x300?text=Beringin" alt="Beringin" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                    <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+                        <h3 class="text-xl font-bold">Beringin</h3>
+                        <p class="text-sm text-gray-300">Ficus benjamina</p>
+                    </div>
+                </div>
+
+                <!-- Pandan Wangi -->
+                <div class="card-hover group relative overflow-hidden rounded-lg h-64 cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70"></div>
+                    <img src="https://via.placeholder.com/300x300?text=Pandan+Wangi" alt="Pandan Wangi" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                    <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+                        <h3 class="text-xl font-bold">Pandan Wangi</h3>
+                        <p class="text-sm text-gray-300">Pandanus amaryllifolius</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="jenis-tanaman.html" class="inline-block bg-green-900 text-white px-8 py-3 rounded-full font-bold hover:bg-green-800 transition">Lihat Semua Tanaman →</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Peta Sebaran -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-green-900 text-center mb-4">Sebaran Tanaman Upakara di Bali</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Kebebradaannya tersebar di berbagai wilayah Bali, baik di lingkungan masyarakat, pekarangan, kebun, maupun kawasan konservasi. Temukan lokasi habitat alami berbagai tanaman upakara di seluruh pelotok Bali.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-200 rounded-lg h-96 flex items-center justify-center overflow-hidden">
+                    <iframe width="100%" height="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d252844.67844374257!2d115.17718129999999!3d-8.6705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd22e1e0311cd0f%3A0x4106b8bfcc4c730!2sBali!5e0!3m2!1sid!2sid!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-700 hover:shadow-md transition">
+                        <h3 class="font-bold text-green-900 mb-2">📍 Ubud</h3>
+                        <p class="text-sm text-gray-700">Pusat pertanian tradisional dengan tanaman padi dan bunga upakara yang subur.</p>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-700 hover:shadow-md transition">
+                        <h3 class="font-bold text-green-900 mb-2">📍 Denpasar</h3>
+                        <p class="text-sm text-gray-700">Pusat perdagangan tanaman upakara dengan pasar tradisional dan modern.</p>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-700 hover:shadow-md transition">
+                        <h3 class="font-bold text-green-900 mb-2">📍 Klungkung</h3>
+                        <p class="text-sm text-gray-700">Daerah dengan tradisi kuat dalam melestarikan tanaman upakara lokal.</p>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-700 hover:shadow-md transition">
+                        <h3 class="font-bold text-green-900 mb-2">📍 Tabanan</h3>
+                        <p class="text-sm text-gray-700">Wilayah penghasil bunga dan tanaman upakara berkualitas tinggi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="peta-sebaran.html" class="inline-block bg-green-900 text-white px-8 py-3 rounded-full font-bold hover:bg-green-800 transition">Lihat Peta Interaktif →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-900 text-white py-8 text-center border-t">
+        <p>© 2026 TARU BALI. Melestarikan Pusaka Budaya Bali.</p>
+    </footer>
+</body>
+</html>
