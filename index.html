@@ -27,11 +27,12 @@
             overflow-x: hidden;
         }
 
+        /* HERO */
         .hero {
             background:
-                radial-gradient(circle at 15% 20%, rgba(250,204,21,.28), transparent 25%),
-                radial-gradient(circle at 85% 25%, rgba(255,255,255,.15), transparent 25%),
-                linear-gradient(135deg, #14532d, #166534, #15803d);
+                radial-gradient(circle at 15% 20%, rgba(255,214,102,.25), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(255,255,255,.15), transparent 25%),
+                linear-gradient(135deg,#14532d,#166534 45%,#15803d);
             min-height: 650px;
             position: relative;
             overflow: hidden;
@@ -40,11 +41,11 @@
         .hero::before {
             content: "";
             position: absolute;
-            width: 400px;
-            height: 400px;
+            width: 350px;
+            height: 350px;
             background: rgba(250,204,21,.12);
             border-radius: 50%;
-            top: -150px;
+            top: -120px;
             left: -100px;
         }
 
@@ -55,25 +56,28 @@
             height: 450px;
             background: rgba(255,255,255,.06);
             border-radius: 50%;
-            bottom: -230px;
+            bottom: -220px;
             right: -120px;
         }
 
+        /* GLASS */
         .glass {
             background: rgba(255,255,255,.92);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
         }
 
-        .card {
+        /* CARD */
+        .card-hover {
             transition: all .35s ease;
         }
 
-        .card:hover {
+        .card-hover:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(22,101,52,.15);
         }
 
+        /* PLANT CARD */
         .plant-card {
             transition: all .4s ease;
         }
@@ -90,7 +94,8 @@
             transform: scale(1.08);
         }
 
-        .divider {
+        /* DIVIDER */
+        .section-divider {
             height: 4px;
             background: linear-gradient(
                 90deg,
@@ -102,11 +107,14 @@
             );
         }
 
+        /* PATTERN */
         .pattern {
-            background-image: radial-gradient(#d4a72c 1px, transparent 1px);
+            background-image:
+                radial-gradient(#d4a72c 1px,transparent 1px);
             background-size: 20px 20px;
         }
 
+        /* FLOATING */
         .floating {
             animation: floating 4s ease-in-out infinite;
         }
@@ -121,48 +129,64 @@
             }
         }
 
+        /* BUTTON */
         .btn-primary {
             background: linear-gradient(135deg,#facc15,#eab308);
-            color: #14532d;
-            transition: all .3s ease;
-            box-shadow: 0 8px 20px rgba(234,179,8,.25);
+            color:#14532d;
+            transition:all .3s ease;
+            box-shadow:0 8px 20px rgba(234,179,8,.25);
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(234,179,8,.35);
+            transform:translateY(-3px);
+            box-shadow:0 12px 25px rgba(234,179,8,.35);
         }
 
+        .btn-secondary {
+            transition:all .3s ease;
+        }
+
+        .btn-secondary:hover {
+            background:white;
+            color:#166534;
+            transform:translateY(-3px);
+        }
+
+        /* NAVIGATION */
         .nav-link {
-            position: relative;
+            position:relative;
+            transition:color .3s ease;
         }
 
         .nav-link::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -7px;
-            width: 0;
-            height: 2px;
-            background: #eab308;
-            transition: width .3s ease;
+            content:"";
+            position:absolute;
+            left:0;
+            bottom:-7px;
+            width:0;
+            height:2px;
+            background:#eab308;
+            transition:width .3s ease;
         }
 
         .nav-link:hover::after {
-            width: 100%;
+            width:100%;
         }
     </style>
 </head>
 
 <body class="bg-stone-50 text-gray-800">
 
-<!-- ================= HEADER ================= -->
+<!-- =====================================================
+HEADER
+===================================================== -->
 
 <header class="fixed top-0 w-full z-50 glass shadow-lg border-b border-yellow-100">
 
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-        <a href="index.html" class="flex items-center gap-3">
+        <!-- LOGO -->
+        <a href="./" class="flex items-center gap-3">
 
             <div class="w-11 h-11 rounded-full bg-gradient-to-br from-green-700 to-green-900 flex items-center justify-center text-xl shadow-md">
                 🌿
@@ -180,11 +204,11 @@
 
         </a>
 
-        <!-- NAVIGASI TANPA MAKNA TANAMAN -->
+        <!-- NAVIGASI -->
 
         <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold">
 
-            <a href="index.html"
+            <a href="./"
                class="nav-link text-green-900">
                 Beranda
             </a>
@@ -211,7 +235,10 @@
 
         </nav>
 
-        <button class="lg:hidden w-11 h-11 rounded-xl bg-green-100 text-green-900 text-2xl">
+        <!-- MOBILE -->
+
+        <button
+            class="lg:hidden w-11 h-11 rounded-xl bg-green-100 text-green-900 text-2xl">
             ☰
         </button>
 
@@ -220,7 +247,9 @@
 </header>
 
 
-<!-- ================= HERO ================= -->
+<!-- =====================================================
+HERO
+===================================================== -->
 
 <section class="hero text-white pt-36 pb-24">
 
@@ -230,7 +259,7 @@
 
             <div>
 
-                <div class="inline-flex items-center gap-2 bg-white/15 border border-white/20 px-5 py-2 rounded-full text-sm font-semibold mb-6">
+                <div class="inline-flex items-center gap-2 bg-white/15 border border-white/20 backdrop-blur-sm px-5 py-2 rounded-full text-sm font-semibold mb-6">
 
                     🌺
                     <span>Digital Sanctuary Budaya Bali</span>
@@ -251,7 +280,7 @@
 
                     TARU BALI merupakan platform digital yang menyediakan informasi mengenai tanaman yang digunakan dalam upacara adat dan keagamaan Hindu di Bali.
 
-                    Website ini hadir sebagai media edukasi untuk memperkenalkan kekayaan flora upakara, fungsi, nilai budaya, serta pentingnya pelestariannya.
+                    Website ini hadir sebagai media edukasi untuk memperkenalkan kekayaan flora upakara, nilai filosofis, fungsi, serta pentingnya pelestariannya.
 
                 </p>
 
@@ -264,10 +293,10 @@
 
                     </a>
 
-                    <a href="tentang-kami.html"
-                       class="border-2 border-white px-7 py-4 rounded-full font-bold hover:bg-white hover:text-green-900 transition">
+                    <a href="fungsi.html"
+                       class="btn-secondary border-2 border-white px-7 py-4 rounded-full font-bold">
 
-                        ✨ Tentang TARU BALI
+                        ✨ Pelajari Fungsi
 
                     </a>
 
@@ -275,6 +304,8 @@
 
             </div>
 
+
+            <!-- VISUAL -->
 
             <div class="hidden lg:flex justify-center relative">
 
@@ -309,35 +340,45 @@
 </section>
 
 
-<div class="divider"></div>
+<div class="section-divider"></div>
 
 
-<!-- ================= IDENTITAS ================= -->
+<!-- =====================================================
+INTRO
+===================================================== -->
 
-<section class="bg-white py-10">
+<section class="bg-white py-8">
 
-    <div class="max-w-6xl mx-auto px-6">
+    <div class="max-w-5xl mx-auto px-6">
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
 
-            <div class="card p-5 rounded-2xl bg-green-50">
-                <div class="text-4xl">🌿</div>
-                <p class="font-bold text-green-900 mt-3">Flora Bali</p>
+            <div>
+                <div class="text-3xl">🌿</div>
+                <p class="font-semibold text-gray-800 mt-2">
+                    Flora Bali
+                </p>
             </div>
 
-            <div class="card p-5 rounded-2xl bg-yellow-50">
-                <div class="text-4xl">🌺</div>
-                <p class="font-bold text-yellow-800 mt-3">Tanaman Upakara</p>
+            <div>
+                <div class="text-3xl">🌺</div>
+                <p class="font-semibold text-gray-800 mt-2">
+                    Tanaman Upakara
+                </p>
             </div>
 
-            <div class="card p-5 rounded-2xl bg-red-50">
-                <div class="text-4xl">🛕</div>
-                <p class="font-bold text-red-800 mt-3">Tradisi Bali</p>
+            <div>
+                <div class="text-3xl">🛕</div>
+                <p class="font-semibold text-gray-800 mt-2">
+                    Tradisi Bali
+                </p>
             </div>
 
-            <div class="card p-5 rounded-2xl bg-blue-50">
-                <div class="text-4xl">📚</div>
-                <p class="font-bold text-blue-800 mt-3">Media Edukasi</p>
+            <div>
+                <div class="text-3xl">📚</div>
+                <p class="font-semibold text-gray-800 mt-2">
+                    Media Edukasi
+                </p>
             </div>
 
         </div>
@@ -347,7 +388,9 @@
 </section>
 
 
-<!-- ================= FUNGSI ================= -->
+<!-- =====================================================
+JENIS UPACARA
+===================================================== -->
 
 <section class="py-20 bg-gradient-to-b from-white to-green-50">
 
@@ -356,15 +399,17 @@
         <div class="text-center mb-14">
 
             <span class="text-yellow-600 font-bold tracking-widest text-sm">
-                KEKAYAAN BUDAYA BALI
+                KEKAYAAN BUDAYA
             </span>
 
             <h2 class="text-4xl md:text-5xl font-bold text-green-900 mt-3">
-                Peran Tanaman Upakara
+                Jenis Upacara Keagamaan
             </h2>
 
             <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-                Tanaman upakara memiliki berbagai peranan penting dalam kehidupan keagamaan, budaya, sosial, pendidikan, dan lingkungan masyarakat Bali.
+
+                Masing-masing upacara di Bali memiliki makna mendalam dan membutuhkan tanaman upakara sesuai dengan fungsi dan filosofinya.
+
             </p>
 
         </div>
@@ -372,7 +417,8 @@
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
 
-            <div class="card bg-white p-8 rounded-3xl border border-yellow-200 shadow-sm">
+            <div class="card-hover bg-white p-8 rounded-3xl border border-yellow-200 shadow-sm">
+
                 <div class="w-16 h-16 rounded-2xl bg-yellow-100 flex items-center justify-center text-3xl mb-6">
                     🛕
                 </div>
@@ -382,27 +428,31 @@
                 </h3>
 
                 <p class="text-gray-600 leading-relaxed">
-                    Tanaman menjadi bagian penting dalam berbagai sarana upacara keagamaan Hindu di Bali.
+                    Elemen penting dalam berbagai ritual Hindu di Bali, dari canang sari hingga banten skala besar.
                 </p>
+
             </div>
 
 
-            <div class="card bg-white p-8 rounded-3xl border border-pink-200 shadow-sm">
+            <div class="card-hover bg-white p-8 rounded-3xl border border-pink-200 shadow-sm">
+
                 <div class="w-16 h-16 rounded-2xl bg-pink-100 flex items-center justify-center text-3xl mb-6">
                     🌸
                 </div>
 
                 <h3 class="text-2xl font-bold text-green-900 mb-3">
-                    Nilai Budaya
+                    Simbol dan Budaya
                 </h3>
 
                 <p class="text-gray-600 leading-relaxed">
-                    Penggunaan tanaman dalam upacara menjadi bagian dari tradisi dan pengetahuan yang diwariskan antargenerasi.
+                    Tanaman upakara memiliki nilai budaya yang diwariskan dan digunakan dalam berbagai kegiatan keagamaan.
                 </p>
+
             </div>
 
 
-            <div class="card bg-white p-8 rounded-3xl border border-blue-200 shadow-sm">
+            <div class="card-hover bg-white p-8 rounded-3xl border border-blue-200 shadow-sm">
+
                 <div class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center text-3xl mb-6">
                     🧑‍🤝‍🧑
                 </div>
@@ -412,12 +462,14 @@
                 </h3>
 
                 <p class="text-gray-600 leading-relaxed">
-                    Melestarikan tanaman upakara turut menjaga pengetahuan dan warisan budaya masyarakat Bali.
+                    Menjaga keberadaan tanaman upakara berarti turut menjaga pengetahuan dan warisan budaya leluhur.
                 </p>
+
             </div>
 
 
-            <div class="card bg-white p-8 rounded-3xl border border-green-200 shadow-sm">
+            <div class="card-hover bg-white p-8 rounded-3xl border border-green-200 shadow-sm">
+
                 <div class="w-16 h-16 rounded-2xl bg-green-100 flex items-center justify-center text-3xl mb-6">
                     🌱
                 </div>
@@ -427,27 +479,31 @@
                 </h3>
 
                 <p class="text-gray-600 leading-relaxed">
-                    Penanaman dan pemeliharaan tanaman upakara dapat membantu menjaga keanekaragaman hayati lingkungan.
+                    Pelestarian tanaman upakara turut mendukung keanekaragaman hayati dan keseimbangan lingkungan.
                 </p>
+
             </div>
 
 
-            <div class="card bg-white p-8 rounded-3xl border border-red-200 shadow-sm">
+            <div class="card-hover bg-white p-8 rounded-3xl border border-red-200 shadow-sm">
+
                 <div class="w-16 h-16 rounded-2xl bg-red-100 flex items-center justify-center text-3xl mb-6">
                     🤝
                 </div>
 
                 <h3 class="text-2xl font-bold text-green-900 mb-3">
-                    Ngayah & Sosial
+                    Ngayah dan Sosial
                 </h3>
 
                 <p class="text-gray-600 leading-relaxed">
-                    Persiapan sarana upacara dapat memperkuat gotong royong, kebersamaan, dan hubungan sosial masyarakat.
+                    Persiapan sarana upacara yang dilakukan bersama dapat memperkuat gotong royong dan hubungan sosial.
                 </p>
+
             </div>
 
 
-            <div class="card bg-white p-8 rounded-3xl border border-purple-200 shadow-sm">
+            <div class="card-hover bg-white p-8 rounded-3xl border border-purple-200 shadow-sm">
+
                 <div class="w-16 h-16 rounded-2xl bg-purple-100 flex items-center justify-center text-3xl mb-6">
                     📚
                 </div>
@@ -457,22 +513,10 @@
                 </h3>
 
                 <p class="text-gray-600 leading-relaxed">
-                    Tanaman upakara dapat menjadi media pembelajaran untuk mengenal botani, budaya, dan kearifan lokal Bali.
+                    Menjadi media pembelajaran untuk mengenal botani lokal, etnobotani, dan kearifan ekologis Bali.
                 </p>
+
             </div>
-
-        </div>
-
-
-        <div class="text-center mt-12">
-
-            <a href="fungsi.html"
-               class="inline-flex items-center gap-2 bg-green-900 text-white px-8 py-4 rounded-full font-bold hover:bg-green-800 transition shadow-lg">
-
-                Pelajari Fungsi Tanaman
-                <span>→</span>
-
-            </a>
 
         </div>
 
@@ -481,10 +525,12 @@
 </section>
 
 
-<div class="divider"></div>
+<div class="section-divider"></div>
 
 
-<!-- ================= JENIS TANAMAN ================= -->
+<!-- =====================================================
+JENIS TANAMAN
+===================================================== -->
 
 <section class="py-20 bg-stone-50 pattern">
 
@@ -501,7 +547,7 @@
             </h2>
 
             <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-                Kenali berbagai tanaman yang memiliki peranan dalam kehidupan keagamaan dan budaya masyarakat Bali.
+                Eksplorasi kekayaan tanaman yang memiliki peranan penting dalam ritual dan kehidupan masyarakat Bali.
             </p>
 
         </div>
@@ -509,9 +555,10 @@
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
+            <!-- TERATAI -->
 
             <a href="jenis-tanaman.html"
-               class="plant-card relative overflow-hidden rounded-3xl h-80 shadow-lg bg-white">
+               class="plant-card group relative overflow-hidden rounded-3xl h-80 shadow-lg bg-white">
 
                 <img
                     src="https://via.placeholder.com/600x600?text=Teratai"
@@ -539,8 +586,10 @@
             </a>
 
 
+            <!-- CEMPAKA -->
+
             <a href="jenis-tanaman.html"
-               class="plant-card relative overflow-hidden rounded-3xl h-80 shadow-lg bg-white">
+               class="plant-card group relative overflow-hidden rounded-3xl h-80 shadow-lg bg-white">
 
                 <img
                     src="https://via.placeholder.com/600x600?text=Cempaka"
@@ -568,8 +617,10 @@
             </a>
 
 
+            <!-- BERINGIN -->
+
             <a href="jenis-tanaman.html"
-               class="plant-card relative overflow-hidden rounded-3xl h-80 shadow-lg bg-white">
+               class="plant-card group relative overflow-hidden rounded-3xl h-80 shadow-lg bg-white">
 
                 <img
                     src="https://via.placeholder.com/600x600?text=Beringin"
@@ -597,8 +648,10 @@
             </a>
 
 
+            <!-- PANDAN -->
+
             <a href="jenis-tanaman.html"
-               class="plant-card relative overflow-hidden rounded-3xl h-80 shadow-lg bg-white">
+               class="plant-card group relative overflow-hidden rounded-3xl h-80 shadow-lg bg-white">
 
                 <img
                     src="https://via.placeholder.com/600x600?text=Pandan+Wangi"
@@ -631,7 +684,7 @@
         <div class="text-center mt-12">
 
             <a href="jenis-tanaman.html"
-               class="inline-flex items-center gap-2 bg-green-900 text-white px-8 py-4 rounded-full font-bold hover:bg-green-800 transition shadow-lg">
+               class="inline-flex items-center gap-2 bg-green-900 text-white px-8 py-4 rounded-full font-bold hover:bg-green-800 hover:-translate-y-1 transition shadow-lg">
 
                 Lihat Semua Tanaman
                 <span>→</span>
@@ -645,10 +698,12 @@
 </section>
 
 
-<div class="divider"></div>
+<div class="section-divider"></div>
 
 
-<!-- ================= PETA ================= -->
+<!-- =====================================================
+PETA SEBARAN
+===================================================== -->
 
 <section class="py-20 bg-white">
 
@@ -671,66 +726,94 @@
         </div>
 
 
-        <div class="grid lg:grid-cols-2 gap-8">
+        <div class="grid lg:grid-cols-2 gap-8 items-stretch">
 
+            <!-- MAP -->
 
-            <div class="rounded-3xl overflow-hidden border-4 border-green-100 shadow-xl min-h-[400px]">
+            <div class="bg-gray-100 rounded-3xl overflow-hidden border-4 border-green-100 min-h-[400px]">
 
                 <iframe
                     width="100%"
-                    height="400"
-                    style="border:0"
+                    height="100%"
+                    style="border:0; min-height:400px"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d252844.67844374257!2d115.17718129999999!3d-8.6705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd22e1e0311cd0f%3A0x4106b8bfcc4c730!2sBali!5e0!3m2!1sid!2sid!4v1234567890"
                     allowfullscreen
-                    loading="lazy">
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
 
             </div>
 
 
+            <!-- LOKASI -->
+
             <div class="grid sm:grid-cols-2 gap-5">
 
-                <div class="card bg-green-50 p-6 rounded-2xl border border-green-200">
-                    <div class="text-2xl mb-3">📍</div>
+                <div class="card-hover bg-gradient-to-br from-green-50 to-white p-6 rounded-2xl border border-green-200">
+
+                    <div class="text-2xl mb-3">
+                        📍
+                    </div>
+
                     <h3 class="font-bold text-green-900 text-xl">
                         Ubud
                     </h3>
+
                     <p class="text-sm text-gray-600 mt-2">
                         Wilayah dengan pertanian tradisional dan berbagai tanaman upakara.
                     </p>
+
                 </div>
 
 
-                <div class="card bg-yellow-50 p-6 rounded-2xl border border-yellow-200">
-                    <div class="text-2xl mb-3">📍</div>
+                <div class="card-hover bg-gradient-to-br from-yellow-50 to-white p-6 rounded-2xl border border-yellow-200">
+
+                    <div class="text-2xl mb-3">
+                        📍
+                    </div>
+
                     <h3 class="font-bold text-green-900 text-xl">
                         Denpasar
                     </h3>
+
                     <p class="text-sm text-gray-600 mt-2">
                         Pusat perdagangan berbagai tanaman dan sarana upakara.
                     </p>
+
                 </div>
 
 
-                <div class="card bg-red-50 p-6 rounded-2xl border border-red-200">
-                    <div class="text-2xl mb-3">📍</div>
+                <div class="card-hover bg-gradient-to-br from-red-50 to-white p-6 rounded-2xl border border-red-200">
+
+                    <div class="text-2xl mb-3">
+                        📍
+                    </div>
+
                     <h3 class="font-bold text-green-900 text-xl">
                         Klungkung
                     </h3>
+
                     <p class="text-sm text-gray-600 mt-2">
                         Wilayah yang memiliki tradisi kuat dalam pelestarian budaya Bali.
                     </p>
+
                 </div>
 
 
-                <div class="card bg-blue-50 p-6 rounded-2xl border border-blue-200">
-                    <div class="text-2xl mb-3">📍</div>
+                <div class="card-hover bg-gradient-to-br from-blue-50 to-white p-6 rounded-2xl border border-blue-200">
+
+                    <div class="text-2xl mb-3">
+                        📍
+                    </div>
+
                     <h3 class="font-bold text-green-900 text-xl">
                         Tabanan
                     </h3>
+
                     <p class="text-sm text-gray-600 mt-2">
                         Salah satu wilayah dengan potensi pertanian dan tanaman upakara.
                     </p>
+
                 </div>
 
             </div>
@@ -755,7 +838,9 @@
 </section>
 
 
-<!-- ================= CTA ================= -->
+<!-- =====================================================
+CALL TO ACTION
+===================================================== -->
 
 <section class="py-20 bg-gradient-to-r from-green-900 via-green-800 to-green-900 text-white">
 
@@ -770,7 +855,9 @@
         </h2>
 
         <p class="text-green-100 text-lg leading-relaxed mb-8">
+
             Mengenal tanaman upakara bukan hanya tentang mengenal tumbuhan, tetapi juga memahami hubungan manusia, alam, dan budaya Bali.
+
         </p>
 
         <a href="jenis-tanaman.html"
@@ -785,7 +872,9 @@
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =====================================================
+FOOTER
+===================================================== -->
 
 <footer class="bg-green-950 text-white">
 
@@ -808,7 +897,9 @@
                 </div>
 
                 <p class="text-green-200 leading-relaxed">
+
                     Pusat edukasi digital mengenai tanaman upakara, fungsi, dan kekayaan budaya Bali.
+
                 </p>
 
             </div>
@@ -822,7 +913,7 @@
 
                 <div class="space-y-2 text-green-200">
 
-                    <a href="index.html" class="block hover:text-white">
+                    <a href="./" class="block hover:text-white">
                         Beranda
                     </a>
 
@@ -854,7 +945,9 @@
                 </h3>
 
                 <p class="text-green-200 leading-relaxed">
-                    Temukan berbagai informasi mengenai tanaman yang memiliki peranan dalam kehidupan dan budaya masyarakat Bali.
+
+                    Temukan berbagai informasi mengenai kekayaan flora yang memiliki peranan dalam kehidupan dan budaya masyarakat Bali.
+
                 </p>
 
             </div>
