@@ -31,7 +31,7 @@ Website digital yang menyediakan informasi lengkap mengenai tanaman yang digunak
 
 ## 📝 Lisensi
 
-© 2024 TARU BALI. Melestarikan Pusaka Budaya Bali.
+© 2026 TARU BALI. Melestarikan Pusaka Budaya Bali.
 
 ## 📧 Kontak
 
