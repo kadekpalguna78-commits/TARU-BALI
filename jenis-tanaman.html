@@ -3,275 +3,466 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Jenis Tanaman Upakara - TARU BALI</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
         * {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family:'Plus Jakarta Sans',sans-serif;
         }
-        h1, h2, h3, .heading {
-            font-family: 'Playfair Display', serif;
+
+        h1,h2,h3 {
+            font-family:'Playfair Display',serif;
         }
-        .filter-btn.active {
-            background-color: #1a5c3a;
-            color: white;
+
+        .nav-link {
+            position:relative;
         }
-        .tanaman-card {
-            transition: all 0.3s ease;
+
+        .nav-link::after {
+            content:"";
+            position:absolute;
+            left:0;
+            bottom:-7px;
+            width:0;
+            height:2px;
+            background:#eab308;
+            transition:.3s;
         }
-        .tanaman-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+
+        .nav-link:hover::after {
+            width:100%;
+        }
+
+        .plant {
+            transition:.35s;
+        }
+
+        .plant:hover {
+            transform:translateY(-8px);
         }
     </style>
 </head>
-<body class="bg-stone-50">
-    <!-- Header -->
-    <header class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-md">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-green-900">TARU BALI</a>
-            <nav class="hidden md:flex gap-8">
-                <a href="index.html" class="text-gray-700 hover:text-green-900">Beranda</a>
-                <a href="tentang-kami.html" class="text-gray-700 hover:text-green-900">Tentang Kami</a>
-                <a href="makna-tanaman.html" class="text-gray-700 hover:text-green-900">Makna Tanaman</a>
-                <a href="fungsi.html" class="text-gray-700 hover:text-green-900">Fungsi</a>
-                <a href="jenis-tanaman.html" class="text-green-900 font-semibold border-b-2 border-green-900">Jenis Tanaman</a>
-                <a href="peta-sebaran.html" class="text-gray-700 hover:text-green-900">Peta Sebaran</a>
-            </nav>
-            <button class="md:hidden">☰</button>
-        </div>
-    </header>
 
-    <!-- Main Content -->
-    <main class="pt-32 pb-16">
-        <div class="max-w-7xl mx-auto px-6">
-            <h1 class="text-5xl font-bold text-green-900 mb-4">Jenis-Jenis Tanaman Upakara</h1>
-            <p class="text-lg text-gray-600 mb-12 max-w-2xl">
-                Eksplorasi kekayaan botani suci Bali. Temukan berbagai jenis tanaman yang memiliki peranan penting dalam ritual dan kehidupan spiritual masyarakat Bali.
-            </p>
+<body class="bg-stone-50 text-gray-800">
 
-            <!-- Search & Filter Section -->
-            <div class="bg-white rounded-lg shadow-md p-8 mb-12">
-                <!-- Search Box -->
-                <div class="mb-6">
-                    <input type="text" id="searchInput" placeholder="🔍 Cari tanaman (nama lokal, nama Indonesia, nama latin)..." 
-                        class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-green-900 focus:outline-none text-lg">
-                </div>
 
-                <!-- Filter Kategori -->
-                <div class="mb-4">
-                    <p class="font-bold text-green-900 mb-3">Jenis Bagian Tanaman:</p>
-                    <div class="flex flex-wrap gap-3">
-                        <button class="filter-btn active px-6 py-2 rounded-full border-2 border-green-900 bg-green-900 text-white font-semibold" data-filter="semua">
-                            ✓ Semua Kategori
-                        </button>
-                        <button class="filter-btn px-6 py-2 rounded-full border-2 border-yellow-400 text-yellow-700 font-semibold hover:bg-yellow-50" data-filter="bunga">
-                            🌸 Bunga
-                        </button>
-                        <button class="filter-btn px-6 py-2 rounded-full border-2 border-green-400 text-green-700 font-semibold hover:bg-green-50" data-filter="daun">
-                            🍃 Daun
-                        </button>
-                        <button class="filter-btn px-6 py-2 rounded-full border-2 border-amber-600 text-amber-700 font-semibold hover:bg-amber-50" data-filter="batang">
-                            🌿 Batang
-                        </button>
-                        <button class="filter-btn px-6 py-2 rounded-full border-2 border-purple-600 text-purple-700 font-semibold hover:bg-purple-50" data-filter="umbi">
-                            🌱 Umbi/Akar
-                        </button>
-                    </div>
-                </div>
+<!-- HEADER -->
+<header class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-md border-b border-yellow-100">
 
-                <!-- Katalog Botani Table -->
-                <div class="mt-8">
-                    <p class="font-bold text-green-900 mb-4 text-lg">Katalog Botani</p>
-                    <div class="overflow-x-auto">
-                        <table class="w-full">
-                            <thead>
-                                <tr class="bg-green-100 border-b-2 border-green-900">
-                                    <th class="px-4 py-3 text-left font-bold text-green-900">Nama Bali</th>
-                                    <th class="px-4 py-3 text-left font-bold text-green-900">Nama Indonesia</th>
-                                    <th class="px-4 py-3 text-left font-bold text-green-900">Nama Latin</th>
-                                    <th class="px-4 py-3 text-left font-bold text-green-900">Kategori</th>
-                                </tr>
-                            </thead>
-                            <tbody id="catalogTable">
-                                <!-- Dinamis diisi dengan JavaScript -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+        <a href="./" class="flex items-center gap-3">
+
+            <div class="w-11 h-11 rounded-full bg-green-800 flex items-center justify-center text-xl">
+                🌿
             </div>
 
-            <!-- Tanaman Cards Grid -->
             <div>
-                <h2 class="text-2xl font-bold text-green-900 mb-6">Daftar Lengkap Tanaman</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="tanamanContainer">
-                    <!-- Dinamis diisi dengan JavaScript -->
+                <div class="text-2xl font-extrabold text-green-900">
+                    TARU BALI
+                </div>
+
+                <div class="text-[10px] tracking-[3px] text-yellow-700 font-semibold">
+                    WARISAN FLORA BALI
                 </div>
             </div>
+
+        </a>
+
+
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold">
+
+            <a href="./"
+               class="nav-link text-gray-700 hover:text-green-800">
+                Beranda
+            </a>
+
+            <a href="tentang-kami.html"
+               class="nav-link text-gray-700 hover:text-green-800">
+                Tentang Kami
+            </a>
+
+            <a href="fungsi.html"
+               class="nav-link text-gray-700 hover:text-green-800">
+                Fungsi
+            </a>
+
+            <a href="jenis-tanaman.html"
+               class="nav-link text-green-900">
+                Jenis Tanaman
+            </a>
+
+            <a href="peta-sebaran.html"
+               class="nav-link text-gray-700 hover:text-green-800">
+                Peta Sebaran
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- HERO -->
+<section class="pt-36 pb-20 bg-gradient-to-br from-green-900 via-green-800 to-green-700 text-white">
+
+    <div class="max-w-6xl mx-auto px-6 text-center">
+
+        <div class="text-6xl mb-6">
+            🌺
         </div>
-    </main>
 
-    <!-- Footer -->
-    <footer class="bg-green-900 text-white py-8 text-center border-t">
-        <p>© 2026 TARU BALI. Melestarikan Pusaka Budaya Bali.</p>
-    </footer>
+        <h1 class="text-5xl md:text-6xl font-bold mb-5">
+            Jenis Tanaman Upakara
+        </h1>
 
-    <script>
-        const tanamanData = [
-            {
-                namaBali: "Teratai",
-                namaIndonesia: "Teratai",
-                namaLatin: "Nelumbo nucifera",
-                kategori: "bunga",
-                deskripsi: "Simbol kesucian dan pencerahan spiritual. Digunakan dalam berbagai upacara sebagai persembahan kepada Dewa.",
-                image: "https://via.placeholder.com/300x200?text=Teratai"
-            },
-            {
-                namaBali: "Cempaka",
-                namaIndonesia: "Cempaka Putih",
-                namaLatin: "Magnolia alba",
-                kategori: "bunga",
-                deskripsi: "Bunga putih yang melambangkan kesucian dan kedamaian dalam upacara keagamaan.",
-                image: "https://via.placeholder.com/300x200?text=Cempaka"
-            },
-            {
-                namaBali: "Majegau",
-                namaIndonesia: "Majegau",
-                namaLatin: "Dysoxylum densiflorum",
-                kategori: "bunga",
-                deskripsi: "Kayu suci yang digunakan dalam penghaturan doa kepada para Dewa.",
-                image: "https://via.placeholder.com/300x200?text=Majegau"
-            },
-            {
-                namaBali: "Beringin",
-                namaIndonesia: "Beringin",
-                namaLatin: "Ficus benjamina",
-                kategori: "batang",
-                deskripsi: "Simbol pengayoman dan perlambang kebijaksanaan leluhur. Sering digunakan dalam upacara permohonan bimbingan.",
-                image: "https://via.placeholder.com/300x200?text=Beringin"
-            },
-            {
-                namaBali: "Pandan Wangi",
-                namaIndonesia: "Pandan Harum",
-                namaLatin: "Pandanus amaryllifolius",
-                kategori: "daun",
-                deskripsi: "Pengharum alami yang digunakan dalam canang sari dan berbagai upacara sehari-hari.",
-                image: "https://via.placeholder.com/300x200?text=Pandan+Wangi"
-            },
-            {
-                namaBali: "Sirih",
-                namaIndonesia: "Daun Sirih",
-                namaLatin: "Piper betle",
-                kategori: "daun",
-                deskripsi: "Daun sirih digunakan dalam upacara dan memiliki nilai budaya yang tinggi dalam tradisi Bali.",
-                image: "https://via.placeholder.com/300x200?text=Sirih"
-            },
-            {
-                namaBali: "Kunyit",
-                namaIndonesia: "Kunyit",
-                namaLatin: "Curcuma longa",
-                kategori: "umbi",
-                deskripsi: "Umbi yang memiliki warna kuning cerah melambangkan kesucian dan energi kehidupan.",
-                image: "https://via.placeholder.com/300x200?text=Kunyit"
-            },
-            {
-                namaBali: "Jahe",
-                namaIndonesia: "Jahe",
-                namaLatin: "Zingiber officinale",
-                kategori: "umbi",
-                deskripsi: "Rimpang aromatik yang digunakan dalam persiapan upacara dan memiliki nilai pengobatan tradisional.",
-                image: "https://via.placeholder.com/300x200?text=Jahe"
-            },
-            {
-                namaBali: "Sekar Sandat",
-                namaIndonesia: "Bunga Sandat",
-                namaLatin: "Bouvardia ternifolia",
-                kategori: "bunga",
-                deskripsi: "Bunga warna-warni yang indah digunakan sebagai dekorasi dalam upacara keagamaan.",
-                image: "https://via.placeholder.com/300x200?text=Sekar+Sandat"
-            },
-            {
-                namaBali: "Melati",
-                namaIndonesia: "Melati",
-                namaLatin: "Jasminum sambac",
-                kategori: "bunga",
-                deskripsi: "Bunga harum yang melambangkan kemurnian dan keindahan. Digunakan dalam canang sari harian.",
-                image: "https://via.placeholder.com/300x200?text=Melati"
-            }
-        ];
+        <p class="text-green-100 max-w-3xl mx-auto text-lg leading-relaxed">
+            Berbagai tumbuhan memiliki peranan dalam kegiatan adat dan
+            keagamaan masyarakat Bali.
+        </p>
 
-        let currentFilter = "semua";
+    </div>
 
-        // Render tanaman cards
-        function renderTanaman() {
-            const container = document.getElementById('tanamanContainer');
-            const filtered = currentFilter === "semua" ? tanamanData : tanamanData.filter(t => t.kategori === currentFilter);
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            
-            const results = filtered.filter(t => 
-                t.namaBali.toLowerCase().includes(searchTerm) ||
-                t.namaIndonesia.toLowerCase().includes(searchTerm) ||
-                t.namaLatin.toLowerCase().includes(searchTerm) ||
-                t.deskripsi.toLowerCase().includes(searchTerm)
-            );
+</section>
 
-            container.innerHTML = results.map(tanaman => `
-                <div class="tanaman-card bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="${tanaman.image}" alt="${tanaman.namaBali}" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold text-green-900 mb-1">${tanaman.namaBali}</h3>
-                        <p class="text-sm text-gray-600 mb-2"><strong>Indonesia:</strong> ${tanaman.namaIndonesia}</p>
-                        <p class="text-sm text-gray-600 mb-3"><strong>Latin:</strong> <em>${tanaman.namaLatin}</em></p>
-                        <p class="text-gray-700 text-sm">${tanaman.deskripsi}</p>
-                        <div class="mt-3">
-                            <span class="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">
-                                ${getKategoriLabel(tanaman.kategori)}
-                            </span>
-                        </div>
-                    </div>
+
+<!-- TANAMAN -->
+<section class="py-20">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-14">
+
+            <span class="text-yellow-600 font-bold tracking-widest text-sm">
+                FLORA BALI
+            </span>
+
+            <h2 class="text-4xl font-bold text-green-900 mt-3">
+                Mengenal Tanaman Upakara
+            </h2>
+
+        </div>
+
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-7">
+
+
+            <!-- TERATAI -->
+
+            <div class="plant bg-white rounded-3xl overflow-hidden shadow-lg border border-green-100">
+
+                <div class="h-52 bg-gradient-to-br from-pink-100 to-green-100 flex items-center justify-center text-8xl">
+                    🌸
                 </div>
-            `).join('');
 
-            renderCatalogTable(results);
-        }
+                <div class="p-6">
 
-        function renderCatalogTable(tanaman) {
-            const tbody = document.getElementById('catalogTable');
-            tbody.innerHTML = tanaman.map((t, i) => `
-                <tr class="${i % 2 === 0 ? 'bg-white' : 'bg-gray-50'} border-b hover:bg-green-50">
-                    <td class="px-4 py-3">${t.namaBali}</td>
-                    <td class="px-4 py-3">${t.namaIndonesia}</td>
-                    <td class="px-4 py-3"><em>${t.namaLatin}</em></td>
-                    <td class="px-4 py-3"><span class="px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700">${getKategoriLabel(t.kategori)}</span></td>
-                </tr>
-            `).join('');
-        }
+                    <span class="text-xs font-bold text-pink-600">
+                        BUNGA
+                    </span>
 
-        function getKategoriLabel(kategori) {
-            const labels = {
-                bunga: "🌸 Bunga",
-                daun: "🍃 Daun",
-                batang: "🌿 Batang",
-                umbi: "🌱 Umbi/Akar"
-            };
-            return labels[kategori] || kategori;
-        }
+                    <h3 class="text-2xl font-bold text-green-900 mt-2">
+                        Teratai
+                    </h3>
 
-        // Event Listeners
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                currentFilter = this.dataset.filter;
-                renderTanaman();
-            });
-        });
+                    <p class="italic text-sm text-gray-500 mb-4">
+                        Nelumbo nucifera
+                    </p>
 
-        document.getElementById('searchInput').addEventListener('keyup', renderTanaman);
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Teratai merupakan tumbuhan air yang dikenal
+                        memiliki nilai estetika dan digunakan dalam
+                        berbagai kegiatan keagamaan.
+                    </p>
 
-        // Initial render
-        renderTanaman();
-    </script>
+                </div>
+
+            </div>
+
+
+            <!-- CEMPAKA -->
+
+            <div class="plant bg-white rounded-3xl overflow-hidden shadow-lg border border-yellow-100">
+
+                <div class="h-52 bg-gradient-to-br from-yellow-100 to-orange-100 flex items-center justify-center text-8xl">
+                    🌼
+                </div>
+
+                <div class="p-6">
+
+                    <span class="text-xs font-bold text-yellow-600">
+                        BUNGA
+                    </span>
+
+                    <h3 class="text-2xl font-bold text-green-900 mt-2">
+                        Cempaka
+                    </h3>
+
+                    <p class="italic text-sm text-gray-500 mb-4">
+                        Magnolia champaca
+                    </p>
+
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Cempaka dikenal karena bunganya yang harum dan
+                        banyak dimanfaatkan dalam kegiatan adat serta
+                        keagamaan masyarakat Bali.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- BERINGIN -->
+
+            <div class="plant bg-white rounded-3xl overflow-hidden shadow-lg border border-green-100">
+
+                <div class="h-52 bg-gradient-to-br from-green-100 to-emerald-100 flex items-center justify-center text-8xl">
+                    🌳
+                </div>
+
+                <div class="p-6">
+
+                    <span class="text-xs font-bold text-green-600">
+                        POHON
+                    </span>
+
+                    <h3 class="text-2xl font-bold text-green-900 mt-2">
+                        Beringin
+                    </h3>
+
+                    <p class="italic text-sm text-gray-500 mb-4">
+                        Ficus benjamina
+                    </p>
+
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Beringin merupakan pohon yang memiliki ukuran
+                        besar dan sering dijumpai pada lingkungan yang
+                        berkaitan dengan ruang sosial dan budaya.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PANDAN -->
+
+            <div class="plant bg-white rounded-3xl overflow-hidden shadow-lg border border-blue-100">
+
+                <div class="h-52 bg-gradient-to-br from-green-100 to-blue-100 flex items-center justify-center text-8xl">
+                    🌿
+                </div>
+
+                <div class="p-6">
+
+                    <span class="text-xs font-bold text-green-600">
+                        DAUN
+                    </span>
+
+                    <h3 class="text-2xl font-bold text-green-900 mt-2">
+                        Pandan
+                    </h3>
+
+                    <p class="italic text-sm text-gray-500 mb-4">
+                        Pandanus amaryllifolius
+                    </p>
+
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Pandan memiliki daun yang dapat dimanfaatkan
+                        dalam berbagai keperluan masyarakat dan
+                        perlengkapan tradisional.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- KELAPA -->
+
+            <div class="plant bg-white rounded-3xl overflow-hidden shadow-lg border border-green-100">
+
+                <div class="h-52 bg-gradient-to-br from-green-100 to-lime-100 flex items-center justify-center text-8xl">
+                    🥥
+                </div>
+
+                <div class="p-6">
+
+                    <span class="text-xs font-bold text-green-600">
+                        BUAH
+                    </span>
+
+                    <h3 class="text-2xl font-bold text-green-900 mt-2">
+                        Kelapa
+                    </h3>
+
+                    <p class="italic text-sm text-gray-500 mb-4">
+                        Cocos nucifera
+                    </p>
+
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Kelapa merupakan tanaman yang memiliki banyak
+                        manfaat dan bagian-bagiannya digunakan dalam
+                        berbagai kegiatan masyarakat Bali.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PISANG -->
+
+            <div class="plant bg-white rounded-3xl overflow-hidden shadow-lg border border-yellow-100">
+
+                <div class="h-52 bg-gradient-to-br from-yellow-100 to-green-100 flex items-center justify-center text-8xl">
+                    🍌
+                </div>
+
+                <div class="p-6">
+
+                    <span class="text-xs font-bold text-yellow-600">
+                        BUAH & DAUN
+                    </span>
+
+                    <h3 class="text-2xl font-bold text-green-900 mt-2">
+                        Pisang
+                    </h3>
+
+                    <p class="italic text-sm text-gray-500 mb-4">
+                        Musa spp.
+                    </p>
+
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Pisang dimanfaatkan masyarakat sebagai bagian
+                        dari kebutuhan sehari-hari maupun berbagai
+                        perlengkapan upakara.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SIRIH -->
+
+            <div class="plant bg-white rounded-3xl overflow-hidden shadow-lg border border-emerald-100">
+
+                <div class="h-52 bg-gradient-to-br from-emerald-100 to-green-100 flex items-center justify-center text-8xl">
+                    🍃
+                </div>
+
+                <div class="p-6">
+
+                    <span class="text-xs font-bold text-emerald-600">
+                        DAUN
+                    </span>
+
+                    <h3 class="text-2xl font-bold text-green-900 mt-2">
+                        Sirih
+                    </h3>
+
+                    <p class="italic text-sm text-gray-500 mb-4">
+                        Piper betle
+                    </p>
+
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Daun sirih dikenal sebagai salah satu tumbuhan
+                        yang digunakan dalam berbagai tradisi masyarakat
+                        di Nusantara, termasuk Bali.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- KEMBANG SEPATO -->
+
+            <div class="plant bg-white rounded-3xl overflow-hidden shadow-lg border border-red-100">
+
+                <div class="h-52 bg-gradient-to-br from-red-100 to-pink-100 flex items-center justify-center text-8xl">
+                    🌺
+                </div>
+
+                <div class="p-6">
+
+                    <span class="text-xs font-bold text-red-600">
+                        BUNGA
+                    </span>
+
+                    <h3 class="text-2xl font-bold text-green-900 mt-2">
+                        Kembang Sepatu
+                    </h3>
+
+                    <p class="italic text-sm text-gray-500 mb-4">
+                        Hibiscus rosa-sinensis
+                    </p>
+
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Kembang sepatu merupakan tanaman berbunga yang
+                        mudah ditemukan di lingkungan masyarakat dan
+                        memiliki nilai estetika.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PENUTUP -->
+<section class="py-20 bg-green-900 text-white">
+
+    <div class="max-w-4xl mx-auto px-6 text-center">
+
+        <h2 class="text-4xl font-bold mb-5">
+            Kenali Kekayaan Flora Bali
+        </h2>
+
+        <p class="text-green-100 text-lg leading-relaxed">
+            Mengenal jenis tanaman merupakan langkah awal untuk
+            meningkatkan kepedulian terhadap keberadaan tanaman
+            dan pengetahuan budaya yang menyertainya.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer class="bg-green-950 text-white">
+
+    <div class="max-w-6xl mx-auto px-6 py-10 text-center">
+
+        <div class="text-2xl font-bold mb-3">
+            🌿 TARU BALI
+        </div>
+
+        <p class="text-green-200">
+            Media edukasi tanaman upakara dan budaya Bali.
+        </p>
+
+        <div class="border-t border-green-800 mt-8 pt-6 text-sm text-green-300">
+            © 2026 TARU BALI
+        </div>
+
+    </div>
+
+</footer>
+
 </body>
 </html>
