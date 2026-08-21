@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TARU BALI - Pusat Edukasi Tanaman Upakara</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffdad8",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f7f3e9",
+                        "surface-variant": "#e6e2d8",
+                        "primary": "#012d1d",
+                        "on-secondary-fixed": "#291800",
+                        "error": "#ba1a1a",
+                        "tertiary": "#55000b",
+                        "secondary-container": "#feae2c",
+                        "secondary-fixed-dim": "#ffb955",
+                        "outline": "#717973",
+                        "primary-fixed-dim": "#a5d0b9",
+                        "on-primary-fixed-variant": "#274e3d",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#c1ecd4",
+                        "on-tertiary-fixed": "#410007",
+                        "primary-container": "#1b4332",
+                        "secondary-fixed": "#ffddb4",
+                        "inverse-primary": "#a5d0b9",
+                        "surface-container-high": "#ece8de",
+                        "on-primary-container": "#86af99",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f1eee4",
+                        "on-background": "#1c1c16",
+                        "surface-container-highest": "#e6e2d8",
+                        "inverse-on-surface": "#f4f0e6",
+                        "on-surface": "#1c1c16",
+                        "tertiary-fixed-dim": "#ffb3b0",
+                        "background": "#fdf9ef",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#6b4500",
+                        "on-tertiary-fixed-variant": "#861f25",
+                        "on-surface-variant": "#414844",
+                        "inverse-surface": "#31312a",
+                        "surface-dim": "#dddad0",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#3f6653",
+                        "on-tertiary-container": "#ff807f",
+                        "surface": "#fdf9ef",
+                        "outline-variant": "#c1c8c2",
+                        "on-secondary-fixed-variant": "#633f00",
+                        "secondary": "#835500",
+                        "on-primary-fixed": "#002114",
+                        "tertiary-container": "#77131c",
+                        "surface-bright": "#fdf9ef"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "base": "8px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "margin-mobile": "16px",
+                        "xl": "80px",
+                        "lg": "48px",
+                        "sm": "12px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-display": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "label-sm": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-md": ["28px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-display": ["56px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col pt-20">
+<header class="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-md bg-surface-container-low shadow-sm">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-screen-2xl mx-auto">
+<a class="font-headline-md text-headline-md font-bold text-primary tracking-tight hover:opacity-80 transition-opacity" href="index.html">TARU BALI</a>
+<nav class="hidden md:flex gap-md items-center">
+<a class="font-label-md text-label-md text-primary border-b-2 border-secondary-container pb-1 hover:bg-surface-container rounded-lg px-2" href="index.html">Beranda</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container rounded-lg px-2 py-1" href="tentang-kami.html">Tentang Kami</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container rounded-lg px-2 py-1" href="makna-tanaman.html">Makna Tanaman</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container rounded-lg px-2 py-1" href="fungsi.html">Fungsi</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container rounded-lg px-2 py-1" href="jenis-tanaman.html">Jenis Tanaman</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container rounded-lg px-2 py-1" href="peta-sebaran.html">Peta Sebaran</a>
+</nav>
+<div class="hidden md:block">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-full hover:bg-primary-container transition-colors shadow-sm flex items-center gap-2">
+                    Edukasi Budaya
+                    <span class="material-symbols-outlined text-[18px]">auto_stories</span>
+</button>
+</div>
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow">
+<section class="relative w-full min-h-[921px] flex items-center justify-center px-margin-mobile md:px-margin-desktop overflow-hidden bg-surface-container-low">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-80 mix-blend-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqs2tQENw1dbYr1Y7Ah1DI87lS7feSlpyNMRcNffWHMJSdfhZMC1e8MiGlcGNbk_ThFmYK61swaR29pe-FR_QttenGBlDUNDv6GBeMsLSMk_L6palY3WswTf61BnSTdEee1lbq2UsCKoHd-lf_eYyM0WQQFQEjQypVRbbHxPu7Oeu1MoLsdo8PWJRIf0tn1i1SbfgwJHGCbrboiMfg6H3WxmPyjgK0b3YKxJn6bfb9tixRnHnP3Bwi" alt="Bali rice terrace sunrise offering"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto text-center space-y-lg mt-xl">
+<span class="inline-block px-4 py-2 bg-secondary-container/20 text-on-secondary-container rounded-full font-label-md text-label-md uppercase tracking-widest">Digital Sanctuary</span>
+<h1 class="font-headline-display text-headline-lg-mobile md:text-headline-display text-primary leading-tight">
+                    TARU BALI: Pusat Edukasi Tanaman Upakara & Budaya Bali
+                </h1>
+<div class="space-y-md max-w-3xl mx-auto">
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        TARU BALI merupakan platform digital yang menyediakan informasi lengkap mengenai tanaman yang digunakan dalam upacara adat dan keagamaan Hindu di Bali.
+                    </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-md justify-center items-center pt-md">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-8 py-4 rounded-[24px] hover:bg-primary-container transition-all shadow-md hover:shadow-lg flex items-center gap-2 w-full sm:w-auto justify-center">
+                        Mulai Menjelajah
+                        <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+</button>
+<button class="border-2 border-primary-fixed-dim text-primary font-label-md text-label-md px-8 py-4 rounded-[24px] hover:bg-surface-container transition-all flex items-center gap-2 w-full sm:w-auto justify-center">
+                        Pelajari Filosofi
+                        <span class="material-symbols-outlined text-[20px]">menu_book</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full rounded-t-xl bg-primary mt-auto">
+<div class="flex flex-col md:flex-row justify-between gap-lg px-margin-desktop py-xl w-full max-w-screen-2xl mx-auto text-on-primary">
+<div class="flex flex-col gap-md max-w-sm">
+<span class="font-headline-lg text-headline-lg text-secondary-fixed">TARU BALI</span>
+<p class="font-body-md text-body-md opacity-80">Melestarikan pusaka budaya melalui kemudahan akses digital.</p>
+</div>
+</div>
+<div class="w-full border-t border-on-primary/10 px-margin-desktop py-md">
+<p class="text-center font-label-sm text-label-sm text-on-primary/60">© 2024 TARU BALI. Melestarikan Pusaka Budaya Bali.</p>
+</div>
+</footer>
+</body></html>
