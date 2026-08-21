@@ -2,6 +2,12 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Mencegah browser menyimpan halaman versi lama -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Tentang Kami - TARU BALI</title>
@@ -9,47 +15,69 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             background: #f7f9f5;
             color: #1f2937;
         }
 
         header {
-            background: white;
-            border-bottom: 1px solid #e5e7eb;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            background: rgba(255,255,255,0.97);
+            border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .header-inner {
             max-width: 1200px;
             margin: auto;
-            padding: 18px 25px;
+            padding: 16px 25px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            gap: 20px;
         }
 
         .logo {
             text-decoration: none;
             color: #14532d;
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 25px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .logo-small {
+            display: block;
+            font-size: 10px;
+            letter-spacing: 3px;
+            color: #a16207;
+            margin-top: 3px;
         }
 
         nav {
             display: flex;
-            gap: 25px;
             align-items: center;
+            gap: 25px;
         }
 
         nav a {
             text-decoration: none;
             color: #374151;
+            font-size: 14px;
             font-weight: 600;
+            transition: 0.3s;
+            padding: 6px 0;
         }
 
         nav a:hover {
@@ -58,33 +86,112 @@
 
         nav a.active {
             color: #166534;
+            border-bottom: 2px solid #166534;
         }
 
+        /* HERO */
+
         .hero {
-            background: linear-gradient(135deg, #14532d, #166534, #15803d);
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(20,83,45,0.97),
+                    rgba(22,101,52,0.96),
+                    rgba(21,128,61,0.94)
+                );
+
             color: white;
-            padding: 90px 25px;
             text-align: center;
+            padding: 90px 25px;
+        }
+
+        .hero-icon {
+            font-size: 65px;
+            margin-bottom: 15px;
         }
 
         .hero h1 {
+            margin: 0 0 18px;
             font-size: 48px;
-            margin: 15px 0;
+            font-weight: 800;
         }
 
         .hero p {
-            max-width: 750px;
+            max-width: 780px;
             margin: auto;
             line-height: 1.8;
-            color: #dcfce7;
             font-size: 18px;
+            color: #dcfce7;
         }
+
+        /* CONTENT */
 
         .container {
             max-width: 1100px;
             margin: auto;
-            padding: 70px 25px;
+            padding: 75px 25px;
         }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .label {
+            color: #a16207;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .about-text h2 {
+            color: #14532d;
+            font-size: 38px;
+            margin: 0 0 25px;
+        }
+
+        .about-text p {
+            color: #4b5563;
+            line-height: 1.9;
+            margin: 0 0 18px;
+            font-size: 16px;
+        }
+
+        .about-box {
+            background: linear-gradient(
+                135deg,
+                #dcfce7,
+                #fef9c3
+            );
+
+            border-radius: 30px;
+            padding: 55px 35px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+        }
+
+        .about-box-icon {
+            font-size: 90px;
+            margin-bottom: 15px;
+        }
+
+        .about-box h3 {
+            color: #14532d;
+            font-size: 30px;
+            margin: 10px 0;
+        }
+
+        .about-box p {
+            color: #4b5563;
+            line-height: 1.8;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        /* TUJUAN */
 
         .section-title {
             text-align: center;
@@ -93,46 +200,12 @@
 
         .section-title h2 {
             color: #14532d;
-            font-size: 36px;
+            font-size: 38px;
             margin: 10px 0;
         }
 
-        .section-title p {
+        .section-title p:last-child {
             color: #6b7280;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            color: #14532d;
-            font-size: 34px;
-        }
-
-        .about-text p {
-            color: #4b5563;
-            line-height: 1.9;
-            margin-bottom: 18px;
-        }
-
-        .about-box {
-            background: linear-gradient(135deg, #dcfce7, #fef9c3);
-            padding: 50px;
-            border-radius: 25px;
-            text-align: center;
-        }
-
-        .about-box .icon {
-            font-size: 80px;
-        }
-
-        .about-box h3 {
-            color: #14532d;
-            font-size: 28px;
         }
 
         .cards {
@@ -143,24 +216,66 @@
 
         .card {
             background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,.06);
+            padding: 32px;
+            border-radius: 22px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.06);
+            border-top: 4px solid #166534;
+            transition: 0.3s;
         }
 
-        .card .icon {
-            font-size: 45px;
+        .card:hover {
+            transform: translateY(-7px);
+        }
+
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
         }
 
         .card h3 {
             color: #14532d;
-            font-size: 23px;
+            font-size: 24px;
+            margin: 10px 0;
         }
 
         .card p {
             color: #6b7280;
             line-height: 1.8;
+            margin: 0;
         }
+
+        /* VISI */
+
+        .vision {
+            background: #14532d;
+            color: white;
+            text-align: center;
+        }
+
+        .vision-inner {
+            max-width: 850px;
+            margin: auto;
+            padding: 80px 25px;
+        }
+
+        .vision-icon {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .vision h2 {
+            font-size: 38px;
+            margin: 0 0 20px;
+        }
+
+        .vision p {
+            color: #dcfce7;
+            font-size: 17px;
+            line-height: 1.9;
+            margin: 0;
+        }
+
+        /* FOOTER */
 
         footer {
             background: #052e16;
@@ -169,45 +284,105 @@
             padding: 40px 25px;
         }
 
-        footer p {
-            color: #bbf7d0;
+        footer h2 {
+            margin: 0 0 10px;
+            font-size: 25px;
         }
 
-        @media (max-width: 800px) {
+        footer p {
+            color: #bbf7d0;
+            margin: 8px 0;
+        }
+
+        .copyright {
+            border-top: 1px solid #166534;
+            margin-top: 25px;
+            padding-top: 20px;
+            font-size: 13px;
+            color: #86efac;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
 
             .header-inner {
                 flex-direction: column;
-                gap: 18px;
             }
 
             nav {
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 15px;
+                gap: 14px 20px;
             }
 
-            .hero h1 {
-                font-size: 36px;
+            .about-grid {
+                grid-template-columns: 1fr;
             }
 
-            .about-grid,
             .cards {
                 grid-template-columns: 1fr;
             }
 
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .section-title h2,
+            .about-text h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .hero {
+                padding: 65px 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            nav {
+                gap: 10px 15px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
 
 <body>
 
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
 
     <div class="header-inner">
 
         <a href="index.html" class="logo">
+
             🌿 TARU BALI
+
+            <span class="logo-small">
+                WARISAN FLORA BALI
+            </span>
+
         </a>
+
 
         <nav>
 
@@ -238,13 +413,19 @@
 </header>
 
 
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
 
-    <div style="font-size:60px;">
+    <div class="hero-icon">
         🌿
     </div>
 
-    <h1>Tentang TARU BALI</h1>
+    <h1>
+        Tentang TARU BALI
+    </h1>
 
     <p>
         Mengenal, memahami, dan melestarikan kekayaan tanaman
@@ -254,15 +435,19 @@
 </section>
 
 
+<!-- =========================
+     TENTANG TARU BALI
+========================= -->
+
 <section class="container">
 
     <div class="about-grid">
 
         <div class="about-text">
 
-            <p style="color:#ca8a04;font-weight:bold;">
+            <div class="label">
                 TENTANG KAMI
-            </p>
+            </div>
 
             <h2>
                 Apa itu TARU BALI?
@@ -275,23 +460,30 @@
             </p>
 
             <p>
-                TARU BALI merupakan sebuah platform digital edukasi
-                yang dibuat untuk mengenalkan berbagai tanaman yang
-                berkaitan dengan upakara dan kehidupan budaya masyarakat Bali.
+                TARU BALI merupakan platform digital edukasi yang
+                dikembangkan untuk mengenalkan berbagai tanaman
+                yang memiliki keterkaitan dengan kehidupan dan
+                budaya masyarakat Bali.
             </p>
 
             <p>
-                Website ini menyajikan informasi mengenai jenis tanaman,
-                fungsi tanaman, serta persebarannya sehingga informasi
-                mengenai kekayaan flora Bali dapat lebih mudah dipelajari
-                oleh masyarakat, khususnya generasi muda.
+                Website ini menyajikan informasi mengenai berbagai
+                jenis tanaman, fungsi tanaman, serta persebarannya
+                di wilayah Bali.
             </p>
 
             <p>
-                Melalui pemanfaatan teknologi digital, TARU BALI diharapkan
-                dapat menjadi media untuk meningkatkan pengetahuan sekaligus
-                menumbuhkan kepedulian terhadap pelestarian tanaman dan
-                budaya Bali.
+                Kehadiran TARU BALI diharapkan dapat membantu
+                masyarakat, khususnya generasi muda, untuk lebih
+                mengenal kekayaan flora Bali serta memahami pentingnya
+                menjaga dan melestarikannya.
+            </p>
+
+            <p>
+                Melalui pemanfaatan teknologi digital, pengetahuan
+                mengenai tanaman dan budaya Bali dapat disampaikan
+                dengan cara yang lebih menarik, mudah diakses, dan
+                sesuai dengan perkembangan zaman.
             </p>
 
         </div>
@@ -299,7 +491,7 @@
 
         <div class="about-box">
 
-            <div class="icon">
+            <div class="about-box-icon">
                 🌳
             </div>
 
@@ -309,7 +501,8 @@
 
             <p>
                 Mengenal flora, memahami budaya,
-                dan menjaga warisan Bali.
+                dan menjaga warisan Bali untuk
+                generasi mendatang.
             </p>
 
         </div>
@@ -319,20 +512,24 @@
 </section>
 
 
-<section class="container" style="padding-top:20px;">
+<!-- =========================
+     TUJUAN
+========================= -->
+
+<section class="container">
 
     <div class="section-title">
 
-        <p style="color:#ca8a04;font-weight:bold;">
+        <div class="label">
             TUJUAN
-        </p>
+        </div>
 
         <h2>
             Mengapa TARU BALI Dibuat?
         </h2>
 
         <p>
-            Beberapa tujuan utama pengembangan TARU BALI.
+            TARU BALI dikembangkan dengan beberapa tujuan utama.
         </p>
 
     </div>
@@ -342,7 +539,7 @@
 
         <div class="card">
 
-            <div class="icon">
+            <div class="card-icon">
                 📚
             </div>
 
@@ -351,8 +548,10 @@
             </h3>
 
             <p>
-                Menyediakan informasi yang mudah dipahami mengenai
-                tanaman dan budaya Bali.
+                Menyediakan informasi mengenai tanaman Bali
+                dengan bahasa yang mudah dipahami sehingga
+                dapat menjadi media pembelajaran bagi masyarakat
+                dan generasi muda.
             </p>
 
         </div>
@@ -360,7 +559,7 @@
 
         <div class="card">
 
-            <div class="icon">
+            <div class="card-icon">
                 🌱
             </div>
 
@@ -369,8 +568,9 @@
             </h3>
 
             <p>
-                Mendorong kepedulian masyarakat terhadap keberadaan
-                dan kelestarian tanaman yang berkaitan dengan budaya Bali.
+                Meningkatkan kepedulian terhadap keberadaan
+                tanaman serta mendorong upaya pelestarian
+                kekayaan flora Bali.
             </p>
 
         </div>
@@ -378,7 +578,7 @@
 
         <div class="card">
 
-            <div class="icon">
+            <div class="card-icon">
                 🛕
             </div>
 
@@ -387,8 +587,9 @@
             </h3>
 
             <p>
-                Membantu memperkenalkan kekayaan budaya Bali kepada
-                masyarakat, terutama generasi muda.
+                Memperkenalkan keterkaitan tanaman dengan
+                kehidupan dan budaya Bali kepada generasi
+                sekarang maupun generasi yang akan datang.
             </p>
 
         </div>
@@ -397,6 +598,38 @@
 
 </section>
 
+
+<!-- =========================
+     VISI
+========================= -->
+
+<section class="vision">
+
+    <div class="vision-inner">
+
+        <div class="vision-icon">
+            🌱
+        </div>
+
+        <h2>
+            Mengenal untuk Melestarikan
+        </h2>
+
+        <p>
+            Dengan mengenal berbagai tanaman yang ada di Bali,
+            kita dapat memahami nilai yang terkandung di dalamnya
+            serta meningkatkan kepedulian untuk menjaga kekayaan
+            alam dan budaya Bali.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -408,11 +641,25 @@
         Media edukasi tanaman dan budaya Bali.
     </p>
 
-    <p>
+    <div class="copyright">
         © 2026 TARU BALI
-    </p>
+    </div>
 
 </footer>
+
+
+<!-- =========================
+     CACHE VERSION
+========================= -->
+
+<script>
+    /*
+       Versi halaman.
+       Jika website diperbarui, angka ini dapat dinaikkan.
+    */
+
+    console.log("TARU BALI - Tentang Kami v2");
+</script>
 
 </body>
 </html>
