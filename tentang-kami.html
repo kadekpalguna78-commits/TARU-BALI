@@ -1,45 +1,484 @@
+```html
 <!DOCTYPE html>
-<html lang="id"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Tentang Kami - TARU BALI</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "primary": "#012d1d",
-                        "secondary-container": "#feae2c",
-                        "background": "#fdf9ef",
-                        "surface-container-low": "#f7f3e9"
-                    }
-                }
-            }
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tentang Kami - TARU BALI</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
-    </script>
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .hero {
+            background:
+                radial-gradient(circle at 10% 20%, rgba(250, 204, 21, .25), transparent 25%),
+                radial-gradient(circle at 90% 80%, rgba(255, 255, 255, .12), transparent 25%),
+                linear-gradient(135deg, #14532d, #166534, #15803d);
+        }
+
+        .card {
+            transition: .35s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(22, 101, 52, .15);
+        }
+
+        .divider {
+            height: 4px;
+            background: linear-gradient(
+                90deg,
+                #166534,
+                #eab308,
+                #dc2626,
+                #eab308,
+                #166534
+            );
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+            width: 0;
+            height: 2px;
+            background: #eab308;
+            transition: .3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
 </head>
-<body class="bg-background text-on-background antialiased min-h-screen flex flex-col pt-32">
-<header class="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-md shadow-sm h-20 flex items-center px-margin-desktop justify-between">
-<a class="font-bold text-primary text-xl" href="index.html">TARU BALI</a>
-<nav class="flex gap-4">
-<a href="index.html">Beranda</a>
-<a class="border-b-2 border-secondary-container" href="tentang-kami.html">Tentang Kami</a>
-</nav>
+
+<body class="bg-stone-50 text-gray-800">
+
+<!-- NAVBAR -->
+
+<header class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-md">
+
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+        <a href="index.html" class="flex items-center gap-3">
+
+            <div class="w-11 h-11 rounded-full bg-gradient-to-br from-green-700 to-green-900 flex items-center justify-center text-xl">
+                🌿
+            </div>
+
+            <div>
+                <div class="text-2xl font-extrabold text-green-900">
+                    TARU BALI
+                </div>
+
+                <div class="text-[10px] tracking-[3px] text-yellow-700 font-semibold">
+                    WARISAN FLORA BALI
+                </div>
+            </div>
+
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold">
+
+            <a href="index.html" class="nav-link text-gray-700 hover:text-green-800">
+                Beranda
+            </a>
+
+            <a href="tentang-kami.html" class="nav-link text-green-900">
+                Tentang Kami
+            </a>
+
+            <a href="makna-tanaman.html" class="nav-link text-gray-700 hover:text-green-800">
+                Makna Tanaman
+            </a>
+
+            <a href="fungsi.html" class="nav-link text-gray-700 hover:text-green-800">
+                Fungsi
+            </a>
+
+            <a href="jenis-tanaman.html" class="nav-link text-gray-700 hover:text-green-800">
+                Jenis Tanaman
+            </a>
+
+            <a href="peta-sebaran.html" class="nav-link text-gray-700 hover:text-green-800">
+                Peta Sebaran
+            </a>
+
+        </nav>
+
+        <button class="lg:hidden w-11 h-11 rounded-xl bg-green-100 text-green-900 text-2xl">
+            ☰
+        </button>
+
+    </div>
+
 </header>
-<main class="flex-grow max-w-screen-2xl mx-auto w-full px-margin-desktop">
-<section class="grid grid-cols-1 md:grid-cols-2 gap-lg items-center">
-<div>
-<h1 class="text-5xl font-bold text-primary mb-6">Akar Spiritual <br/><span class="text-secondary-container">Taru Bali</span></h1>
-<p class="text-lg text-on-surface-variant mb-4">Nama TARU BALI berasal dari kata 'Taru' yang dalam bahasa Sanskerta berarti pohon atau tumbuhan.</p>
-</div>
-<div class="rounded-xl overflow-hidden h-[400px]">
-<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB86-Qmzesi9aKwNcLLpzyjXv3h_TPKizGRDks7UJZlBy_UPT0j_93TzN_z05nvyhKcOJhUjAU8sIS2LfmomydgWxYaD7tsqwTPYElBpoFV1W_Dh2qLg2_psZa9QgRYsY_JvB5DBkgpLRLOrvhfK8Fy0rjmpXGYWTHBnjkKa5jM68zycZBxnYsoUWQqtknO4Bp8g7h-Zk2z5uDBX2tbMwj4Zq6b-N5nYaYeIQ_UPrEqER62Hn46RWtG" alt="Taru Bali Nature"/>
-</div>
+
+
+<!-- HERO -->
+
+<section class="hero text-white pt-36 pb-20">
+
+    <div class="max-w-5xl mx-auto px-6 text-center">
+
+        <div class="text-6xl mb-6">
+            🌿
+        </div>
+
+        <p class="text-yellow-300 font-bold tracking-[4px] text-sm mb-4">
+            TENTANG TARU BALI
+        </p>
+
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">
+            Mengenal Lebih Dekat
+            <span class="text-yellow-300">
+                TARU BALI
+            </span>
+        </h1>
+
+        <p class="text-lg md:text-xl text-green-50 max-w-3xl mx-auto leading-relaxed">
+            Sebuah media edukasi digital yang memperkenalkan kekayaan tanaman upakara,
+            makna filosofis, fungsi, serta pentingnya pelestarian budaya dan lingkungan Bali.
+        </p>
+
+    </div>
+
 </section>
-</main>
-<footer class="mt-auto py-8 text-center border-t">© 2024 TARU BALI</footer>
-</body></html>
+
+<div class="divider"></div>
+
+
+<!-- ARTI NAMA -->
+
+<section class="py-20 bg-white">
+
+    <div class="max-w-6xl mx-auto px-6">
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+            <div>
+
+                <span class="text-yellow-600 font-bold tracking-widest text-sm">
+                    MAKNA NAMA
+                </span>
+
+                <h2 class="text-4xl md:text-5xl font-bold text-green-900 mt-3 mb-6">
+                    Mengapa TARU BALI?
+                </h2>
+
+                <p class="text-gray-600 text-lg leading-relaxed mb-5">
+                    Nama <strong class="text-green-800">TARU BALI</strong> berasal dari kata
+                    "Taru" yang berarti pohon atau tumbuhan. Kata tersebut dipadukan dengan
+                    "Bali" yang menunjukkan kekayaan tumbuhan yang memiliki keterkaitan dengan
+                    kehidupan, tradisi, dan budaya masyarakat Bali.
+                </p>
+
+                <p class="text-gray-600 text-lg leading-relaxed">
+                    Oleh karena itu, TARU BALI dimaknai sebagai media yang mengajak masyarakat,
+                    khususnya generasi muda, untuk mengenal berbagai tanaman yang digunakan
+                    dalam upacara keagamaan serta memahami nilai budaya yang terkandung di dalamnya.
+                </p>
+
+            </div>
+
+
+            <div class="bg-gradient-to-br from-green-50 via-yellow-50 to-white rounded-3xl p-10 border border-green-100 shadow-lg">
+
+                <div class="text-center">
+
+                    <div class="text-8xl mb-5">
+                        🌳
+                    </div>
+
+                    <h3 class="text-3xl font-bold text-green-900">
+                        TARU
+                    </h3>
+
+                    <p class="text-yellow-700 font-semibold tracking-widest mt-2">
+                        TUMBUHAN / POHON
+                    </p>
+
+                    <div class="w-20 h-1 bg-yellow-400 mx-auto my-6 rounded-full"></div>
+
+                    <h3 class="text-3xl font-bold text-green-900">
+                        BALI
+                    </h3>
+
+                    <p class="text-gray-600 mt-2">
+                        Kekayaan flora dan budaya Pulau Bali
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TUJUAN -->
+
+<section class="py-20 bg-gradient-to-b from-green-50 to-white">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-14">
+
+            <span class="text-green-700 font-bold tracking-widest text-sm">
+                TUJUAN
+            </span>
+
+            <h2 class="text-4xl md:text-5xl font-bold text-green-900 mt-3">
+                Mengapa Website Ini Dibuat?
+            </h2>
+
+            <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+                TARU BALI hadir untuk menjembatani pengetahuan tradisional dengan teknologi digital.
+            </p>
+
+        </div>
+
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+
+            <div class="card bg-white p-8 rounded-3xl border border-green-200">
+
+                <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center text-3xl mb-6">
+                    📚
+                </div>
+
+                <h3 class="text-2xl font-bold text-green-900 mb-3">
+                    Edukasi
+                </h3>
+
+                <p class="text-gray-600 leading-relaxed">
+                    Menyediakan informasi yang mudah dipahami mengenai tanaman upakara dan budaya Bali.
+                </p>
+
+            </div>
+
+
+            <div class="card bg-white p-8 rounded-3xl border border-yellow-200">
+
+                <div class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center text-3xl mb-6">
+                    🌱
+                </div>
+
+                <h3 class="text-2xl font-bold text-green-900 mb-3">
+                    Pelestarian
+                </h3>
+
+                <p class="text-gray-600 leading-relaxed">
+                    Mendorong kepedulian terhadap keberadaan dan kelestarian tanaman upakara.
+                </p>
+
+            </div>
+
+
+            <div class="card bg-white p-8 rounded-3xl border border-pink-200">
+
+                <div class="w-16 h-16 bg-pink-100 rounded-2xl flex items-center justify-center text-3xl mb-6">
+                    🌺
+                </div>
+
+                <h3 class="text-2xl font-bold text-green-900 mb-3">
+                    Budaya
+                </h3>
+
+                <p class="text-gray-600 leading-relaxed">
+                    Mengenalkan hubungan antara tanaman, tradisi, filosofi, dan kehidupan masyarakat Bali.
+                </p>
+
+            </div>
+
+
+            <div class="card bg-white p-8 rounded-3xl border border-blue-200">
+
+                <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl mb-6">
+                    💻
+                </div>
+
+                <h3 class="text-2xl font-bold text-green-900 mb-3">
+                    Digitalisasi
+                </h3>
+
+                <p class="text-gray-600 leading-relaxed">
+                    Memanfaatkan teknologi sebagai sarana untuk menyebarluaskan pengetahuan budaya Bali.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- VISI -->
+
+<section class="py-20 bg-white">
+
+    <div class="max-w-5xl mx-auto px-6">
+
+        <div class="bg-gradient-to-br from-green-900 via-green-800 to-green-900 rounded-[2rem] p-10 md:p-16 text-white text-center shadow-xl">
+
+            <div class="text-5xl mb-5">
+                🌺
+            </div>
+
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                Visi TARU BALI
+            </h2>
+
+            <p class="text-lg md:text-xl text-green-100 leading-relaxed max-w-3xl mx-auto">
+                Menjadi media edukasi digital yang membantu generasi muda mengenal,
+                memahami, dan ikut melestarikan tanaman upakara sebagai bagian dari
+                kekayaan budaya dan lingkungan Bali.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MANFAAT -->
+
+<section class="py-20 bg-stone-50">
+
+    <div class="max-w-6xl mx-auto px-6">
+
+        <div class="text-center mb-12">
+
+            <span class="text-red-600 font-bold tracking-widest text-sm">
+                MANFAAT
+            </span>
+
+            <h2 class="text-4xl font-bold text-green-900 mt-3">
+                Manfaat TARU BALI
+            </h2>
+
+        </div>
+
+
+        <div class="space-y-5">
+
+            <div class="bg-white p-6 rounded-2xl border-l-4 border-green-600 shadow-sm">
+                <strong class="text-green-900">
+                    🌿 Sebagai sumber informasi
+                </strong>
+
+                <p class="text-gray-600 mt-2">
+                    Membantu pengguna memperoleh informasi mengenai berbagai tanaman yang digunakan dalam sarana upakara.
+                </p>
+            </div>
+
+
+            <div class="bg-white p-6 rounded-2xl border-l-4 border-yellow-500 shadow-sm">
+                <strong class="text-green-900">
+                    📖 Sebagai media pembelajaran
+                </strong>
+
+                <p class="text-gray-600 mt-2">
+                    Dapat dimanfaatkan sebagai media pembelajaran untuk mengenal tanaman, budaya, dan kearifan lokal Bali.
+                </p>
+            </div>
+
+
+            <div class="bg-white p-6 rounded-2xl border-l-4 border-red-500 shadow-sm">
+                <strong class="text-green-900">
+                    🌱 Mendukung pelestarian
+                </strong>
+
+                <p class="text-gray-600 mt-2">
+                    Meningkatkan kesadaran mengenai pentingnya menjaga keberadaan tanaman upakara dan lingkungan.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="py-20 bg-gradient-to-r from-green-900 to-green-800 text-white text-center">
+
+    <div class="max-w-4xl mx-auto px-6">
+
+        <div class="text-5xl mb-5">
+            🌿
+        </div>
+
+        <h2 class="text-4xl md:text-5xl font-bold mb-5">
+            Mari Mengenal Kekayaan Flora Bali
+        </h2>
+
+        <p class="text-green-100 text-lg mb-8">
+            Jelajahi berbagai tanaman upakara dan temukan makna yang terkandung di dalamnya.
+        </p>
+
+        <a href="jenis-tanaman.html"
+           class="inline-block bg-yellow-400 text-green-950 px-8 py-4 rounded-full font-bold hover:bg-yellow-300 transition">
+            Jelajahi Jenis Tanaman →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="bg-green-950 text-white py-10">
+
+    <div class="max-w-7xl mx-auto px-6 text-center">
+
+        <div class="text-2xl font-bold mb-3">
+            🌿 TARU BALI
+        </div>
+
+        <p class="text-green-300">
+            Pusat Edukasi Tanaman Upakara & Budaya Bali
+        </p>
+
+        <div class="border-t border-green-800 mt-6 pt-6 text-sm text-green-400">
+            © 2026 TARU BALI. Melestarikan Pusaka Budaya Bali.
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
+```
