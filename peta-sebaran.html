@@ -1,50 +1,271 @@
 <!DOCTYPE html>
-<html lang="id"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Peta Sebaran - TARU BALI</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peta Sebaran - TARU BALI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <style>
+        * {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        h1, h2, h3, .heading {
+            font-family: 'Playfair Display', serif;
+        }
+        #map {
+            width: 100%;
+            height: 500px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .location-marker {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .location-marker:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .marker-active {
+            box-shadow: 0 8px 24px rgba(26, 92, 58, 0.3);
+            border: 3px solid #1a5c3a;
+        }
+    </style>
 </head>
-<body class="bg-background text-on-background antialiased min-h-screen flex flex-col pt-20">
-<header class="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-md shadow-sm h-20 flex items-center px-8 justify-between">
-<a class="font-bold text-primary text-xl" href="index.html">TARU BALI</a>
-<nav class="hidden md:flex gap-4">
-<a href="index.html">Beranda</a>
-<a href="tentang-kami.html">Tentang Kami</a>
-<a href="makna-tanaman.html">Makna Tanaman</a>
-<a href="fungsi.html">Fungsi</a>
-<a href="jenis-tanaman.html">Jenis Tanaman</a>
-<a href="peta-sebaran.html" class="border-b-2 border-orange-500">Peta Sebaran</a>
-</nav>
-</header>
-<main class="flex-grow max-w-screen-2xl mx-auto w-full px-8 pt-12">
-<h1 class="text-4xl font-bold text-primary mb-8">Peta Sebaran Tanaman Upakara di Bali</h1>
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-<div class="lg:col-span-2">
-<div class="bg-surface-container-low p-8 rounded-lg h-96 flex items-center justify-center">
-<p class="text-on-surface-variant text-center text-lg">Peta interaktif tanaman upakara di wilayah Bali<br/><span class="text-sm">(Integrasi Google Maps dapat ditambahkan di sini)</span></p>
-</div>
-</div>
-<div class="space-y-4">
-<div class="bg-secondary-container/10 p-4 rounded-lg border-l-4 border-secondary-container">
-<h3 class="font-bold text-primary mb-2">📍 Ubud</h3>
-<p class="text-sm text-on-surface-variant">Pusat pertanian tradisional dengan tanaman padi dan bunga upakara yang subur.</p>
-</div>
-<div class="bg-secondary-container/10 p-4 rounded-lg border-l-4 border-secondary-container">
-<h3 class="font-bold text-primary mb-2">📍 Denpasar</h3>
-<p class="text-sm text-on-surface-variant">Pusat perdagangan tanaman upakara dengan pasar tradisional dan modern.</p>
-</div>
-<div class="bg-secondary-container/10 p-4 rounded-lg border-l-4 border-secondary-container">
-<h3 class="font-bold text-primary mb-2">📍 Klungkung</h3>
-<p class="text-sm text-on-surface-variant">Daerah dengan tradisi kuat dalam melestarikan tanaman upakara lokal.</p>
-</div>
-<div class="bg-secondary-container/10 p-4 rounded-lg border-l-4 border-secondary-container">
-<h3 class="font-bold text-primary mb-2">📍 Tabanan</h3>
-<p class="text-sm text-on-surface-variant">Wilayah penghasil bunga dan tanaman upakara berkualitas tinggi.</p>
-</div>
-</div>
-</div>
-</main>
-<footer class="mt-auto py-8 text-center border-t">© 2024 TARU BALI</footer>
-</body></html>
+<body class="bg-stone-50">
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-md">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-green-900">TARU BALI</a>
+            <nav class="hidden md:flex gap-8">
+                <a href="index.html" class="text-gray-700 hover:text-green-900">Beranda</a>
+                <a href="tentang-kami.html" class="text-gray-700 hover:text-green-900">Tentang Kami</a>
+                <a href="makna-tanaman.html" class="text-gray-700 hover:text-green-900">Makna Tanaman</a>
+                <a href="fungsi.html" class="text-gray-700 hover:text-green-900">Fungsi</a>
+                <a href="jenis-tanaman.html" class="text-gray-700 hover:text-green-900">Jenis Tanaman</a>
+                <a href="peta-sebaran.html" class="text-green-900 font-semibold border-b-2 border-green-900">Peta Sebaran</a>
+            </nav>
+            <button class="md:hidden">☰</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <h1 class="text-5xl font-bold text-green-900 mb-4">Sebaran Tanaman Upakara di Bali</h1>
+            <p class="text-lg text-gray-600 mb-12 max-w-3xl">
+                Kebebradaannya tersebar di berbagai wilayah Bali, baik di lingkungan masyarakat, pekarangan, kebun, maupun kawasan konservasi. Temukan lokasi habitat alami berbagai tanaman upakara di seluruh pelotok Bali. 
+                <strong>Klik marker pada peta untuk melihat informasi lokasi lengkap!</strong>
+            </p>
+
+            <!-- Map & Locations Grid -->
+            <div class="grid lg:grid-cols-3 gap-8 mb-12">
+                <!-- Map -->
+                <div class="lg:col-span-2">
+                    <div id="map"></div>
+                </div>
+
+                <!-- Location Cards -->
+                <div class="space-y-4">
+                    <h2 class="text-2xl font-bold text-green-900 mb-4">Lokasi Utama</h2>
+                    
+                    <div class="location-card bg-white rounded-lg p-4 border-l-4 border-green-700 cursor-pointer hover:shadow-lg transition" data-location="ubud" onclick="navigateToLocation('ubud')">
+                        <h3 class="font-bold text-green-900 mb-2 text-lg">📍 Ubud</h3>
+                        <p class="text-sm text-gray-700">Pusat pertanian tradisional dengan tanaman padi dan bunga upakara yang subur. Terkenal dengan pasar bunga dan tanaman upakara harian.</p>
+                        <span class="text-xs text-green-700 font-semibold mt-2 inline-block">Klik untuk ke peta</span>
+                    </div>
+
+                    <div class="location-card bg-white rounded-lg p-4 border-l-4 border-blue-700 cursor-pointer hover:shadow-lg transition" data-location="denpasar" onclick="navigateToLocation('denpasar')">
+                        <h3 class="font-bold text-green-900 mb-2 text-lg">📍 Denpasar</h3>
+                        <p class="text-sm text-gray-700">Pusat perdagangan tanaman upakara dengan pasar tradisional dan modern. Banyak penyuplai tanaman untuk kebutuhan upacara di seluruh Bali.</p>
+                        <span class="text-xs text-blue-700 font-semibold mt-2 inline-block">Klik untuk ke peta</span>
+                    </div>
+
+                    <div class="location-card bg-white rounded-lg p-4 border-l-4 border-purple-700 cursor-pointer hover:shadow-lg transition" data-location="klungkung" onclick="navigateToLocation('klungkung')">
+                        <h3 class="font-bold text-green-900 mb-2 text-lg">📍 Klungkung</h3>
+                        <p class="text-sm text-gray-700">Daerah dengan tradisi kuat dalam melestarikan tanaman upakara lokal. Banyak kebun tradisional yang diwariskan turun-temurun.</p>
+                        <span class="text-xs text-purple-700 font-semibold mt-2 inline-block">Klik untuk ke peta</span>
+                    </div>
+
+                    <div class="location-card bg-white rounded-lg p-4 border-l-4 border-amber-700 cursor-pointer hover:shadow-lg transition" data-location="tabanan" onclick="navigateToLocation('tabanan')">
+                        <h3 class="font-bold text-green-900 mb-2 text-lg">📍 Tabanan</h3>
+                        <p class="text-sm text-gray-700">Wilayah penghasil bunga dan tanaman upakara berkualitas tinggi. Terkenal dengan perkebunan bunga cempaka dan teratai yang luas.</p>
+                        <span class="text-xs text-amber-700 font-semibold mt-2 inline-block">Klik untuk ke peta</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabel Tanaman Menurut Wilayah -->
+            <div class="bg-white rounded-lg shadow-md p-8 mb-12">
+                <h2 class="text-2xl font-bold text-green-900 mb-6">Tanaman Upakara Menurut Wilayah</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-green-100 border-b-2 border-green-900">
+                                <th class="px-4 py-3 text-left font-bold text-green-900">Wilayah</th>
+                                <th class="px-4 py-3 text-left font-bold text-green-900">Tanaman Utama</th>
+                                <th class="px-4 py-3 text-left font-bold text-green-900">Keunggulan Lokal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white border-b hover:bg-green-50">
+                                <td class="px-4 py-3 font-semibold text-green-900">Ubud</td>
+                                <td class="px-4 py-3">Padi, Teratai, Bunga Cempaka</td>
+                                <td class="px-4 py-3">Sistem pertanian irigasi tradisional yang efisien</td>
+                            </tr>
+                            <tr class="bg-gray-50 border-b hover:bg-green-50">
+                                <td class="px-4 py-3 font-semibold text-green-900">Denpasar</td>
+                                <td class="px-4 py-3">Melati, Bunga Jepun, Pandan Wangi</td>
+                                <td class="px-4 py-3">Pusat distribusi dan perdagangan utama</td>
+                            </tr>
+                            <tr class="bg-white border-b hover:bg-green-50">
+                                <td class="px-4 py-3 font-semibold text-green-900">Klungkung</td>
+                                <td class="px-4 py-3">Beringin, Sirih, Bunga Sandat</td>
+                                <td class="px-4 py-3">Pelestarian tanaman endemik dan tradisional</td>
+                            </tr>
+                            <tr class="bg-gray-50 border-b hover:bg-green-50">
+                                <td class="px-4 py-3 font-semibold text-green-900">Tabanan</td>
+                                <td class="px-4 py-3">Cempaka Putih, Teratai, Kunyit</td>
+                                <td class="px-4 py-3">Perkebunan bunga berkualitas premium</td>
+                            </tr>
+                            <tr class="bg-white border-b hover:bg-green-50">
+                                <td class="px-4 py-3 font-semibold text-green-900">Buleleng</td>
+                                <td class="px-4 py-3">Beringin, Majegau, Jahe</td>
+                                <td class="px-4 py-3">Tanaman umbi dan obat tradisional</td>
+                            </tr>
+                            <tr class="bg-gray-50 hover:bg-green-50">
+                                <td class="px-4 py-3 font-semibold text-green-900">Bangli</td>
+                                <td class="px-4 py-3">Padi, Cempaka, Kunyit</td>
+                                <td class="px-4 py-3">Ketinggian tanah cocok untuk tanaman premium</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Informasi Pelestarian -->
+            <div class="bg-green-50 rounded-lg p-8 border-l-4 border-green-700">
+                <h2 class="text-2xl font-bold text-green-900 mb-4">💚 Program Pelestarian Tanaman Upakara</h2>
+                <p class="text-gray-700 mb-4">
+                    Setiap wilayah di Bali memiliki program khusus untuk melestarikan tanaman upakara. Beberapa inisiatif termasuk:
+                </p>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-start">
+                        <span class="text-green-700 font-bold mr-3">✓</span>
+                        <span><strong>Kebun Raya Bali:</strong> Melestarikan koleksi tanaman upakara langka dan endemik</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-700 font-bold mr-3">✓</span>
+                        <span><strong>Program Komunitas:</strong> Pelatihan masyarakat lokal dalam budidaya tanaman upakara</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-700 font-bold mr-3">✓</span>
+                        <span><strong>Kemitraan Petani:</strong> Dukungan kepada petani lokal untuk menjaga kualitas dan keberlanjutan tanaman</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-700 font-bold mr-3">✓</span>
+                        <span><strong>Penelitian Etnobotani:</strong> Studi mendalam tentang penggunaan tradisional dan manfaat tanaman upakara</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-900 text-white py-8 text-center border-t">
+        <p>© 2026 TARU BALI. Melestarikan Pusaka Budaya Bali.</p>
+    </footer>
+
+    <script>
+        // Data lokasi dengan koordinat
+        const locations = {
+            ubud: {
+                lat: -8.5069,
+                lng: 115.2625,
+                name: "Ubud",
+                tanaman: ["Padi", "Teratai", "Bunga Cempaka"],
+                color: '#10b981'
+            },
+            denpasar: {
+                lat: -8.6705,
+                lng: 115.2126,
+                name: "Denpasar",
+                tanaman: ["Melati", "Bunga Jepun", "Pandan Wangi"],
+                color: '#3b82f6'
+            },
+            klungkung: {
+                lat: -8.7333,
+                lng: 115.3667,
+                name: "Klungkung",
+                tanaman: ["Beringin", "Sirih", "Bunga Sandat"],
+                color: '#a855f7'
+            },
+            tabanan: {
+                lat: -8.5,
+                lng: 115.1,
+                name: "Tabanan",
+                tanaman: ["Cempaka Putih", "Teratai", "Kunyit"],
+                color: '#d97706'
+            }
+        };
+
+        // Initialize map
+        const map = L.map('map').setView([-8.5, 115.3], 10);
+        
+        // Add tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors',
+            maxZoom: 19
+        }).addTo(map);
+
+        // Add markers
+        Object.entries(locations).forEach(([key, location]) => {
+            const marker = L.circleMarker([location.lat, location.lng], {
+                radius: 20,
+                fillColor: location.color,
+                color: '#fff',
+                weight: 3,
+                opacity: 1,
+                fillOpacity: 0.8
+            }).addTo(map);
+
+            marker.bindPopup(`
+                <div class="font-bold text-green-900">${location.name}</div>
+                <div class="text-sm text-gray-700 mt-2">
+                    <strong>Tanaman Utama:</strong><br>
+                    ${location.tanaman.join(', ')}
+                </div>
+            `);
+
+            marker.on('click', function() {
+                map.setView([location.lat, location.lng], 12);
+                highlightLocation(key);
+            });
+        });
+
+        // Highlight location
+        function highlightLocation(key) {
+            document.querySelectorAll('.location-card').forEach(card => {
+                card.classList.remove('marker-active');
+            });
+            const card = document.querySelector(`[data-location="${key}"]`);
+            if (card) {
+                card.classList.add('marker-active');
+                card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+
+        // Navigate to location
+        function navigateToLocation(key) {
+            const location = locations[key];
+            map.flyTo([location.lat, location.lng], 12, {
+                duration: 1.5
+            });
+            highlightLocation(key);
+        }
+    </script>
+</body>
+</html>
