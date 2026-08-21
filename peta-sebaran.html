@@ -1,23 +1,516 @@
-<nav>
+<!DOCTYPE html>
+<html lang="id">
 
-    <a href="index.html">
-        Beranda
-    </a>
+<head>
 
-    <a href="tentang.html">
-        Tentang Kami
-    </a>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <a href="fungsi.html">
-        Fungsi
-    </a>
+    <title>Peta Sebaran - TARU BALI</title>
 
-    <a href="jenis-tanaman.html">
-        Jenis Tanaman
-    </a>
+    <style>
 
-    <a href="peta-sebaran.html">
-        Peta Sebaran
-    </a>
+        * {
+            box-sizing: border-box;
+        }
 
-</nav>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8f3;
+            color: #1f2937;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: white;
+            box-shadow: 0 2px 12px rgba(0,0,0,.08);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: auto;
+            padding: 16px 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 25px;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: #14532d;
+            font-size: 25px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .logo-small {
+            display: block;
+            font-size: 9px;
+            letter-spacing: 3px;
+            color: #a16207;
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #374151;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #166534;
+        }
+
+        .hero {
+            padding: 75px 25px;
+            text-align: center;
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #14532d,
+                    #15803d
+                );
+        }
+
+        .hero-icon {
+            font-size: 70px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin: 15px 0;
+        }
+
+        .hero p {
+            max-width: 800px;
+            margin: auto;
+            color: #dcfce7;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 65px 25px;
+        }
+
+        .map-box {
+            background: white;
+            border-radius: 25px;
+            padding: 35px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(0,0,0,.07);
+
+            margin-bottom: 35px;
+        }
+
+        .map-box h2 {
+            color: #14532d;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .bali-map {
+
+            min-height: 350px;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #dcfce7,
+                    #fef9c3
+                );
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 30px;
+        }
+
+        .bali-icon {
+            font-size: 100px;
+        }
+
+        .bali-map h3 {
+            color: #14532d;
+            font-size: 30px;
+            margin: 10px 0;
+        }
+
+        .bali-map p {
+            color: #4b5563;
+            line-height: 1.8;
+        }
+
+        .region-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .region-card {
+            background: white;
+            border-radius: 20px;
+            padding: 28px;
+
+            box-shadow:
+                0 7px 25px
+                rgba(0,0,0,.07);
+
+            border-left:
+                5px solid #166534;
+        }
+
+        .region-card h2 {
+            color: #14532d;
+            margin-top: 0;
+        }
+
+        .region-card p {
+            color: #6b7280;
+            line-height: 1.8;
+        }
+
+        .region-icon {
+            font-size: 45px;
+        }
+
+        footer {
+            background: #052e16;
+            color: white;
+            text-align: center;
+            padding: 45px 25px;
+        }
+
+        footer p {
+            color: #bbf7d0;
+        }
+
+        @media(max-width:850px) {
+
+            .header-inner {
+                flex-direction: column;
+            }
+
+            .region-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="header-inner">
+
+
+        <a
+            href="https://kadekpalguna78-commits.github.io/TARU-BALI/"
+            class="logo">
+
+            🌿 TARU BALI
+
+            <span class="logo-small">
+                WARISAN FLORA BALI
+            </span>
+
+        </a>
+
+
+        <nav>
+
+
+            <a
+                href="https://kadekpalguna78-commits.github.io/TARU-BALI/">
+
+                Beranda
+
+            </a>
+
+
+            <a
+                href="https://kadekpalguna78-commits.github.io/TARU-BALI/tentang.html">
+
+                Tentang Kami
+
+            </a>
+
+
+            <a
+                href="https://kadekpalguna78-commits.github.io/TARU-BALI/fungsi.html">
+
+                Fungsi
+
+            </a>
+
+
+            <a
+                href="https://kadekpalguna78-commits.github.io/TARU-BALI/jenis-tanaman.html">
+
+                Jenis Tanaman
+
+            </a>
+
+
+            <a
+                href="https://kadekpalguna78-commits.github.io/TARU-BALI/peta-sebaran.html"
+                class="active">
+
+                Peta Sebaran
+
+            </a>
+
+
+        </nav>
+
+
+    </div>
+
+</header>
+
+
+
+<section class="hero">
+
+    <div class="hero-icon">
+        🗺️
+    </div>
+
+    <h1>
+        Peta Sebaran Tanaman Upakara
+    </h1>
+
+    <p>
+        Informasi mengenai persebaran tanaman yang
+        berkaitan dengan budaya dan kehidupan masyarakat
+        di berbagai wilayah Bali.
+    </p>
+
+</section>
+
+
+
+<section class="container">
+
+
+    <div class="map-box">
+
+        <h2>
+            🌴 Persebaran Tanaman di Bali
+        </h2>
+
+
+        <div class="bali-map">
+
+
+            <div>
+
+                <div class="bali-icon">
+                    🏝️
+                </div>
+
+
+                <h3>
+                    Pulau Bali
+                </h3>
+
+
+                <p>
+
+                    Tanaman yang digunakan dalam kehidupan
+                    dan budaya masyarakat dapat ditemukan
+                    di berbagai wilayah Bali.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="region-grid">
+
+
+        <div class="region-card">
+
+            <div class="region-icon">
+                🌿
+            </div>
+
+            <h2>
+                Buleleng
+            </h2>
+
+            <p>
+                Wilayah Buleleng memiliki berbagai jenis
+                tanaman yang tumbuh di kawasan perkebunan,
+                pekarangan, dan lingkungan masyarakat.
+            </p>
+
+        </div>
+
+
+        <div class="region-card">
+
+            <div class="region-icon">
+                🌱
+            </div>
+
+            <h2>
+                Tabanan
+            </h2>
+
+            <p>
+                Tabanan memiliki wilayah pertanian dan
+                perkebunan yang mendukung keberadaan
+                berbagai jenis tanaman.
+            </p>
+
+        </div>
+
+
+        <div class="region-card">
+
+            <div class="region-icon">
+                🌺
+            </div>
+
+            <h2>
+                Gianyar
+            </h2>
+
+            <p>
+                Tanaman yang berkaitan dengan kegiatan
+                adat dan budaya dapat ditemukan di berbagai
+                lingkungan masyarakat Gianyar.
+            </p>
+
+        </div>
+
+
+        <div class="region-card">
+
+            <div class="region-icon">
+                🌴
+            </div>
+
+            <h2>
+                Badung
+            </h2>
+
+            <p>
+                Berbagai tanaman dapat ditemukan pada
+                lingkungan pekarangan, taman, dan kawasan
+                masyarakat di Badung.
+            </p>
+
+        </div>
+
+
+        <div class="region-card">
+
+            <div class="region-icon">
+                🌼
+            </div>
+
+            <h2>
+                Karangasem
+            </h2>
+
+            <p>
+                Karangasem memiliki keanekaragaman tanaman
+                yang tumbuh di kawasan pedesaan dan
+                perkebunan.
+            </p>
+
+        </div>
+
+
+        <div class="region-card">
+
+            <div class="region-icon">
+                🍃
+            </div>
+
+            <h2>
+                Klungkung
+            </h2>
+
+            <p>
+                Tanaman yang digunakan dalam kehidupan
+                masyarakat dan kegiatan adat dapat ditemukan
+                di berbagai wilayah Klungkung.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<footer>
+
+    <h2>
+        🌿 TARU BALI
+    </h2>
+
+    <p>
+        Media edukasi tanaman dan budaya Bali.
+    </p>
+
+    <p>
+        © 2026 TARU BALI
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
