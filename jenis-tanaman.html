@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Jenis Tanaman Upakara - TARU BALI</title>
+    <title>Jenis Tanaman - TARU BALI</title>
 
     <style>
         * {
@@ -20,10 +20,10 @@
         }
 
         header {
+            background: white;
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: white;
             box-shadow: 0 2px 12px rgba(0,0,0,.08);
         }
 
@@ -55,7 +55,7 @@
 
         nav {
             display: flex;
-            gap: 24px;
+            gap: 22px;
             flex-wrap: wrap;
             justify-content: center;
         }
@@ -73,14 +73,14 @@
         }
 
         .hero {
-            padding: 75px 25px;
-            text-align: center;
+            background: linear-gradient(135deg,#14532d,#15803d);
             color: white;
-            background: linear-gradient(135deg, #14532d, #15803d);
+            text-align: center;
+            padding: 75px 25px;
         }
 
         .hero-icon {
-            font-size: 70px;
+            font-size: 65px;
         }
 
         .hero h1 {
@@ -89,16 +89,16 @@
         }
 
         .hero p {
-            max-width: 750px;
+            max-width: 800px;
             margin: auto;
             color: #dcfce7;
             line-height: 1.8;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1150px;
             margin: auto;
-            padding: 65px 25px;
+            padding: 60px 25px;
         }
 
         .search-box {
@@ -106,84 +106,97 @@
             padding: 25px;
             border-radius: 20px;
             box-shadow: 0 7px 25px rgba(0,0,0,.07);
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
 
         .search-box input {
             width: 100%;
-            padding: 16px 20px;
+            padding: 17px 20px;
             border: 2px solid #bbf7d0;
             border-radius: 12px;
-            outline: none;
             font-size: 16px;
+            outline: none;
         }
 
         .search-box input:focus {
             border-color: #166534;
         }
 
+        .search-info {
+            margin-top: 12px;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .category {
+            margin-bottom: 45px;
+        }
+
+        .category-title {
+            color: #14532d;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
         .plant-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
         }
 
         .plant-card {
             background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 7px 25px rgba(0,0,0,.07);
-            border-top: 5px solid #166534;
-            transition: .3s;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 6px 20px rgba(0,0,0,.06);
+            border-top: 4px solid #166534;
         }
 
-        .plant-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .plant-icon {
-            font-size: 50px;
-        }
-
-        .plant-card h2 {
+        .plant-card h3 {
             color: #14532d;
-            margin: 12px 0;
-        }
-
-        .plant-card p {
-            color: #6b7280;
-            line-height: 1.8;
+            font-size: 20px;
+            margin: 0 0 8px;
         }
 
         .latin {
             color: #a16207;
             font-style: italic;
             font-size: 14px;
+            margin-bottom: 15px;
         }
 
-        .function {
+        .plant-card p {
+            color: #4b5563;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .badge {
             display: inline-block;
-            margin-top: 10px;
-            padding: 7px 12px;
+            margin-top: 8px;
+            padding: 6px 10px;
             background: #dcfce7;
             color: #166534;
             border-radius: 20px;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: bold;
         }
 
-        .empty {
+        .no-result {
             display: none;
             text-align: center;
-            padding: 40px;
+            background: white;
+            padding: 45px;
+            border-radius: 18px;
             color: #6b7280;
+            margin-bottom: 30px;
         }
 
         footer {
             background: #052e16;
             color: white;
             text-align: center;
-            padding: 45px 25px;
+            padding: 40px 25px;
         }
 
         footer p {
@@ -212,39 +225,30 @@
 
     <div class="header-inner">
 
-        <a
-            href="https://kadekpalguna78-commits.github.io/TARU-BALI/"
-            class="logo">
-
+        <a href="./index.html" class="logo">
             🌿 TARU BALI
-
-            <span class="logo-small">
-                WARISAN FLORA BALI
-            </span>
-
+            <span class="logo-small">WARISAN FLORA BALI</span>
         </a>
 
         <nav>
 
-            <a href="https://kadekpalguna78-commits.github.io/TARU-BALI/">
+            <a href="./index.html">
                 Beranda
             </a>
 
-            <a href="https://kadekpalguna78-commits.github.io/TARU-BALI/tentang.html">
+            <a href="./tentang.html">
                 Tentang Kami
             </a>
 
-            <a href="https://kadekpalguna78-commits.github.io/TARU-BALI/fungsi.html">
+            <a href="./fungsi.html">
                 Fungsi
             </a>
 
-            <a
-                href="https://kadekpalguna78-commits.github.io/TARU-BALI/jenis-tanaman.html"
-                class="active">
+            <a href="./jenis-tanaman.html" class="active">
                 Jenis Tanaman
             </a>
 
-            <a href="https://kadekpalguna78-commits.github.io/TARU-BALI/peta-sebaran.html">
+            <a href="./peta-sebaran.html">
                 Peta Sebaran
             </a>
 
@@ -257,210 +261,993 @@
 
 <section class="hero">
 
-    <div class="hero-icon">
-        🌺
-    </div>
+    <div class="hero-icon">🌺</div>
 
-    <h1>
-        Jenis-Jenis Tanaman Upakara
-    </h1>
+    <h1>Jenis-Jenis Tanaman</h1>
 
     <p>
-        Mengenal berbagai tanaman yang berkaitan dengan
-        kehidupan, budaya, dan kegiatan upakara masyarakat Bali.
+        Jelajahi berbagai jenis tanaman yang berkaitan
+        dengan upakara, budaya, dan kehidupan masyarakat Bali.
     </p>
 
 </section>
 
 
-<section class="container">
+<main class="container">
+
 
     <div class="search-box">
 
         <input
             type="text"
             id="searchInput"
-            placeholder="🔍 Cari nama tanaman...">
+            placeholder="🔍 Cari nama lokal, nama Indonesia, atau nama Latin..."
+        >
+
+        <div class="search-info" id="searchInfo">
+            Menampilkan seluruh data tanaman.
+        </div>
 
     </div>
 
 
-    <div class="plant-grid" id="plantGrid">
+    <div class="no-result" id="noResult">
 
+        <h2>🌱 Tanaman tidak ditemukan</h2>
 
-        <div class="plant-card">
-
-            <div class="plant-icon">
-                🌴
-            </div>
-
-            <h2>
-                Kelapa
-            </h2>
-
-            <div class="latin">
-                Cocos nucifera
-            </div>
-
-            <p>
-                Tanaman yang banyak dimanfaatkan dalam
-                kehidupan dan berbagai kegiatan masyarakat Bali.
-            </p>
-
-            <span class="function">
-                Sarana Upakara
-            </span>
-
-        </div>
-
-
-        <div class="plant-card">
-
-            <div class="plant-icon">
-                🌺
-            </div>
-
-            <h2>
-                Kamboja
-            </h2>
-
-            <div class="latin">
-                Plumeria
-            </div>
-
-            <p>
-                Bunga yang banyak dijumpai di lingkungan
-                pura dan digunakan dalam kegiatan keagamaan.
-            </p>
-
-            <span class="function">
-                Bunga Upakara
-            </span>
-
-        </div>
-
-
-        <div class="plant-card">
-
-            <div class="plant-icon">
-                🌼
-            </div>
-
-            <h2>
-                Kenanga
-            </h2>
-
-            <div class="latin">
-                Cananga odorata
-            </div>
-
-            <p>
-                Tanaman berbunga harum yang dikenal
-                dalam berbagai kegiatan tradisional.
-            </p>
-
-            <span class="function">
-                Sarana Upakara
-            </span>
-
-        </div>
-
-
-        <div class="plant-card">
-
-            <div class="plant-icon">
-                🌿
-            </div>
-
-            <h2>
-                Pandan
-            </h2>
-
-            <div class="latin">
-                Pandanus amaryllifolius
-            </div>
-
-            <p>
-                Tanaman yang dimanfaatkan dalam kehidupan
-                sehari-hari dan berbagai kegiatan masyarakat.
-            </p>
-
-            <span class="function">
-                Kebutuhan Adat
-            </span>
-
-        </div>
-
-
-        <div class="plant-card">
-
-            <div class="plant-icon">
-                🍃
-            </div>
-
-            <h2>
-                Sirih
-            </h2>
-
-            <div class="latin">
-                Piper betle
-            </div>
-
-            <p>
-                Tanaman yang dikenal dalam berbagai tradisi
-                dan kegiatan masyarakat Bali.
-            </p>
-
-            <span class="function">
-                Tradisi
-            </span>
-
-        </div>
-
-
-        <div class="plant-card">
-
-            <div class="plant-icon">
-                🌱
-            </div>
-
-            <h2>
-                Pisang
-            </h2>
-
-            <div class="latin">
-                Musa
-            </div>
-
-            <p>
-                Tanaman yang memiliki berbagai manfaat
-                dan dimanfaatkan dalam kegiatan masyarakat.
-            </p>
-
-            <span class="function">
-                Sarana Upakara
-            </span>
-
-        </div>
-
+        <p>
+            Coba gunakan nama lokal, nama Indonesia,
+            atau nama Latin yang berbeda.
+        </p>
 
     </div>
 
 
-    <div class="empty" id="emptyMessage">
+    <!-- =========================
+         GUMI BANTEN
+    ========================== -->
 
-        Tanaman yang dicari tidak ditemukan.
+    <section class="category">
 
-    </div>
+        <h2 class="category-title">
+            🌿 Tanaman Upakara — Gumi Banten
+        </h2>
 
-</section>
+        <div class="plant-grid">
+
+
+            <div class="plant-card">
+                <h3>Alamanda</h3>
+                <div class="latin">Allamanda cathartica</div>
+                <p>Bunga digunakan untuk canang dalam Panca Yadnya.</p>
+                <span class="badge">Gumi Banten</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Alang-alang</h3>
+                <div class="latin">Imperata cylindrica</div>
+                <p>Daun digunakan dalam Cirowista dan Saatmimang.</p>
+                <span class="badge">Gumi Banten</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Ancak</h3>
+                <div class="latin">Ficus religiosa</div>
+                <p>Daun digunakan sebagai bahan Banten Dewa-Dewi.</p>
+                <span class="badge">Gumi Banten</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Andong Bang</h3>
+                <div class="latin">Cordyline sp.</div>
+                <p>Daun digunakan dalam Banten Biyukaon dan Sayut Pasupati.</p>
+                <span class="badge">Gumi Banten</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Andong Ireng</h3>
+                <div class="latin">Cordyline sp.</div>
+                <p>Daun digunakan dalam Banten Catur.</p>
+                <span class="badge">Gumi Banten</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Asem</h3>
+                <div class="latin">Tamarindus indica</div>
+                <p>Buah digunakan dalam Banten Pedambel.</p>
+                <span class="badge">Gumi Banten</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Badung</h3>
+                <div class="latin">Garcinia dulcis</div>
+                <p>Buah dan kulit kayu digunakan dalam beberapa banten.</p>
+                <span class="badge">Gumi Banten</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Bangle</h3>
+                <div class="latin">Zingiber cassumunar</div>
+                <p>Daun dan umbi digunakan dalam Banten Pebersian Mati dan Pengadang-ngadangan.</p>
+                <span class="badge">Gumi Banten</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Base / Sirih</h3>
+                <div class="latin">Piper betle</div>
+                <p>Pucuk dan daun digunakan dalam berbagai kelengkapan upakara.</p>
+                <span class="badge">Gumi Banten</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Bawang Barak</h3>
+                <div class="latin">Allium cepa</div>
+                <p>Umbi digunakan dalam Banten Segehan.</p>
+                <span class="badge">Gumi Banten</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Bayam</h3>
+                <div class="latin">Amaranthus spinosus</div>
+                <p>Daun digunakan sebagai lelampadan dalam banten suci.</p>
+                <span class="badge">Gumi Banten</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Belimbing</h3>
+                <div class="latin">Averrhoa bilimbi</div>
+                <p>Buah digunakan sebagai panca dalam Banten Suci.</p>
+                <span class="badge">Gumi Banten</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Beringin</h3>
+                <div class="latin">Ficus benjamina L.</div>
+                <p>Daun digunakan dalam Banten Saraswati, Dewa-Dewi, Suci dan Puspa Lingga.</p>
+                <span class="badge">Gumi Banten</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Biaung Gadung</h3>
+                <div class="latin">Dioscorea alata</div>
+                <p>Umbi digunakan sebagai bahan Banten Pengadang-ngadangan.</p>
+                <span class="badge">Gumi Banten</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Bilwa / Bila</h3>
+                <div class="latin">Crescentia cujete</div>
+                <p>Daun digunakan dalam Sayut Siwa Lingga.</p>
+                <span class="badge">Gumi Banten</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Biyu / Pisang</h3>
+                <div class="latin">Musa paradisiaca L.</div>
+                <p>Berbagai bagian pisang digunakan dalam beberapa upakara.</p>
+                <span class="badge">Gumi Banten</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Cemara</h3>
+                <div class="latin">Casuarina junghuhniana</div>
+                <p>Daun digunakan dalam bagia pule kerti dan pancalayuan.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Cengkeh</h3>
+                <div class="latin">Eugenia aromatic</div>
+                <p>Bunga digunakan dalam Pitra Yadnya dan kelengkapan bahan upakara.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Cepaka / Cempaka</h3>
+                <div class="latin">Michelia alba</div>
+                <p>Bagian tanaman digunakan dalam berbagai kebutuhan upakara.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Pandan Wangi</h3>
+                <div class="latin">Pandanus amaryllifolius</div>
+                <p>Daun digunakan untuk canang dan pesucian.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Padi</h3>
+                <div class="latin">Oryza sativa L.</div>
+                <p>Biji digunakan dalam Banten Catur.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Paku Aji</h3>
+                <div class="latin">Cycas rumphii</div>
+                <p>Daun digunakan dalam upakara Ngaben.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Pala</h3>
+                <div class="latin">Myristica fragrans</div>
+                <p>Buah digunakan dalam Banten Pebersihan Mati.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Pucuk Bang</h3>
+                <div class="latin">Hibiscus rosa-sinensis L.</div>
+                <p>Bunga digunakan dalam Banten Sesayut.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Ratna Kenop</h3>
+                <div class="latin">Gomphrena globosa L.</div>
+                <p>Bunga dan daun digunakan dalam berbagai upakara.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Paya Pare</h3>
+                <div class="latin">Momordica charantia</div>
+                <p>Bunga dan buah digunakan dalam beberapa banten.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Peji / Palem</h3>
+                <div class="latin">Pinanga coronata</div>
+                <p>Batang dan daun dipasang di sanggah surya.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Gedang / Pepaya</h3>
+                <div class="latin">Carica papaya</div>
+                <p>Buah digunakan dalam Banten Durmangala.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Poh / Mangga</h3>
+                <div class="latin">Mangifera indica</div>
+                <p>Buah digunakan dalam Banten Suci dan raka-raka.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Silik / Srikaya</h3>
+                <div class="latin">Annona squamosa</div>
+                <p>Buah digunakan sebagai raka-raka.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Suweg</h3>
+                <div class="latin">Amorphophallus paeoniifolius</div>
+                <p>Umbi digunakan dalam Banten Panjang Ilang.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Tabia / Cabai</h3>
+                <div class="latin">Capsicum annuum</div>
+                <p>Buah digunakan dalam Banten Pengadang-ngadangan dan Panjang Ilang.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Tuwung Kokak</h3>
+                <div class="latin">Solanum torvum</div>
+                <p>Buah digunakan dalam Banten Pengadang-ngadangan.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Tibah / Mengkudu</h3>
+                <div class="latin">Morinda citrifolia</div>
+                <p>Buah digunakan dalam Banten Pepegat dan Pemangguhan.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Tebu</h3>
+                <div class="latin">Saccharum officinarum L.</div>
+                <p>Batang digunakan dalam berbagai jenis upakara.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Teleng</h3>
+                <div class="latin">Clitoria ternatea L.</div>
+                <p>Bunga digunakan dalam canang dan Banten Pebersian Mati.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Tunjung / Teratai</h3>
+                <div class="latin">Nymphaea stellata</div>
+                <p>Bunga digunakan dalam canang dan pesucian.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Tulasi / Selasih Miyik</h3>
+                <div class="latin">Ocimum tenuiflorum</div>
+                <p>Bunga digunakan dalam Puspa Lingga dan batang dalam Ngaben.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Tingkih / Kemiri</h3>
+                <div class="latin">Aleurites moluccanus</div>
+                <p>Buah digunakan dalam Banten Daksina.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Tiying Buluh</h3>
+                <div class="latin">Schizostachyum silicatum</div>
+                <p>Batang digunakan dalam upacara Ngaben.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Tiying Tali</h3>
+                <div class="latin">Gigantochloa apus</div>
+                <p>Daun digunakan untuk Tipat Pesor dan batang untuk berbagai upakara.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Pangi / Keluwek</h3>
+                <div class="latin">Pangium edule</div>
+                <p>Buah digunakan sebagai sarana Daksina.</p>
+                <span class="badge">Tanaman Upakara</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PUSPA DEWATA
+    ========================== -->
+
+    <section class="category">
+
+        <h2 class="category-title">
+            🌸 Tanaman Upakara — Puspa Dewata
+        </h2>
+
+        <div class="plant-grid">
+
+
+            <div class="plant-card">
+                <h3>Anyelir</h3>
+                <div class="latin">Dianthus caryophyllus</div>
+                <p>Bunga digunakan untuk canang.</p>
+                <span class="badge">Puspa Dewata</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Cempaka Kuning</h3>
+                <div class="latin">Michelia champaca</div>
+                <p>Bunga digunakan untuk canang dan pesucian.</p>
+                <span class="badge">Puspa Dewata</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Cempaka Putih</h3>
+                <div class="latin">Michelia alba</div>
+                <p>Bunga digunakan untuk canang dan pesucian.</p>
+                <span class="badge">Puspa Dewata</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Dewandaru</h3>
+                <div class="latin">Eugenia uniflora L.</div>
+                <p>Buah digunakan dalam Banten Catur.</p>
+                <span class="badge">Puspa Dewata</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Gemitir</h3>
+                <div class="latin">Tagetes erecta</div>
+                <p>Bunga digunakan untuk canang.</p>
+                <span class="badge">Puspa Dewata</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Jepun / Kamboja</h3>
+                <div class="latin">Plumeria acuminata</div>
+                <p>Bunga digunakan untuk canang dan pesucian.</p>
+                <span class="badge">Puspa Dewata</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Kananga / Sandat</h3>
+                <div class="latin">Cananga odorata</div>
+                <p>Bunga digunakan untuk canang dan pesucian.</p>
+                <span class="badge">Puspa Dewata</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Kembang Jempiring</h3>
+                <div class="latin">Gardenia jasminoides</div>
+                <p>Bunga digunakan untuk canang dan pesucian.</p>
+                <span class="badge">Puspa Dewata</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Kembang Kasna</h3>
+                <div class="latin">Edelweiss anaphalis</div>
+                <p>Bunga digunakan untuk canang dan pesucian.</p>
+                <span class="badge">Puspa Dewata</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Kembang Kemuning</h3>
+                <div class="latin">Murraya paniculata</div>
+                <p>Bunga digunakan untuk canang.</p>
+                <span class="badge">Puspa Dewata</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Kembang Kertas</h3>
+                <div class="latin">Bougainvillea spectabilis</div>
+                <p>Bunga digunakan untuk canang.</p>
+                <span class="badge">Puspa Dewata</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Kembang Pacah</h3>
+                <div class="latin">Impatiens balsamina</div>
+                <p>Bunga digunakan untuk canang.</p>
+                <span class="badge">Puspa Dewata</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Kembang Seribu</h3>
+                <div class="latin">Hydrangea macrophylla</div>
+                <p>Bunga digunakan untuk canang.</p>
+                <span class="badge">Puspa Dewata</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Kembang Siulan</h3>
+                <div class="latin">Aglaia odorata</div>
+                <p>Bunga digunakan untuk canang.</p>
+                <span class="badge">Puspa Dewata</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Kembang Soka</h3>
+                <div class="latin">Ixora sp.</div>
+                <p>Bunga digunakan untuk canang.</p>
+                <span class="badge">Puspa Dewata</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Kemoning</h3>
+                <div class="latin">Flacourtia rukam</div>
+                <p>Bunga digunakan dalam canang dan Puspalingga.</p>
+                <span class="badge">Puspa Dewata</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Menuh / Melati</h3>
+                <div class="latin">Jasminum sambac</div>
+                <p>Bunga digunakan dalam Banten Pebersian Mati.</p>
+                <span class="badge">Puspa Dewata</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Mawa / Mawar</h3>
+                <div class="latin">Rosa L.</div>
+                <p>Bunga digunakan untuk canang.</p>
+                <span class="badge">Puspa Dewata</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Pucuk Bang</h3>
+                <div class="latin">Hibiscus rosa-sinensis L.</div>
+                <p>Bunga digunakan dalam Banten Sesayut dan canang.</p>
+                <span class="badge">Puspa Dewata</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Ratna Kenop</h3>
+                <div class="latin">Gomphrena globosa L.</div>
+                <p>Bunga digunakan dalam Puspa Lingga.</p>
+                <span class="badge">Puspa Dewata</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Soka</h3>
+                <div class="latin">Polyanthia sp.</div>
+                <p>Bunga digunakan untuk canang.</p>
+                <span class="badge">Puspa Dewata</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Sedap Malam</h3>
+                <div class="latin">Polianthes tuberosa</div>
+                <p>Bunga digunakan untuk canang.</p>
+                <span class="badge">Puspa Dewata</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Teleng</h3>
+                <div class="latin">Clitoria ternatea L.</div>
+                <p>Bunga digunakan untuk canang dan Banten Pebersian Mati.</p>
+                <span class="badge">Puspa Dewata</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Tunjung / Teratai</h3>
+                <div class="latin">Nymphaea stellata</div>
+                <p>Bunga digunakan untuk canang dan pesucian.</p>
+                <span class="badge">Puspa Dewata</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Tulasi / Selasih</h3>
+                <div class="latin">Ocimum tenuiflorum</div>
+                <p>Bunga digunakan sebagai Puspa Lingga.</p>
+                <span class="badge">Puspa Dewata</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TANAMAN LAIN DARI SUMBER
+    ========================== -->
+
+    <section class="category">
+
+        <h2 class="category-title">
+            🌱 Tanaman Lain dalam Data Sumber
+        </h2>
+
+        <div class="plant-grid">
+
+
+            <div class="plant-card">
+                <h3>Beluntas</h3>
+                <div class="latin">Pluchea indica</div>
+                <p>Tanaman yang tercantum dalam kelompok tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Mahoni</h3>
+                <div class="latin">Swietenia mahagoni</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Maja</h3>
+                <div class="latin">Aegle marmelos</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Majegau</h3>
+                <div class="latin">Dysoxylum parasiticum</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Manas / Nanas</h3>
+                <div class="latin">Ananas comosus</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Manggis</h3>
+                <div class="latin">Garcinia mangostana L.</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Meniran</h3>
+                <div class="latin">Phyllanthus niruri</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Menireng / Miana</h3>
+                <div class="latin">Coleus scutellarioides</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Mesui / Masoi</h3>
+                <div class="latin">Cryptocarya massoy</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Mica / Lada</h3>
+                <div class="latin">Piper nigrum L.</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Mimba</h3>
+                <div class="latin">Azadirachta indica</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Mitir / Gumitir</h3>
+                <div class="latin">Tagetes erecta</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Murbei</h3>
+                <div class="latin">Morus sp.</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Nangka</h3>
+                <div class="latin">Artocarpus heterophyllus Lam.</div>
+                <p>Tercantum dalam data sumber tanaman.</p>
+                <span class="badge">Data Sumber</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Nyuh Gading / Kelapa Gading</h3>
+                <div class="latin">Cocos nucifera L.</div>
+                <p>Tercantum dalam data tanaman.</p>
+                <span class="badge">Data Sumber</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Sambiloto</h3>
+                <div class="latin">Andrographis paniculata</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Pule</h3>
+                <div class="latin">Alstonia scholaris</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Puring</h3>
+                <div class="latin">Codiaeum variegatum</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Kumis Kucing</h3>
+                <div class="latin">Orthosiphon aristatus</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Jeruk Nipis</h3>
+                <div class="latin">Citrus aurantifolia</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Jeruk Purut</h3>
+                <div class="latin">Citrus hystrix</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Kangkung</h3>
+                <div class="latin">Ipomoea aquatica</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Kapulaga</h3>
+                <div class="latin">Amomum compactum</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Kunyit</h3>
+                <div class="latin">Curcuma domestica</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Lidah Buaya</h3>
+                <div class="latin">Aloe vera</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Delima</h3>
+                <div class="latin">Punica granatum</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Dadap</h3>
+                <div class="latin">Erythrina variegata</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Binahong</h3>
+                <div class="latin">Anredera cordifolia</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Brotowali</h3>
+                <div class="latin">Tinospora crispa</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Bayam Merah</h3>
+                <div class="latin">Amaranthus hybridus L.</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Belimbing</h3>
+                <div class="latin">Averrhoa carambola</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Ciplukan</h3>
+                <div class="latin">Physalis angulata</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Cereme</h3>
+                <div class="latin">Phyllanthus acidus</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Gamal</h3>
+                <div class="latin">Gliricidia sepium</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Gambir</h3>
+                <div class="latin">Uncaria gambir</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Gandola</h3>
+                <div class="latin">Basella rubra</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Gayam</h3>
+                <div class="latin">Inocarpus fagiferus</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Pepaya</h3>
+                <div class="latin">Carica papaya</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Juwet / Jamblang</h3>
+                <div class="latin">Syzygium cumini</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Kecubung</h3>
+                <div class="latin">Datura metel</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Kapok / Randu</h3>
+                <div class="latin">Ceiba pentandra</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Landep</h3>
+                <div class="latin">Barleria prionitis</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Liligundi</h3>
+                <div class="latin">Vitex trifolia</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+
+            <div class="plant-card">
+                <h3>Lengkuas</h3>
+                <div class="latin">Alpinia galanga</div>
+                <p>Tercantum dalam data tanaman Usada.</p>
+                <span class="badge">Usada</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
 
 
 <footer>
 
-    <h2>
-        🌿 TARU BALI
-    </h2>
+    <h2>🌿 TARU BALI</h2>
 
     <p>
         Media edukasi tanaman dan budaya Bali.
@@ -478,32 +1265,34 @@
     const searchInput =
         document.getElementById("searchInput");
 
-    const plantCards =
+    const cards =
         document.querySelectorAll(".plant-card");
 
-    const emptyMessage =
-        document.getElementById("emptyMessage");
+    const noResult =
+        document.getElementById("noResult");
+
+    const searchInfo =
+        document.getElementById("searchInfo");
 
 
     searchInput.addEventListener("input", function () {
 
         const keyword =
-            searchInput.value.toLowerCase().trim();
+            this.value.toLowerCase().trim();
 
-        let found = 0;
+        let total = 0;
 
 
-        plantCards.forEach(function(card) {
+        cards.forEach(function(card) {
 
             const text =
                 card.textContent.toLowerCase();
 
-
             if (text.includes(keyword)) {
 
-                card.style.display = "block";
+                card.style.display = "";
 
-                found++;
+                total++;
 
             } else {
 
@@ -514,19 +1303,35 @@
         });
 
 
-        if (found === 0) {
+        if (keyword === "") {
 
-            emptyMessage.style.display = "block";
+            searchInfo.textContent =
+                "Menampilkan seluruh data tanaman.";
 
         } else {
 
-            emptyMessage.style.display = "none";
+            searchInfo.textContent =
+                "Ditemukan " + total +
+                " tanaman untuk pencarian \"" +
+                keyword + "\".";
+
+        }
+
+
+        if (total === 0) {
+
+            noResult.style.display = "block";
+
+        } else {
+
+            noResult.style.display = "none";
 
         }
 
     });
 
 </script>
+
 
 </body>
 </html>
