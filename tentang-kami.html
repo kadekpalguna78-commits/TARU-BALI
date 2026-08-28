@@ -1,14 +1,22 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Tentang Kami - TARU BALI</title>
 
     <style>
+
         * {
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -18,14 +26,22 @@
             color: #1f2937;
         }
 
-        /* HEADER */
+
+        /* =========================
+           HEADER
+        ========================= */
+
         header {
             background: white;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+
+            box-shadow:
+                0 2px 12px
+                rgba(0, 0, 0, 0.08);
         }
+
 
         .header-inner {
             max-width: 1200px;
@@ -38,7 +54,11 @@
             gap: 25px;
         }
 
-        /* LOGO */
+
+        /* =========================
+           LOGO
+        ========================= */
+
         .logo {
             text-decoration: none;
             color: #14532d;
@@ -46,6 +66,7 @@
             font-weight: 800;
             white-space: nowrap;
         }
+
 
         .logo-small {
             display: block;
@@ -55,7 +76,11 @@
             margin-top: 3px;
         }
 
-        /* NAVIGASI */
+
+        /* =========================
+           NAVIGASI
+        ========================= */
+
         nav {
             display: flex;
             align-items: center;
@@ -63,6 +88,7 @@
             gap: 24px;
             flex-wrap: wrap;
         }
+
 
         nav a {
             text-decoration: none;
@@ -72,23 +98,30 @@
             transition: 0.3s;
         }
 
+
         nav a:hover {
             color: #166534;
         }
+
 
         nav a.active {
             color: #166534;
             font-weight: 700;
         }
 
-        /* HERO */
+
+        /* =========================
+           HERO
+        ========================= */
+
         .hero {
-            background: linear-gradient(
-                135deg,
-                #14532d,
-                #166534,
-                #15803d
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    #14532d,
+                    #166534,
+                    #15803d
+                );
 
             color: white;
             text-align: center;
@@ -96,40 +129,55 @@
             padding: 80px 25px;
         }
 
+
         .hero-icon {
             font-size: 70px;
             margin-bottom: 15px;
         }
+
 
         .hero h1 {
             font-size: 50px;
             margin: 0 0 15px;
         }
 
+
         .hero p {
             max-width: 750px;
             margin: auto;
+
             color: #dcfce7;
+
             font-size: 17px;
             line-height: 1.8;
         }
 
-        /* CONTENT */
+
+        /* =========================
+           CONTENT
+        ========================= */
+
         .container {
             max-width: 1050px;
             margin: auto;
             padding: 70px 25px;
         }
 
+
         .section {
             background: white;
+
             padding: 40px;
+
             border-radius: 22px;
+
             margin-bottom: 30px;
 
             box-shadow:
-                0 8px 25px rgba(0, 0, 0, 0.07);
+                0 8px 25px
+                rgba(0, 0, 0, 0.07);
         }
+
 
         .section h2 {
             color: #14532d;
@@ -137,124 +185,187 @@
             margin-top: 0;
         }
 
+
         .section p {
             color: #4b5563;
+
             font-size: 16px;
+
             line-height: 1.9;
+
             margin-bottom: 15px;
         }
 
-        /* CARDS */
+
+        /* =========================
+           CARDS
+        ========================= */
+
         .cards {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
             gap: 25px;
         }
 
+
         .card {
             background: #f0fdf4;
+
             padding: 30px;
+
             border-radius: 18px;
-            border-left: 5px solid #166534;
+
+            border-left:
+                5px solid #166534;
         }
+
 
         .card-icon {
             font-size: 45px;
             margin-bottom: 10px;
         }
 
+
         .card h3 {
             color: #14532d;
+
             font-size: 22px;
+
             margin: 10px 0;
         }
+
 
         .card p {
             margin: 0;
             font-size: 15px;
         }
 
-        /* CTA */
+
+        /* =========================
+           CTA
+        ========================= */
+
         .cta {
             text-align: center;
+
             background: #14532d;
+
             color: white;
+
             padding: 65px 25px;
         }
+
 
         .cta h2 {
             font-size: 34px;
             margin: 10px 0 15px;
         }
 
+
         .cta p {
             max-width: 700px;
             margin: auto;
+
             color: #dcfce7;
+
             line-height: 1.8;
         }
 
+
         .cta-button {
             display: inline-block;
+
             margin-top: 25px;
+
             padding: 14px 25px;
+
             border-radius: 10px;
 
             background: #facc15;
+
             color: #14532d;
 
             text-decoration: none;
+
             font-weight: bold;
         }
+
 
         .cta-button:hover {
             background: #fde047;
         }
 
-        /* FOOTER */
+
+        /* =========================
+           FOOTER
+        ========================= */
+
         footer {
             background: #052e16;
+
             color: white;
+
             text-align: center;
+
             padding: 40px 25px;
         }
+
 
         footer h2 {
             margin: 0 0 10px;
         }
+
 
         footer p {
             color: #bbf7d0;
             line-height: 1.7;
         }
 
+
         .copyright {
-            border-top: 1px solid #166534;
+            border-top:
+                1px solid #166534;
+
             margin-top: 25px;
+
             padding-top: 20px;
+
             color: #86efac;
+
             font-size: 13px;
         }
 
-        /* RESPONSIVE */
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
         @media (max-width: 800px) {
 
             .header-inner {
                 flex-direction: column;
             }
 
+
             .cards {
                 grid-template-columns: 1fr;
             }
+
 
             .hero h1 {
                 font-size: 38px;
             }
 
+
             nav {
                 gap: 15px;
             }
+
         }
+
 
         @media (max-width: 500px) {
 
@@ -262,26 +373,36 @@
                 font-size: 32px;
             }
 
+
             .section {
                 padding: 25px;
             }
 
+
             nav a {
                 font-size: 12px;
             }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-<!-- =========================
+
+<!-- =========================================
      HEADER
-========================= -->
+========================================= -->
 
 <header>
 
     <div class="header-inner">
+
+
+        <!-- LOGO -->
 
         <a
             href="https://kadekpalguna78-commits.github.io/TARU-BALI/"
@@ -296,6 +417,8 @@
         </a>
 
 
+        <!-- NAVIGASI -->
+
         <nav>
 
             <a
@@ -303,21 +426,25 @@
                 Beranda
             </a>
 
+
             <a
-                href="https://kadekpalguna78-commits.github.io/TARU-BALI/tentang.html"
+                href="https://kadekpalguna78-commits.github.io/TARU-BALI/tentang-kami.html"
                 class="active">
                 Tentang Kami
             </a>
+
 
             <a
                 href="https://kadekpalguna78-commits.github.io/TARU-BALI/fungsi.html">
                 Fungsi
             </a>
 
+
             <a
                 href="https://kadekpalguna78-commits.github.io/TARU-BALI/jenis-tanaman.html">
                 Jenis Tanaman
             </a>
+
 
             <a
                 href="https://kadekpalguna78-commits.github.io/TARU-BALI/peta-sebaran.html">
@@ -326,14 +453,16 @@
 
         </nav>
 
+
     </div>
 
 </header>
 
 
-<!-- =========================
+
+<!-- =========================================
      HERO
-========================= -->
+========================================= -->
 
 <section class="hero">
 
@@ -341,9 +470,11 @@
         🌿
     </div>
 
+
     <h1>
         Tentang Kami
     </h1>
+
 
     <p>
         Mengenal TARU BALI sebagai media digital
@@ -354,18 +485,22 @@
 </section>
 
 
-<!-- =========================
+
+<!-- =========================================
      CONTENT
-========================= -->
+========================================= -->
 
 <main class="container">
 
+
+    <!-- APA ITU TARU BALI -->
 
     <section class="section">
 
         <h2>
             🌱 Apa itu TARU BALI?
         </h2>
+
 
         <p>
             TARU BALI merupakan platform digital edukasi
@@ -374,11 +509,13 @@
             lingkungan, dan budaya masyarakat Bali.
         </p>
 
+
         <p>
             Nama TARU BALI berasal dari kata
             <strong>"Taru"</strong> yang berarti pohon
             atau tumbuhan.
         </p>
+
 
         <p>
             Website ini dikembangkan sebagai media untuk
@@ -391,11 +528,15 @@
     </section>
 
 
+
+    <!-- TUJUAN -->
+
     <section class="section">
 
         <h2>
             🎯 Tujuan TARU BALI
         </h2>
+
 
         <div class="cards">
 
@@ -419,6 +560,7 @@
             </div>
 
 
+
             <div class="card">
 
                 <div class="card-icon">
@@ -438,6 +580,7 @@
             </div>
 
 
+
             <div class="card">
 
                 <div class="card-icon">
@@ -455,6 +598,7 @@
                 </p>
 
             </div>
+
 
 
             <div class="card">
@@ -480,17 +624,22 @@
     </section>
 
 
+
+    <!-- MENGAPA TARU BALI -->
+
     <section class="section">
 
         <h2>
             🌳 Mengapa TARU BALI?
         </h2>
 
+
         <p>
             Perkembangan teknologi memberikan peluang untuk
             menyampaikan informasi mengenai kekayaan flora
             Bali melalui media yang lebih mudah diakses.
         </p>
+
 
         <p>
             Melalui TARU BALI, informasi mengenai tanaman
@@ -505,25 +654,30 @@
 </main>
 
 
-<!-- =========================
+
+<!-- =========================================
      CTA
-========================= -->
+========================================= -->
 
 <section class="cta">
+
 
     <div style="font-size:55px;">
         🌿
     </div>
 
+
     <h2>
         Mari Mengenal Flora Bali
     </h2>
+
 
     <p>
         Kenali berbagai tanaman yang terdapat di Bali
         dan bersama-sama menjaga kekayaan alam serta
         budaya untuk generasi mendatang.
     </p>
+
 
     <a
         href="https://kadekpalguna78-commits.github.io/TARU-BALI/jenis-tanaman.html"
@@ -533,28 +687,39 @@
 
     </a>
 
+
 </section>
 
 
-<!-- =========================
+
+<!-- =========================================
      FOOTER
-========================= -->
+========================================= -->
 
 <footer>
+
 
     <h2>
         🌿 TARU BALI
     </h2>
 
+
     <p>
         Media edukasi tanaman dan budaya Bali.
     </p>
 
+
     <div class="copyright">
+
         © 2026 TARU BALI
+
     </div>
+
 
 </footer>
 
+
 </body>
+
 </html>
+```
